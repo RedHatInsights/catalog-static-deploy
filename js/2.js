@@ -6438,7 +6438,9 @@ function (_Component) {
       }, "Edit Portfolio")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["DropdownItem"], {
         component: "button",
         "aria-label": "Remove Portfolio"
-      }, "Remove Portfolio"));
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+        to: _this.props.removePortfolioRoute
+      }, "Remove Portfolio")));
     });
 
     return _this;
@@ -6478,7 +6480,8 @@ PortfolioActionToolbar.propTypes = {
   title: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
   onClickEditPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func,
   addProductsRoute: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string.isRequired,
-  editPortfolioRoute: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string.isRequired
+  editPortfolioRoute: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string.isRequired,
+  removePortfolioRoute: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string.isRequired
 };
 /* harmony default export */ __webpack_exports__["default"] = (PortfolioActionToolbar);
 
@@ -7104,8 +7107,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PortfolioItem__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./PortfolioItem */ "./src/SmartComponents/Portfolio/PortfolioItem.js");
 /* harmony import */ var _PresentationalComponents_Shared_404Route__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/404Route */ "./src/PresentationalComponents/Shared/404Route.js");
 /* harmony import */ var _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./add-portfolio-modal */ "./src/SmartComponents/Portfolio/add-portfolio-modal.js");
-/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
-/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_portfolio_scss__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./remove-portfolio-modal */ "./src/SmartComponents/Portfolio/remove-portfolio-modal.js");
+/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
+/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_portfolio_scss__WEBPACK_IMPORTED_MODULE_24__);
+
 
 
 
@@ -7174,38 +7179,39 @@ function (_Component) {
       }));
     });
 
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "onClickRemovePortfolio", function () {
+      _this.props.showModal({
+        open: true,
+        portfolio: _this.props.portfolio,
+        onSuccess: _this.onPortfolioRemoved,
+        closeModal: _this.props.hideModal
+      }, 'removeportfolio');
+
+      _this.setState(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default()({}, _this.state, {
+        isOpen: !_this.state.isOpen
+      }));
+    });
+
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "filterItems", function (filterValue) {
       var filteredItems = [];
 
       if (_this.props.portfolioItems && _this.props.portfolioItems.portfolioItems) {
         filteredItems = _this.props.portfolioItems.portfolioItems;
-        filteredItems = filteredItems.filter(function (item) {
-          var itemName = item.name.toLowerCase();
-          return itemName.indexOf(filterValue.toLowerCase()) !== -1;
+        filteredItems = filteredItems.filter(function (_ref) {
+          var name = _ref.name;
+          return name.toLowerCase().includes(filterValue.toLowerCase());
         });
       }
 
       return filteredItems;
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "setViewMode", function () {
-      var mode = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-      var reloadData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-      _this.setState(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default()({}, _this.state, {
-        viewMode: mode
-      }));
-
-      if (reloadData) {
-        _this.props.fetchPortfolioItemsWithPortfolio(_this.props.match.params.id);
-      }
-    });
-
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "renderProducts", function (_ref) {
-      var title = _ref.title,
-          filteredItems = _ref.filteredItems,
-          addProductsRoute = _ref.addProductsRoute,
-          editPortfolioRoute = _ref.editPortfolioRoute;
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "renderProducts", function (_ref2) {
+      var title = _ref2.title,
+          filteredItems = _ref2.filteredItems,
+          addProductsRoute = _ref2.addProductsRoute,
+          editPortfolioRoute = _ref2.editPortfolioRoute,
+          removePortfolioRoute = _ref2.removePortfolioRoute;
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_9__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioFilterToolbar__WEBPACK_IMPORTED_MODULE_18__["default"], null), !_this.props.isLoading && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           marginTop: '15px',
@@ -7215,18 +7221,24 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioActionToolbar__WEBPACK_IMPORTED_MODULE_19__["default"], {
         title: title,
         onClickEditPortfolio: _this.onClickEditPortfolio,
+        onClickRemovePortfolio: _this.onClickRemovePortfolio,
         filterItems: _this.filterItems,
         addProductsRoute: addProductsRoute,
-        editPortfolioRoute: editPortfolioRoute
+        editPortfolioRoute: editPortfolioRoute,
+        removePortfolioRoute: removePortfolioRoute
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
         exact: true,
         path: "/portfolio/:id/edit-portfolio",
         component: _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_22__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
+        exact: true,
+        path: "/portfolio/:id/remove-portfolio",
+        component: _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_23__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_13__["default"], filteredItems), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_Common_MainModal__WEBPACK_IMPORTED_MODULE_15__["default"], null));
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "renderAddProducts", function (_ref2) {
-      var portfolioRoute = _ref2.portfolioRoute;
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "renderAddProducts", function (_ref3) {
+      var portfolioRoute = _ref3.portfolioRoute;
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_SmartComponents_Portfolio_AddProductsToPortfolio__WEBPACK_IMPORTED_MODULE_17__["default"], {
         portfolio: _this.props.portfolio,
         portfolioRoute: portfolioRoute
@@ -7256,6 +7268,7 @@ function (_Component) {
       var portfolioRoute = this.props.match.url;
       var addProductsRoute = "".concat(this.props.match.url, "/add-products");
       var editPortfolioRoute = "".concat(this.props.match.url, "/edit-portfolio");
+      var removePortfolioRoute = "".concat(this.props.match.url, "/remove-portfolio");
       var filteredItems = {
         items: this.props.portfolioItems.map(function (item) {
           return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PortfolioItem__WEBPACK_IMPORTED_MODULE_20__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
@@ -7268,6 +7281,10 @@ function (_Component) {
 
       if (this.props.isLoading) {
         return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, "Loading");
+      }
+
+      if (this.state.portfolioRemoved) {
+        this.props.history.push('/portfolios');
       }
 
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
@@ -7283,6 +7300,7 @@ function (_Component) {
           return _this2.renderProducts(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default()({
             addProductsRoute: addProductsRoute,
             editPortfolioRoute: editPortfolioRoute,
+            removePortfolioRoute: removePortfolioRoute,
             filteredItems: filteredItems,
             title: title
           }, props));
@@ -7296,11 +7314,11 @@ function (_Component) {
   return Portfolio;
 }(react__WEBPACK_IMPORTED_MODULE_9__["Component"]);
 
-var mapStateToProps = function mapStateToProps(_ref3) {
-  var _ref3$portfolioReduce = _ref3.portfolioReducer,
-      selectedPortfolio = _ref3$portfolioReduce.selectedPortfolio,
-      portfolioItems = _ref3$portfolioReduce.portfolioItems,
-      isLoading = _ref3$portfolioReduce.isLoading;
+var mapStateToProps = function mapStateToProps(_ref4) {
+  var _ref4$portfolioReduce = _ref4.portfolioReducer,
+      selectedPortfolio = _ref4$portfolioReduce.selectedPortfolio,
+      portfolioItems = _ref4$portfolioReduce.portfolioItems,
+      isLoading = _ref4$portfolioReduce.isLoading;
   return {
     portfolio: selectedPortfolio,
     portfolioItems: portfolioItems,
@@ -7334,7 +7352,8 @@ Portfolio.propTypes = {
   fetchSelectedPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func,
   showModal: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func,
   hideModal: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func,
-  onClickEditPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func,
+  onClickEditPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func.isRequired,
+  onClickRemovePortfolio: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func.isRequired,
   match: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.object,
   portfolio: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.shape({
     name: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.string,
@@ -7503,6 +7522,111 @@ PortfolioItem.propTypes = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/SmartComponents/Portfolio/remove-portfolio-modal.js":
+/*!*****************************************************************!*\
+  !*** ./src/SmartComponents/Portfolio/remove-portfolio-modal.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components/components/Notifications */ "./node_modules/@red-hat-insights/insights-frontend-components/components/Notifications.js");
+/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../redux/Actions/PortfolioActions */ "./src/redux/Actions/PortfolioActions.js");
+/* harmony import */ var _redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../redux/Actions/MainModalActions */ "./src/redux/Actions/MainModalActions.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
+
+
+
+
+
+
+
+
+
+
+var RemovePortfolioModal = function RemovePortfolioModal(_ref) {
+  var _ref$history = _ref.history,
+      goBack = _ref$history.goBack,
+      push = _ref$history.push,
+      removePortfolio = _ref.removePortfolio,
+      addNotification = _ref.addNotification,
+      hideModal = _ref.hideModal,
+      portfolioId = _ref.portfolioId,
+      portfolioName = _ref.portfolioName;
+
+  var onSubmit = function onSubmit() {
+    return removePortfolio(portfolioId).then(hideModal()).then(push('/portfolios'));
+  };
+
+  var onCancel = function onCancel() {
+    return Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["pipe"])(addNotification({
+      variant: 'warning',
+      title: 'Removing portfolio',
+      description: 'Removing portfolio was cancelled by the user.'
+    }), goBack());
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["Modal"], {
+    title: 'Remove portfolio',
+    isOpen: true,
+    onClose: onCancel,
+    actions: [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+      key: "cancel",
+      variant: "secondary",
+      type: "button",
+      onClick: onCancel
+    }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+      key: "submit",
+      variant: "primary",
+      type: "button",
+      onClick: onSubmit
+    }, "Confirm")]
+  }, "Removing Portfolio ", portfolioName);
+};
+
+RemovePortfolioModal.propTypes = {
+  history: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    goBack: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+    push: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+  }).isRequired,
+  removePortfolio: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  addNotification: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  hideModal: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  portfolioId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  portfolioName: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.portfolioName
+};
+
+var mapStateToProps = function mapStateToProps(_ref2) {
+  var selectedPortfolio = _ref2.portfolioReducer.selectedPortfolio;
+  return {
+    portfolioId: selectedPortfolio.id,
+    portfolioName: selectedPortfolio.name
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return Object(redux__WEBPACK_IMPORTED_MODULE_4__["bindActionCreators"])({
+    addNotification: _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6__["addNotification"],
+    removePortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_7__["removePortfolio"],
+    hideModal: _redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_8__["hideModal"]
+  }, dispatch);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(RemovePortfolioModal)));
 
 /***/ })
 
