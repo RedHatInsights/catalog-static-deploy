@@ -6231,7 +6231,7 @@ function (_React$Component) {
         height: "20"
       }), this.props.editMode && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_Shared_CardCheckbox__WEBPACK_IMPORTED_MODULE_15__["default"], {
         id: this.props.id,
-        checked: this.props.checkedItems.includes(this.props.id),
+        checked: this.props.checked,
         onChange: this.props.onToggleItemSelect
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["CardBody"], {
         className: "pcard_body"
@@ -6249,7 +6249,7 @@ PlatformItem.propTypes = {
   id: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.string,
   name: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.string,
   editMode: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.bool,
-  checkedItems: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.array,
+  checked: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.bool,
   onToggleItemSelect: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.func
 };
 /* harmony default export */ __webpack_exports__["default"] = (PlatformItem);
@@ -6712,35 +6712,17 @@ function (_Component) {
     _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(PlatformSelectToolbar)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "state", {
-      isOpen: false,
       searchValue: '',
       selectedOption: '',
       arrayValue: []
     });
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "selectMultipleOption", function (options) {
-      var platforms = _this.props.platforms;
-      var selectedValues = [];
-      options.map(function (option) {
-        selectedValues.push(platforms.find(function (oneItem) {
-          return oneItem.id === option.value;
-        }));
+      return _this.setState({
+        selected: options
+      }, function () {
+        return _this.props.onOptionSelect(options);
       });
-
-      _this.setState({
-        isOpen: false,
-        selected: selectedValues
-      });
-
-      _this.props.onOptionSelect && _this.props.onOptionSelect(selectedValues);
-    });
-
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "onMenuClose", function () {});
-
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "onInputChange", function () {});
-
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "onSearchSubmit", function () {
-      _this.props.hasOwnProperty('onSearchClick') && _this.props.onSearchClick(_this.state.searchValue, _this.state.selected);
     });
 
     return _this;
@@ -6753,7 +6735,8 @@ function (_Component) {
       var dropdownItems = platforms.map(function (platform) {
         return {
           value: platform.id,
-          label: platform.name
+          label: platform.name,
+          id: platform.id
         };
       });
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Toolbar"], {
@@ -6765,8 +6748,7 @@ function (_Component) {
         placeholder: 'Filter by Platform',
         options: dropdownItems,
         onChange: this.selectMultipleOption,
-        onMenuClose: this.onMenuClose,
-        closeMenuOnSelect: true
+        closeMenuOnSelect: false
       }))));
     }
   }]);
@@ -6809,52 +6791,46 @@ PlatformSelectToolbar.propTypes = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components */ "./node_modules/@red-hat-insights/insights-frontend-components/index.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components/components/Notifications */ "./node_modules/@red-hat-insights/insights-frontend-components/components/Notifications.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../redux/Actions/PlatformActions */ "./src/redux/Actions/PlatformActions.js");
-/* harmony import */ var _SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../SmartComponents/ContentGallery/ContentGallery */ "./src/SmartComponents/ContentGallery/ContentGallery.js");
-/* harmony import */ var _Common_MainModal__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../Common/MainModal */ "./src/SmartComponents/Common/MainModal.js");
-/* harmony import */ var _Platform_platform_scss__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../Platform/platform.scss */ "./src/SmartComponents/Platform/platform.scss");
-/* harmony import */ var _Platform_platform_scss__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_Platform_platform_scss__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../SmartComponents/Portfolio/portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
-/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_22__);
-/* harmony import */ var _PresentationalComponents_Portfolio_PortfolioOrderToolbar__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../PresentationalComponents/Portfolio/PortfolioOrderToolbar */ "./src/PresentationalComponents/Portfolio/PortfolioOrderToolbar.js");
-/* harmony import */ var _PresentationalComponents_Portfolio_AddProductsTitleToolbar__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../PresentationalComponents/Portfolio/AddProductsTitleToolbar */ "./src/PresentationalComponents/Portfolio/AddProductsTitleToolbar.js");
-/* harmony import */ var _PresentationalComponents_Platform_PlatformDashboard__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformDashboard */ "./src/PresentationalComponents/Platform/PlatformDashboard.js");
-/* harmony import */ var _SmartComponents_Common_PlatformSelectToolbar__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../../SmartComponents/Common/PlatformSelectToolbar */ "./src/SmartComponents/Common/PlatformSelectToolbar.js");
-/* harmony import */ var _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../../redux/Actions/PortfolioActions */ "./src/redux/Actions/PortfolioActions.js");
-/* harmony import */ var _PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformItem */ "./src/PresentationalComponents/Platform/PlatformItem.js");
-
-
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components */ "./node_modules/@red-hat-insights/insights-frontend-components/index.js");
+/* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components/components/Notifications */ "./node_modules/@red-hat-insights/insights-frontend-components/components/Notifications.js");
+/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../redux/Actions/PlatformActions */ "./src/redux/Actions/PlatformActions.js");
+/* harmony import */ var _SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../SmartComponents/ContentGallery/ContentGallery */ "./src/SmartComponents/ContentGallery/ContentGallery.js");
+/* harmony import */ var _Common_MainModal__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../Common/MainModal */ "./src/SmartComponents/Common/MainModal.js");
+/* harmony import */ var _Platform_platform_scss__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../Platform/platform.scss */ "./src/SmartComponents/Platform/platform.scss");
+/* harmony import */ var _Platform_platform_scss__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_Platform_platform_scss__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../SmartComponents/Portfolio/portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
+/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _PresentationalComponents_Portfolio_PortfolioOrderToolbar__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../PresentationalComponents/Portfolio/PortfolioOrderToolbar */ "./src/PresentationalComponents/Portfolio/PortfolioOrderToolbar.js");
+/* harmony import */ var _PresentationalComponents_Portfolio_AddProductsTitleToolbar__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../PresentationalComponents/Portfolio/AddProductsTitleToolbar */ "./src/PresentationalComponents/Portfolio/AddProductsTitleToolbar.js");
+/* harmony import */ var _PresentationalComponents_Platform_PlatformDashboard__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformDashboard */ "./src/PresentationalComponents/Platform/PlatformDashboard.js");
+/* harmony import */ var _SmartComponents_Common_PlatformSelectToolbar__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../SmartComponents/Common/PlatformSelectToolbar */ "./src/SmartComponents/Common/PlatformSelectToolbar.js");
+/* harmony import */ var _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../redux/Actions/PortfolioActions */ "./src/redux/Actions/PortfolioActions.js");
+/* harmony import */ var _PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformItem */ "./src/PresentationalComponents/Platform/PlatformItem.js");
 
 
 
@@ -6886,58 +6862,61 @@ __webpack_require__.r(__webpack_exports__);
 var AddProductsToPortfolio =
 /*#__PURE__*/
 function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_8___default()(AddProductsToPortfolio, _Component);
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6___default()(AddProductsToPortfolio, _Component);
 
   function AddProductsToPortfolio() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_4___default()(this, AddProductsToPortfolio);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, AddProductsToPortfolio);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_6___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_7___default()(AddProductsToPortfolio)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default()(AddProductsToPortfolio)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_10___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9___default()(_this)), "state", {
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "state", {
       selectedPlatforms: [],
       checkedItems: []
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_10___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9___default()(_this)), "onPlatformSelectionChange", function (selectedValues) {
-      _this.setState({
-        selectedPlatforms: selectedValues
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "onPlatformSelectionChange", function () {
+      var selectedValues = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      return _this.setState(function () {
+        return {
+          selectedPlatforms: selectedValues
+        };
+      }, function () {
+        return _this.props.fetchMultiplePlatformItems(selectedValues.filter(function (_ref) {
+          var id = _ref.id;
+          return !_this.props.platformItems[id];
+        }).map(function (_ref2) {
+          var id = _ref2.id;
+          return id;
+        }));
       });
-
-      _this.fetchData(selectedValues[0].id);
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_10___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9___default()(_this)), "onToggleItemSelect", function (event) {
-      var item = event.target.id;
-      var isChecked = event.target.checked;
-      console.log('item select: ', event);
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "onToggleItemSelect", function (checkedId) {
+      return _this.setState(function (_ref3) {
+        var checkedItems = _ref3.checkedItems;
+        var index = checkedItems.indexOf(checkedId);
 
-      if (isChecked) {
-        _this.setState(function (state) {
-          var checkedItems = [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_3___default()(state.checkedItems), [item]);
+        if (index > -1) {
           return {
-            checkedItems: checkedItems
+            checkedItems: [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(checkedItems.slice(0, index)), _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(checkedItems.slice(index + 1)))
           };
-        });
-      } else {
-        _this.setState(function (prevState) {
-          return {
-            checkedItems: prevState.checkedItems.filter(function (value) {
-              return !(value === item.id);
-            })
-          };
-        });
-      }
+        }
+
+        return {
+          checkedItems: [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(checkedItems), [checkedId])
+        };
+      });
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_10___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_9___default()(_this)), "onAddToPortfolio", function () {
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "onAddToPortfolio", function () {
       return _this.props.addToPortfolio(_this.props.portfolio.id, _this.state.checkedItems).then(function () {
         return _this.props.history.push(_this.props.portfolioRoute);
       }).then(function () {
@@ -6945,37 +6924,29 @@ function (_Component) {
       });
     });
 
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "createItems", function () {
+      var selectedPlatforms = _this.state.selectedPlatforms;
+      var platformItems = _this.props.platformItems;
+      return selectedPlatforms.map(function (_ref4) {
+        var id = _ref4.id;
+        return platformItems[id] ? platformItems[id].map(function (item) {
+          return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_26__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+            key: item.id
+          }, item, {
+            editMode: true,
+            onToggleItemSelect: function onToggleItemSelect() {
+              return _this.onToggleItemSelect(item.id);
+            },
+            checked: _this.state.checkedItems.includes(item.id)
+          }));
+        }) : null;
+      });
+    });
+
     return _this;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_5___default()(AddProductsToPortfolio, [{
-    key: "fetchData",
-    value: function () {
-      var _fetchData = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2___default()(
-      /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee(platforms) {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return this.props.fetchPlatformItems(platforms);
-
-              case 2:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function fetchData(_x) {
-        return _fetchData.apply(this, arguments);
-      }
-
-      return fetchData;
-    }()
-  }, {
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(AddProductsToPortfolio, [{
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -6984,46 +6955,38 @@ function (_Component) {
 
       if (this.props.platformItems) {
         filteredItems = {
-          items: this.props.platformItems.map(function (item) {
-            return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_28__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
-              key: item.id
-            }, item, {
-              editMode: true,
-              onToggleItemSelect: _this2.onToggleItemSelect,
-              checkedItems: _this2.state.checkedItems
-            }));
-          }),
+          items: this.createItems(),
           isLoading: this.props.isLoading
         };
       }
 
       var title = this.props.portfolio ? this.props.portfolio.name : '';
-      return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_16__["Section"], null, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioOrderToolbar__WEBPACK_IMPORTED_MODULE_23__["default"], null), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_PresentationalComponents_Portfolio_AddProductsTitleToolbar__WEBPACK_IMPORTED_MODULE_24__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_14__["Section"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioOrderToolbar__WEBPACK_IMPORTED_MODULE_21__["default"], null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Portfolio_AddProductsTitleToolbar__WEBPACK_IMPORTED_MODULE_22__["default"], {
         title: title,
         onClickAddToPortfolio: this.onAddToPortfolio,
         portfolioRoute: this.props.portfolioRoute
-      }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_SmartComponents_Common_PlatformSelectToolbar__WEBPACK_IMPORTED_MODULE_26__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_SmartComponents_Common_PlatformSelectToolbar__WEBPACK_IMPORTED_MODULE_24__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
         onOptionSelect: this.onPlatformSelectionChange
       }, this.props)), this.state.selectedPlatforms.length > 0 && this.state.selectedPlatforms.map(function (platform) {
-        return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_19__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
-          key: platform.id
+        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_17__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+          key: platform.label
         }, filteredItems, {
           title: platform.name,
           editMode: true,
           onToggleSelect: _this2.onToggleItemSelect,
           checkedItems: _this2.state.checkedItems
         }));
-      }), this.state.selectedPlatforms.length < 1 && react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_PresentationalComponents_Platform_PlatformDashboard__WEBPACK_IMPORTED_MODULE_25__["default"], null), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_Common_MainModal__WEBPACK_IMPORTED_MODULE_20__["default"], null));
+      }), this.state.selectedPlatforms.length < 1 && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Platform_PlatformDashboard__WEBPACK_IMPORTED_MODULE_23__["default"], null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_Common_MainModal__WEBPACK_IMPORTED_MODULE_18__["default"], null));
     }
   }]);
 
   return AddProductsToPortfolio;
-}(react__WEBPACK_IMPORTED_MODULE_11__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_9__["Component"]);
 
-var mapStateToProps = function mapStateToProps(_ref) {
-  var _ref$platformReducer = _ref.platformReducer,
-      platformItems = _ref$platformReducer.platformItems,
-      isPlatformDataLoading = _ref$platformReducer.isPlatformDataLoading;
+var mapStateToProps = function mapStateToProps(_ref5) {
+  var _ref5$platformReducer = _ref5.platformReducer,
+      platformItems = _ref5$platformReducer.platformItems,
+      isPlatformDataLoading = _ref5$platformReducer.isPlatformDataLoading;
   return {
     platformItems: platformItems,
     isLoading: isPlatformDataLoading
@@ -7031,36 +6994,36 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return Object(redux__WEBPACK_IMPORTED_MODULE_13__["bindActionCreators"])({
-    addNotification: _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_17__["addNotification"],
-    fetchPlatformItems: _redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_18__["fetchPlatformItems"],
-    addToPortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_27__["addToPortfolio"],
-    fetchPortfolioItemsWithPortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_27__["fetchPortfolioItemsWithPortfolio"]
+  return Object(redux__WEBPACK_IMPORTED_MODULE_11__["bindActionCreators"])({
+    addNotification: _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_15__["addNotification"],
+    fetchMultiplePlatformItems: _redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_16__["fetchMultiplePlatformItems"],
+    addToPortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_25__["addToPortfolio"],
+    fetchPortfolioItemsWithPortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_25__["fetchPortfolioItemsWithPortfolio"]
   }, dispatch);
 };
 
 AddProductsToPortfolio.propTypes = {
-  platformItems: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.array,
-  isLoading: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.bool,
-  isEditMode: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.bool,
-  addToPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.func,
-  fetchPlatformItems: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.func,
-  portfolio: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.shape({
-    name: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.string,
-    id: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.number]).isRequired
+  platformItems: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.object,
+  isLoading: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.bool,
+  isEditMode: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.bool,
+  addToPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.func,
+  fetchMultiplePlatformItems: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.func,
+  portfolio: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.shape({
+    name: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.string,
+    id: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.number]).isRequired
   }).isRequired,
-  history: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.shape({
-    push: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.func.isRequired
+  history: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.shape({
+    push: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.func.isRequired
   }).isRequired,
-  match: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.shape({
-    params: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.shape({
-      id: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.string.isRequired
+  match: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.shape({
+    params: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.shape({
+      id: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.string.isRequired
     }).isRequired
   }).isRequired,
-  portfolioRoute: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.string.isRequired,
-  fetchPortfolioItemsWithPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_15___default.a.func.isRequired
+  portfolioRoute: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.string.isRequired,
+  fetchPortfolioItemsWithPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.func.isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_14__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_12__["connect"])(mapStateToProps, mapDispatchToProps)(AddProductsToPortfolio)));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_12__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_10__["connect"])(mapStateToProps, mapDispatchToProps)(AddProductsToPortfolio)));
 
 /***/ }),
 

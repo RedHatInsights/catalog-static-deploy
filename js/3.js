@@ -128,7 +128,7 @@ function (_React$Component) {
         height: "20"
       }), this.props.editMode && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_Shared_CardCheckbox__WEBPACK_IMPORTED_MODULE_15__["default"], {
         id: this.props.id,
-        checked: this.props.checkedItems.includes(this.props.id),
+        checked: this.props.checked,
         onChange: this.props.onToggleItemSelect
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["CardBody"], {
         className: "pcard_body"
@@ -146,7 +146,7 @@ PlatformItem.propTypes = {
   id: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.string,
   name: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.string,
   editMode: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.bool,
-  checkedItems: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.array,
+  checked: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.bool,
   onToggleItemSelect: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.func
 };
 /* harmony default export */ __webpack_exports__["default"] = (PlatformItem);
@@ -605,7 +605,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
       isPlatformDataLoading = _ref$platformReducer.isPlatformDataLoading;
   return {
     platform: selectedPlatform,
-    platformItems: platformItems,
+    platformItems: selectedPlatform && platformItems[selectedPlatform.id],
     isPlatformDataLoading: !selectedPlatform || isPlatformDataLoading
   };
 };
@@ -632,7 +632,7 @@ Platform.propTypes = {
   }),
   platformItems: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.array
 };
-_PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_16__["default"].defaultProps = {
+Platform.defaultProps = {
   platformItems: []
 };
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["connect"])(mapStateToProps, mapDispatchToProps)(Platform));
