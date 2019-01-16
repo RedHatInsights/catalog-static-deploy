@@ -7071,8 +7071,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PresentationalComponents_Shared_404Route__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/404Route */ "./src/PresentationalComponents/Shared/404Route.js");
 /* harmony import */ var _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./add-portfolio-modal */ "./src/SmartComponents/Portfolio/add-portfolio-modal.js");
 /* harmony import */ var _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./remove-portfolio-modal */ "./src/SmartComponents/Portfolio/remove-portfolio-modal.js");
-/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
-/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_portfolio_scss__WEBPACK_IMPORTED_MODULE_24__);
+/* harmony import */ var _Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../Helpers/Shared/helpers */ "./src/Helpers/Shared/helpers.js");
+/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
+/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(_portfolio_scss__WEBPACK_IMPORTED_MODULE_25__);
+
 
 
 
@@ -7215,12 +7217,14 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.fetchData(this.props.match.params.id);
+      Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_24__["scrollToTop"])();
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       if (prevProps.match.params.id !== this.props.match.params.id) {
         this.fetchData(this.props.match.params.id);
+        Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_24__["scrollToTop"])();
       }
     }
   }, {

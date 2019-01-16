@@ -29,6 +29,26 @@ module.exports = _extends;
 
 /***/ }),
 
+/***/ "./src/Helpers/Shared/helpers.js":
+/*!***************************************!*\
+  !*** ./src/Helpers/Shared/helpers.js ***!
+  \***************************************/
+/*! exports provided: scrollToTop */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollToTop", function() { return scrollToTop; });
+var scrollToTop = function scrollToTop() {
+  return document.getElementById('root').scrollTo({
+    behavior: 'smooth',
+    top: 0,
+    left: 0
+  });
+};
+
+/***/ }),
+
 /***/ "./src/PresentationalComponents/Platform/PlatformItem.js":
 /*!***************************************************************!*\
   !*** ./src/PresentationalComponents/Platform/PlatformItem.js ***!
@@ -501,8 +521,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../SmartComponents/ContentGallery/ContentGallery */ "./src/SmartComponents/ContentGallery/ContentGallery.js");
 /* harmony import */ var _PresentationalComponents_Platform_PlatformToolbar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformToolbar */ "./src/PresentationalComponents/Platform/PlatformToolbar.js");
 /* harmony import */ var _PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformItem */ "./src/PresentationalComponents/Platform/PlatformItem.js");
-/* harmony import */ var _platform_scss__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./platform.scss */ "./src/SmartComponents/Platform/platform.scss");
-/* harmony import */ var _platform_scss__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_platform_scss__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../Helpers/Shared/helpers */ "./src/Helpers/Shared/helpers.js");
+/* harmony import */ var _platform_scss__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./platform.scss */ "./src/SmartComponents/Platform/platform.scss");
+/* harmony import */ var _platform_scss__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_platform_scss__WEBPACK_IMPORTED_MODULE_18__);
+
 
 
 
@@ -558,12 +580,14 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.fetchData(this.props.match.params.id);
+      Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_17__["scrollToTop"])();
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       if (prevProps.match.params.id !== this.props.match.params.id) {
         this.fetchData(this.props.match.params.id);
+        Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_17__["scrollToTop"])();
       }
     }
   }, {
