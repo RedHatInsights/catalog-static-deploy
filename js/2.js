@@ -1,77 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2],{
 
-/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
-      arr2[i] = arr[i];
-    }
-
-    return arr2;
-  }
-}
-
-module.exports = _arrayWithoutHoles;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _iterableToArray(iter) {
-  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
-}
-
-module.exports = _iterableToArray;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
-}
-
-module.exports = _nonIterableSpread;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
-
-var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
-
-var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
-
-function _toConsumableArray(arr) {
-  return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
-}
-
-module.exports = _toConsumableArray;
-
-/***/ }),
-
 /***/ "./node_modules/memoize-one/dist/memoize-one.esm.js":
 /*!**********************************************************!*\
   !*** ./node_modules/memoize-one/dist/memoize-one.esm.js ***!
@@ -7036,10 +6964,10 @@ AddProductsToPortfolio.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
-/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
@@ -7132,31 +7060,6 @@ function (_Component) {
       _this.props.fetchPortfolioItemsWithPortfolio(apiProps);
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "onClickEditPortfolio", function () {
-      _this.props.showModal({
-        open: true,
-        itemdata: _this.props,
-        closeModal: _this.props.hideModal
-      }, 'editportfolio');
-
-      _this.setState(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default()({}, _this.state, {
-        isOpen: !_this.state.isOpen
-      }));
-    });
-
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "onClickRemovePortfolio", function () {
-      _this.props.showModal({
-        open: true,
-        portfolio: _this.props.portfolio,
-        onSuccess: _this.onPortfolioRemoved,
-        closeModal: _this.props.hideModal
-      }, 'removeportfolio');
-
-      _this.setState(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default()({}, _this.state, {
-        isOpen: !_this.state.isOpen
-      }));
-    });
-
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "filterItems", function (filterValue) {
       var filteredItems = [];
 
@@ -7185,8 +7088,6 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioActionToolbar__WEBPACK_IMPORTED_MODULE_19__["default"], {
         title: title,
-        onClickEditPortfolio: _this.onClickEditPortfolio,
-        onClickRemovePortfolio: _this.onClickRemovePortfolio,
         filterItems: _this.filterItems,
         addProductsRoute: addProductsRoute,
         editPortfolioRoute: editPortfolioRoute,
@@ -7238,33 +7139,24 @@ function (_Component) {
       var removePortfolioRoute = "".concat(this.props.match.url, "/remove-portfolio");
       var filteredItems = {
         items: this.props.portfolioItems.map(function (item) {
-          return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PortfolioItem__WEBPACK_IMPORTED_MODULE_20__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+          return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PortfolioItem__WEBPACK_IMPORTED_MODULE_20__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({
             key: item.id
           }, item));
         }),
         isLoading: this.props.isLoading
       };
       var title = this.props.portfolio ? this.props.portfolio.name : '';
-
-      if (this.props.isLoading) {
-        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, "Loading");
-      }
-
-      if (this.state.portfolioRemoved) {
-        this.props.history.push('/portfolios');
-      }
-
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
         path: "/portfolio/:id/add-products",
         render: function render(props) {
-          return _this2.renderAddProducts(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default()({
+          return _this2.renderAddProducts(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({
             portfolioRoute: portfolioRoute
           }, props));
         }
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
         path: "/portfolio/:id",
         render: function render(props) {
-          return _this2.renderProducts(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default()({
+          return _this2.renderProducts(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({
             addProductsRoute: addProductsRoute,
             editPortfolioRoute: editPortfolioRoute,
             removePortfolioRoute: removePortfolioRoute,
@@ -7319,8 +7211,6 @@ Portfolio.propTypes = {
   fetchSelectedPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func,
   showModal: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func,
   hideModal: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func,
-  onClickEditPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func.isRequired,
-  onClickRemovePortfolio: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func.isRequired,
   match: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.object,
   portfolio: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.shape({
     name: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.string,
@@ -7512,9 +7402,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components/components/Notifications */ "./node_modules/@red-hat-insights/insights-frontend-components/components/Notifications.js");
 /* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../redux/Actions/PortfolioActions */ "./src/redux/Actions/PortfolioActions.js");
-/* harmony import */ var _redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../redux/Actions/MainModalActions */ "./src/redux/Actions/MainModalActions.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 
 
 
@@ -7530,17 +7418,19 @@ var RemovePortfolioModal = function RemovePortfolioModal(_ref) {
       goBack = _ref$history.goBack,
       push = _ref$history.push,
       removePortfolio = _ref.removePortfolio,
+      fetchPortfolios = _ref.fetchPortfolios,
       addNotification = _ref.addNotification,
-      hideModal = _ref.hideModal,
       portfolioId = _ref.portfolioId,
       portfolioName = _ref.portfolioName;
 
   var onSubmit = function onSubmit() {
-    return removePortfolio(portfolioId).then(hideModal()).then(push('/portfolios'));
+    return removePortfolio(portfolioId).then(function () {
+      return Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["pipe"])(push('/portfolios'), fetchPortfolios());
+    });
   };
 
   var onCancel = function onCancel() {
-    return Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["pipe"])(addNotification({
+    return Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["pipe"])(addNotification({
       variant: 'warning',
       title: 'Removing portfolio',
       description: 'Removing portfolio was cancelled by the user.'
@@ -7574,7 +7464,8 @@ RemovePortfolioModal.propTypes = {
   addNotification: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
   hideModal: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
   portfolioId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  portfolioName: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.portfolioName
+  portfolioName: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.portfolioName,
+  fetchPortfolios: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
 };
 
 var mapStateToProps = function mapStateToProps(_ref2) {
@@ -7589,7 +7480,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return Object(redux__WEBPACK_IMPORTED_MODULE_4__["bindActionCreators"])({
     addNotification: _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6__["addNotification"],
     removePortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_7__["removePortfolio"],
-    hideModal: _redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_8__["hideModal"]
+    fetchPortfolios: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_7__["fetchPortfolios"]
   }, dispatch);
 };
 
