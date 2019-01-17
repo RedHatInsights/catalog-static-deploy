@@ -6698,7 +6698,6 @@ var mapStateToProps = function mapStateToProps(_ref) {
 
 PlatformSelectToolbar.propTypes = {
   platforms: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.array,
-  fetchPlatforms: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func,
   isLoading: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.bool,
   searchFilter: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
   onOptionSelect: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func,
