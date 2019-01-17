@@ -419,7 +419,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // swap loading?
+
+
+
+var NoItems = function NoItems() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Bullseye"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].h1
+  }, "No items found"));
+};
 
 var ContentGallery = function ContentGallery(_ref) {
   var isLoading = _ref.isLoading,
@@ -428,7 +435,7 @@ var ContentGallery = function ContentGallery(_ref) {
     type: "content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
     gutter: "md"
-  }, items)));
+  }, items.length > 0 ? items : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NoItems, null))));
 };
 
 ContentGallery.propTypes = {
