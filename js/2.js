@@ -6582,30 +6582,16 @@ CardCheckbox.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
-/* harmony import */ var _PresentationalComponents_Platform_platform_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/platform.scss */ "./src/PresentationalComponents/Platform/platform.scss");
-/* harmony import */ var _PresentationalComponents_Platform_platform_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_PresentationalComponents_Platform_platform_scss__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _PresentationalComponents_Shared_FilterToolbarItem__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/FilterToolbarItem */ "./src/PresentationalComponents/Shared/FilterToolbarItem.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var _PresentationalComponents_Platform_platform_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/platform.scss */ "./src/PresentationalComponents/Platform/platform.scss");
+/* harmony import */ var _PresentationalComponents_Platform_platform_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_PresentationalComponents_Platform_platform_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _PresentationalComponents_Shared_FilterToolbarItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/FilterToolbarItem */ "./src/PresentationalComponents/Shared/FilterToolbarItem.js");
 
 
 
@@ -6614,96 +6600,50 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-var PlatformSelectToolbar =
-/*#__PURE__*/
-function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(PlatformSelectToolbar, _Component);
-
-  function PlatformSelectToolbar() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, PlatformSelectToolbar);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(PlatformSelectToolbar)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "state", {
-      searchValue: '',
-      selectedOption: '',
-      arrayValue: []
-    });
-
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "selectMultipleOption", function (options) {
-      return _this.setState({
-        selected: options
-      }, function () {
-        return _this.props.onOptionSelect(options);
-      });
-    });
-
-    return _this;
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(PlatformSelectToolbar, [{
-    key: "render",
-    value: function render() {
-      var platforms = this.props.platforms;
-      var dropdownItems = platforms.map(function (platform) {
-        return {
-          value: platform.id,
-          label: platform.name,
-          id: platform.id
-        };
-      });
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Toolbar"], {
-        className: "searchToolbar"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_PresentationalComponents_Shared_FilterToolbarItem__WEBPACK_IMPORTED_MODULE_13__["default"], null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarGroup"], {
-        className: "searchPlatforms"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarItem"], null, platforms && react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_11__["default"], {
-        isMulti: true,
-        placeholder: 'Filter by Platform',
-        options: dropdownItems,
-        onChange: this.selectMultipleOption,
-        closeMenuOnSelect: false
-      }))));
-    }
-  }]);
-
-  return PlatformSelectToolbar;
-}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
-
-;
-
-var mapStateToProps = function mapStateToProps(_ref) {
-  var _ref$platformReducer = _ref.platformReducer,
-      platforms = _ref$platformReducer.platforms,
-      isPlatformDataLoading = _ref$platformReducer.isPlatformDataLoading;
-  return {
-    platforms: platforms,
-    isLoading: isPlatformDataLoading
-  };
+var PlatformSelectToolbar = function PlatformSelectToolbar(_ref) {
+  var onOptionSelect = _ref.onOptionSelect,
+      platforms = _ref.platforms,
+      onFilterChange = _ref.onFilterChange,
+      searchValue = _ref.searchValue;
+  var dropdownItems = platforms.map(function (platform) {
+    return {
+      value: platform.id,
+      label: platform.name,
+      id: platform.id
+    };
+  });
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Toolbar"], {
+    className: "searchToolbar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PresentationalComponents_Shared_FilterToolbarItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    onFilterChange: onFilterChange,
+    searchValue: searchValue,
+    placeholder: "Filter products"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["ToolbarGroup"], {
+    className: "searchPlatforms"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["ToolbarItem"], null, platforms && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    isMulti: true,
+    placeholder: 'Filter by Platform',
+    options: dropdownItems,
+    onChange: onOptionSelect,
+    closeMenuOnSelect: false
+  }))));
 };
 
 PlatformSelectToolbar.propTypes = {
-  platforms: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.array,
-  isLoading: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.bool,
-  searchFilter: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
-  onOptionSelect: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func,
-  onSearchClick: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func
+  platforms: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.array,
+  onOptionSelect: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
+  onFilterChange: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
+  searchValue: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
 };
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_8__["connect"])(mapStateToProps)(PlatformSelectToolbar));
+
+var mapStateToProps = function mapStateToProps(_ref2) {
+  var platforms = _ref2.platformReducer.platforms;
+  return {
+    platforms: platforms
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(PlatformSelectToolbar));
 
 /***/ }),
 
@@ -6806,7 +6746,14 @@ function (_Component) {
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "state", {
       selectedPlatforms: [],
-      checkedItems: []
+      checkedItems: [],
+      searchValue: ''
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "handleFilterChange", function (searchValue) {
+      return _this.setState({
+        searchValue: searchValue
+      });
     });
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "onPlatformSelectionChange", function () {
@@ -6818,7 +6765,7 @@ function (_Component) {
       }, function () {
         return _this.props.fetchMultiplePlatformItems(selectedValues.filter(function (_ref) {
           var id = _ref.id;
-          return !_this.props.platformItems[id];
+          return !_this.props.platformItems.hasOwnProperty(id);
         }).map(function (_ref2) {
           var id = _ref2.id;
           return id;
@@ -6856,7 +6803,10 @@ function (_Component) {
       var platformItems = _this.props.platformItems;
       return selectedPlatforms.map(function (_ref4) {
         var id = _ref4.id;
-        return platformItems[id] ? platformItems[id].map(function (item) {
+        return platformItems[id] ? platformItems[id].filter(function (_ref5) {
+          var name = _ref5.name;
+          return name.trim().toLowerCase().includes(_this.state.searchValue.toLocaleLowerCase());
+        }).map(function (item) {
           return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_26__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
             key: item.id
           }, item, {
@@ -6893,6 +6843,8 @@ function (_Component) {
         onClickAddToPortfolio: this.onAddToPortfolio,
         portfolioRoute: this.props.portfolioRoute
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_SmartComponents_Common_PlatformSelectToolbar__WEBPACK_IMPORTED_MODULE_24__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+        searchValue: this.state.searchValue,
+        onFilterChange: this.handleFilterChange,
         onOptionSelect: this.onPlatformSelectionChange
       }, this.props)), this.state.selectedPlatforms.length > 0 && this.state.selectedPlatforms.map(function (platform) {
         return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_17__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
@@ -6910,10 +6862,10 @@ function (_Component) {
   return AddProductsToPortfolio;
 }(react__WEBPACK_IMPORTED_MODULE_9__["Component"]);
 
-var mapStateToProps = function mapStateToProps(_ref5) {
-  var _ref5$platformReducer = _ref5.platformReducer,
-      platformItems = _ref5$platformReducer.platformItems,
-      isPlatformDataLoading = _ref5$platformReducer.isPlatformDataLoading;
+var mapStateToProps = function mapStateToProps(_ref6) {
+  var _ref6$platformReducer = _ref6.platformReducer,
+      platformItems = _ref6$platformReducer.platformItems,
+      isPlatformDataLoading = _ref6$platformReducer.isPlatformDataLoading;
   return {
     platformItems: platformItems,
     isLoading: isPlatformDataLoading
