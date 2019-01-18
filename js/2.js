@@ -24,7 +24,7 @@ function index (resultFn, isEqual) {
   var calledOnce = false;
 
   var isNewArgEqualToLast = function isNewArgEqualToLast(newArg, index) {
-    return isEqual(newArg, lastArgs[index], index);
+    return isEqual(newArg, lastArgs[index]);
   };
 
   var result = function result() {
@@ -466,44 +466,6 @@ var possibleConstructorReturn = function (self, call) {
   return call && (typeof call === "object" || typeof call === "function") ? call : self;
 };
 
-var slicedToArray = function () {
-  function sliceIterator(arr, i) {
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-
-    try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"]) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  return function (arr, i) {
-    if (Array.isArray(arr)) {
-      return arr;
-    } else if (Symbol.iterator in Object(arr)) {
-      return sliceIterator(arr, i);
-    } else {
-      throw new TypeError("Invalid attempt to destructure non-iterable instance");
-    }
-  };
-}();
-
 var toConsumableArray = function (arr) {
   if (Array.isArray(arr)) {
     for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
@@ -819,9 +781,10 @@ function getMenuPlacement(_ref) {
       if (placement === 'auto' || isFixedPosition) {
         // may need to be constrained after flipping
         var _constrainedHeight = maxHeight;
+        var spaceAbove = isFixedPosition ? viewSpaceAbove : scrollSpaceAbove;
 
-        if (!isFixedPosition && scrollSpaceAbove >= minHeight || isFixedPosition && viewSpaceAbove >= minHeight) {
-          _constrainedHeight = isFixedPosition ? viewSpaceAbove - marginBottom - spacing.controlHeight : scrollSpaceAbove - marginBottom - spacing.controlHeight;
+        if (spaceAbove >= minHeight) {
+          _constrainedHeight = Math.min(spaceAbove - marginBottom - spacing.controlHeight, maxHeight);
         }
 
         return { placement: 'top', maxHeight: _constrainedHeight };
@@ -1322,7 +1285,7 @@ var createFilter = function createFilter(config) {
 // Assistive text to describe visual elements. Hidden for sighted users.
 var A11yText = function A11yText(props) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement('span', _extends({
-    className: Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])({
+    className: /*#__PURE__*/ /*#__PURE__*/Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])({
       zIndex: 9999,
       border: 0,
       clip: 'rect(1px, 1px, 1px, 1px)',
@@ -1357,12 +1320,13 @@ var DummyInput = function (_Component) {
           enter = _props.enter,
           exit = _props.exit,
           innerRef = _props.innerRef,
-          props = objectWithoutProperties(_props, ['in', 'out', 'onExited', 'appear', 'enter', 'exit', 'innerRef']);
+          emotion = _props.emotion,
+          props = objectWithoutProperties(_props, ['in', 'out', 'onExited', 'appear', 'enter', 'exit', 'innerRef', 'emotion']);
 
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement('input', _extends({
         ref: innerRef
       }, props, {
-        className: Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])({
+        className: /*#__PURE__*/ /*#__PURE__*/Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])({
           // get rid of any default styles
           background: 0,
           border: 0,
@@ -1643,7 +1607,7 @@ var ScrollBlock = function (_PureComponent) {
         null,
         react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement('div', {
           onClick: this.blurSelectInput,
-          className: Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])({ position: 'fixed', left: 0, bottom: 0, right: 0, top: 0 })
+          className: /*#__PURE__*/ /*#__PURE__*/Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])({ position: 'fixed', left: 0, bottom: 0, right: 0, top: 0 })
         }),
         react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(
           NodeResolver,
@@ -1824,7 +1788,7 @@ var instructionsAriaMessage = function instructionsAriaMessage(event) {
 
   switch (event) {
     case 'menu':
-      return 'Use Up and Down to choose options, press Backspace to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.';
+      return 'Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.';
     case 'input':
       return (label ? label : 'Select') + ' is focused ' + (isSearchable ? ',type to refine list' : '') + ', press Down to open the menu, ' + (isMulti ? ' press left to focus selected values' : '');
     case 'value':
@@ -2072,11 +2036,8 @@ var DropdownIndicator = function DropdownIndicator(props) {
         'dropdown-indicator': true
       }, className)
     }),
-    children
+    children || react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(DownChevron, null)
   );
-};
-DropdownIndicator.defaultProps = {
-  children: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(DownChevron, null)
 };
 
 var clearIndicatorCSS = baseCSS;
@@ -2095,12 +2056,8 @@ var ClearIndicator = function ClearIndicator(props) {
         'clear-indicator': true
       }, className)
     }),
-    children
+    children || react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(CrossIcon, null)
   );
-};
-
-ClearIndicator.defaultProps = {
-  children: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(CrossIcon, null)
 };
 
 // ==============================
@@ -2137,6 +2094,7 @@ var IndicatorSeparator = function IndicatorSeparator(props) {
 // ==============================
 
 var keyframesName = 'react-select-loading-indicator';
+var keyframesInjected = false;
 
 var loadingIndicatorCSS = function loadingIndicatorCSS(_ref4) {
   var isFocused = _ref4.isFocused,
@@ -2163,7 +2121,7 @@ var LoadingDot = function LoadingDot(_ref5) {
       delay = _ref5.delay,
       offset = _ref5.offset;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement('span', {
-    className: Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])({
+    className: /*#__PURE__*/ /*#__PURE__*/Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])({
       animationDuration: '1s',
       animationDelay: delay + 'ms',
       animationIterationCount: 'infinite',
@@ -2180,9 +2138,6 @@ var LoadingDot = function LoadingDot(_ref5) {
   });
 };
 
-// eslint-disable-next-line no-unused-expressions
-Object(emotion__WEBPACK_IMPORTED_MODULE_2__["injectGlobal"])('@keyframes ', keyframesName, '{0%,80%,100%{opacity:0;}40%{opacity:1;}};');
-
 var LoadingIndicator = function LoadingIndicator(props) {
   var className = props.className,
       cx = props.cx,
@@ -2193,6 +2148,12 @@ var LoadingIndicator = function LoadingIndicator(props) {
       colors = props.theme.colors;
 
   var color = isFocused ? colors.neutral80 : colors.neutral20;
+
+  if (!keyframesInjected) {
+    // eslint-disable-next-line no-unused-expressions
+    Object(emotion__WEBPACK_IMPORTED_MODULE_2__["injectGlobal"])('@keyframes ', keyframesName, '{0%,80%,100%{opacity:0;}40%{opacity:1;}};');
+    keyframesInjected = true;
+  }
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(
     'div',
@@ -2247,7 +2208,8 @@ var Control = function Control(props) {
       isDisabled = props.isDisabled,
       isFocused = props.isFocused,
       innerRef = props.innerRef,
-      innerProps = props.innerProps;
+      innerProps = props.innerProps,
+      menuIsOpen = props.menuIsOpen;
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(
     'div',
@@ -2256,7 +2218,8 @@ var Control = function Control(props) {
       className: cx( /*#__PURE__*/Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])(getStyles('control', props)), {
         'control': true,
         'control--is-disabled': isDisabled,
-        'control--is-focused': isFocused
+        'control--is-focused': isFocused,
+        'control--menu-is-open': menuIsOpen
       }, className)
     }, innerProps),
     children
@@ -2279,7 +2242,8 @@ var Group = function Group(props) {
       Heading = props.Heading,
       headingProps = props.headingProps,
       label = props.label,
-      theme = props.theme;
+      theme = props.theme,
+      selectProps = props.selectProps;
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(
     'div',
@@ -2288,7 +2252,12 @@ var Group = function Group(props) {
     },
     react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(
       Heading,
-      _extends({}, headingProps, { theme: theme, getStyles: getStyles, cx: cx }),
+      _extends({}, headingProps, {
+        selectProps: selectProps,
+        theme: theme,
+        getStyles: getStyles,
+        cx: cx
+      }),
       label
     ),
     react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(
@@ -2319,7 +2288,8 @@ var GroupHeading = function GroupHeading(props) {
       cx = props.cx,
       getStyles = props.getStyles,
       theme = props.theme,
-      cleanProps = objectWithoutProperties(props, ['className', 'cx', 'getStyles', 'theme']);
+      selectProps = props.selectProps,
+      cleanProps = objectWithoutProperties(props, ['className', 'cx', 'getStyles', 'theme', 'selectProps']);
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement('div', _extends({
     className: cx( /*#__PURE__*/Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])(getStyles('groupHeading', _extends({ theme: theme }, cleanProps))), { 'group-heading': true }, className)
@@ -2359,12 +2329,11 @@ var Input = function Input(_ref2) {
       isHidden = _ref2.isHidden,
       isDisabled = _ref2.isDisabled,
       theme = _ref2.theme,
-      props = objectWithoutProperties(_ref2, ['className', 'cx', 'getStyles', 'innerRef', 'isHidden', 'isDisabled', 'theme']);
+      selectProps = _ref2.selectProps,
+      props = objectWithoutProperties(_ref2, ['className', 'cx', 'getStyles', 'innerRef', 'isHidden', 'isDisabled', 'theme', 'selectProps']);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(
     'div',
-    {
-      className: Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])(getStyles('input', _extends({ theme: theme }, props)))
-    },
+    { className: /*#__PURE__*/ /*#__PURE__*/Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])(getStyles('input', _extends({ theme: theme }, props))) },
     react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_input_autosize__WEBPACK_IMPORTED_MODULE_5___default.a, _extends({
       className: cx(null, { 'input': true }, className),
       inputRef: innerRef,
@@ -2456,16 +2425,12 @@ var MultiValueRemove = function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(
         'div',
         innerProps,
-        children
+        children || react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(CrossIcon, { size: 14 })
       );
     }
   }]);
   return MultiValueRemove;
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
-
-MultiValueRemove.defaultProps = {
-  children: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(CrossIcon, { size: 14 })
-};
 
 var MultiValue = function (_Component2) {
   inherits(MultiValue, _Component2);
@@ -3507,7 +3472,8 @@ var Select = function (_Component) {
 
       var _commonProps = this.commonProps,
           cx = _commonProps.cx,
-          theme = _commonProps.theme;
+          theme = _commonProps.theme,
+          selectProps = _commonProps.selectProps;
 
 
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Input, _extends({
@@ -3523,6 +3489,7 @@ var Select = function (_Component) {
         onBlur: this.onInputBlur,
         onChange: this.handleInputChange,
         onFocus: this.onInputFocus,
+        selectProps: selectProps,
         spellCheck: 'false',
         tabIndex: tabIndex,
         theme: theme,
@@ -3938,7 +3905,8 @@ var Select = function (_Component) {
       var _props13 = this.props,
           className = _props13.className,
           id = _props13.id,
-          isDisabled = _props13.isDisabled;
+          isDisabled = _props13.isDisabled,
+          menuIsOpen = _props13.menuIsOpen;
       var isFocused = this.state.isFocused;
 
 
@@ -3965,7 +3933,8 @@ var Select = function (_Component) {
               onTouchEnd: this.onControlTouchEnd
             },
             isDisabled: isDisabled,
-            isFocused: isFocused
+            isFocused: isFocused,
+            menuIsOpen: menuIsOpen
           }),
           react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(
             ValueContainer,
@@ -4045,13 +4014,20 @@ var _initialiseProps = function _initialiseProps() {
   this.focus = this.focusInput;
   this.blur = this.blurInput;
 
+  this.onChange = function (newValue, actionMeta) {
+    var _props14 = _this7.props,
+        onChange = _props14.onChange,
+        name = _props14.name;
+
+    onChange(newValue, _extends({}, actionMeta, { name: name }));
+  };
+
   this.setValue = function (newValue) {
     var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'set-value';
     var option = arguments[2];
-    var _props14 = _this7.props,
-        closeMenuOnSelect = _props14.closeMenuOnSelect,
-        isMulti = _props14.isMulti,
-        onChange = _props14.onChange;
+    var _props15 = _this7.props,
+        closeMenuOnSelect = _props15.closeMenuOnSelect,
+        isMulti = _props15.isMulti;
 
     _this7.onInputChange('', { action: 'set-value' });
     if (closeMenuOnSelect) {
@@ -4060,13 +4036,13 @@ var _initialiseProps = function _initialiseProps() {
     }
     // when the select value should change, we should reset focusedValue
     _this7.clearFocusValueOnUpdate = true;
-    onChange(newValue, { action: action, option: option });
+    _this7.onChange(newValue, { action: action, option: option });
   };
 
   this.selectOption = function (newValue) {
-    var _props15 = _this7.props,
-        blurInputOnSelect = _props15.blurInputOnSelect,
-        isMulti = _props15.isMulti;
+    var _props16 = _this7.props,
+        blurInputOnSelect = _props16.blurInputOnSelect,
+        isMulti = _props16.isMulti;
 
 
     if (isMulti) {
@@ -4102,11 +4078,10 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.removeValue = function (removedValue) {
-    var onChange = _this7.props.onChange;
     var selectValue = _this7.state.selectValue;
 
     var candidate = _this7.getOptionValue(removedValue);
-    onChange(selectValue.filter(function (i) {
+    _this7.onChange(selectValue.filter(function (i) {
       return _this7.getOptionValue(i) !== candidate;
     }), {
       action: 'remove-value',
@@ -4122,15 +4097,12 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.clearValue = function () {
-    var _props16 = _this7.props,
-        isMulti = _props16.isMulti,
-        onChange = _props16.onChange;
+    var isMulti = _this7.props.isMulti;
 
-    onChange(isMulti ? [] : null, { action: 'clear' });
+    _this7.onChange(isMulti ? [] : null, { action: 'clear' });
   };
 
   this.popValue = function () {
-    var onChange = _this7.props.onChange;
     var selectValue = _this7.state.selectValue;
 
     var lastSelectedValue = selectValue[selectValue.length - 1];
@@ -4140,7 +4112,7 @@ var _initialiseProps = function _initialiseProps() {
         value: lastSelectedValue ? _this7.getOptionLabel(lastSelectedValue) : undefined
       }
     });
-    onChange(selectValue.slice(0, selectValue.length - 1), {
+    _this7.onChange(selectValue.slice(0, selectValue.length - 1), {
       action: 'pop-value',
       removedValue: lastSelectedValue
     });
@@ -4294,8 +4266,12 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.onTouchStart = function (_ref5) {
-    var _ref5$touches = slicedToArray(_ref5.touches, 1),
-        touch = _ref5$touches[0];
+    var touches = _ref5.touches;
+
+    var touch = touches.item(0);
+    if (!touch) {
+      return;
+    }
 
     _this7.initialTouchX = touch.clientX;
     _this7.initialTouchY = touch.clientY;
@@ -4303,8 +4279,12 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.onTouchMove = function (_ref6) {
-    var _ref6$touches = slicedToArray(_ref6.touches, 1),
-        touch = _ref6$touches[0];
+    var touches = _ref6.touches;
+
+    var touch = touches.item(0);
+    if (!touch) {
+      return;
+    }
 
     var deltaX = Math.abs(touch.clientX - _this7.initialTouchX);
     var deltaY = Math.abs(touch.clientY - _this7.initialTouchY);
@@ -4462,6 +4442,8 @@ var _initialiseProps = function _initialiseProps() {
         }
         break;
       case 'Tab':
+        if (isComposing) return;
+
         if (event.shiftKey || !menuIsOpen || !tabSelectsValue || !focusedOption ||
         // don't capture the event if the menu opens on focus and the focused
         // option is already selected; it breaks the flow of navigation
@@ -4535,6 +4517,12 @@ var _initialiseProps = function _initialiseProps() {
     }
     event.preventDefault();
   };
+};
+
+var defaultProps$1 = {
+  defaultInputValue: '',
+  defaultMenuIsOpen: false,
+  defaultValue: null
 };
 
 var manageState = function manageState(SelectComponent) {
@@ -4625,14 +4613,10 @@ var manageState = function manageState(SelectComponent) {
       }
     }]);
     return StateManager;
-  }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]), _class.defaultProps = {
-    defaultInputValue: '',
-    defaultMenuIsOpen: false,
-    defaultValue: null
-  }, _temp2;
+  }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]), _class.defaultProps = defaultProps$1, _temp2;
 };
 
-var defaultProps$1 = {
+var defaultProps$2 = {
   cacheOptions: false,
   defaultOptions: false
 };
@@ -4705,7 +4689,7 @@ var makeAsyncSelect = function makeAsyncSelect(SelectComponent) {
 
       _this.state = {
         defaultOptions: Array.isArray(props.defaultOptions) ? props.defaultOptions : undefined,
-        inputValue: props.inputValue,
+        inputValue: typeof props.inputValue !== 'undefined' ? props.inputValue : '',
         isLoading: props.defaultOptions === true ? true : false,
         loadedOptions: [],
         passEmptyOptions: false
@@ -4803,13 +4787,18 @@ var makeAsyncSelect = function makeAsyncSelect(SelectComponent) {
       }
     }]);
     return Async;
-  }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]), _class.defaultProps = defaultProps$1, _temp;
+  }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]), _class.defaultProps = defaultProps$2, _temp;
 };
 var Async = makeAsyncSelect(manageState(Select));
 
-var compareOption = function compareOption(inputValue, option) {
-  var candidate = inputValue.toLowerCase();
-  return option.value.toLowerCase() === candidate || option.label.toLowerCase() === candidate;
+var compareOption = function compareOption() {
+  var inputValue = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var option = arguments[1];
+
+  var candidate = String(inputValue).toLowerCase();
+  var optionValue = String(option.value).toLowerCase();
+  var optionLabel = String(option.label).toLowerCase();
+  return optionValue === candidate || optionLabel === candidate;
 };
 
 var builtins = {
@@ -4832,7 +4821,7 @@ var builtins = {
   }
 };
 
-var defaultProps$2 = _extends({
+var defaultProps$3 = _extends({
   allowCreateWhileLoading: false,
   createOptionPosition: 'last'
 }, builtins);
@@ -4940,7 +4929,7 @@ var makeCreatableSelect = function makeCreatableSelect(SelectComponent) {
       }
     }]);
     return Creatable;
-  }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]), _class.defaultProps = defaultProps$2, _temp;
+  }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]), _class.defaultProps = defaultProps$3, _temp;
 };
 var Creatable = manageState(makeCreatableSelect(Select));
 
@@ -4999,11 +4988,20 @@ var Collapse = function (_Component) {
       exited: { width: 0 }
     }, _this.getWidth = function (ref) {
       if (ref && isNaN(_this.state.width)) {
+        /*
+          Here we're invoking requestAnimationFrame with a callback invoking our
+          call to getBoundingClientRect and setState in order to resolve an edge case
+          around portalling. Certain portalling solutions briefly remove children from the DOM
+          before appending them to the target node. This is to avoid us trying to call getBoundingClientrect
+          while the Select component is in this state.
+        */
         // cannot use `offsetWidth` because it is rounded
-        var _ref$getBoundingClien = ref.getBoundingClientRect(),
-            _width = _ref$getBoundingClien.width;
+        _this.rafID = window.requestAnimationFrame(function () {
+          var _ref$getBoundingClien = ref.getBoundingClientRect(),
+              width = _ref$getBoundingClien.width;
 
-        _this.setState({ width: _width });
+          _this.setState({ width: width });
+        });
       }
     }, _this.getStyle = function (width) {
       return {
@@ -5016,16 +5014,23 @@ var Collapse = function (_Component) {
     }, _temp), possibleConstructorReturn(_this, _ret);
   }
 
-  // width must be calculated; cannot transition from `undefined` to `number`
-
-
-  // get base styles
-
-
-  // get transition styles
-
-
   createClass(Collapse, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if (this.rafID) {
+        window.cancelAnimationFrame(this.rafID);
+      }
+    }
+
+    // width must be calculated; cannot transition from `undefined` to `number`
+
+
+    // get base styles
+
+
+    // get transition styles
+
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -5183,9 +5188,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 var addClass = function addClass(node, classes) {
   return node && classes && classes.split(' ').forEach(function (c) {
@@ -5198,102 +5203,6 @@ var removeClass = function removeClass(node, classes) {
     return (0, _removeClass.default)(node, c);
   });
 };
-
-var propTypes =  true ? _extends({}, _Transition.default.propTypes, {
-  /**
-   * The animation classNames applied to the component as it enters, exits or has finished the transition.
-   * A single name can be provided and it will be suffixed for each stage: e.g.
-   *
-   * `classNames="fade"` applies `fade-enter`, `fade-enter-active`, `fade-enter-done`,
-   * `fade-exit`, `fade-exit-active`, `fade-exit-done`, `fade-appear`, and `fade-appear-active`.
-   * Each individual classNames can also be specified independently like:
-   *
-   * ```js
-   * classNames={{
-   *  appear: 'my-appear',
-   *  appearActive: 'my-active-appear',
-   *  enter: 'my-enter',
-   *  enterActive: 'my-active-enter',
-   *  enterDone: 'my-done-enter',
-   *  exit: 'my-exit',
-   *  exitActive: 'my-active-exit',
-   *  exitDone: 'my-done-exit',
-   * }}
-   * ```
-   *
-   * If you want to set these classes using CSS Modules:
-   *
-   * ```js
-   * import styles from './styles.css';
-   * ```
-   *
-   * you might want to use camelCase in your CSS file, that way could simply spread
-   * them instead of listing them one by one:
-   *
-   * ```js
-   * classNames={{ ...styles }}
-   * ```
-   *
-   * @type {string | {
-   *  appear?: string,
-   *  appearActive?: string,
-   *  enter?: string,
-   *  enterActive?: string,
-   *  enterDone?: string,
-   *  exit?: string,
-   *  exitActive?: string,
-   *  exitDone?: string,
-   * }}
-   */
-  classNames: _PropTypes.classNamesShape,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
-   * applied.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEnter: PropTypes.func,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'enter-active' or
-   * 'appear-active' class is applied.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEntering: PropTypes.func,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'enter' or
-   * 'appear' classes are **removed** and the `done` class is added to the DOM node.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEntered: PropTypes.func,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'exit' class is
-   * applied.
-   *
-   * @type Function(node: HtmlElement)
-   */
-  onExit: PropTypes.func,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
-   *
-   * @type Function(node: HtmlElement
-   */
-  onExiting: PropTypes.func,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'exit' classes
-   * are **removed** and the `exit-done` class is added to the DOM node.
-   *
-   * @type Function(node: HtmlElement)
-   */
-  onExited: PropTypes.func
-}) : undefined;;
 /**
  * A `Transition` component using CSS transitions and animations.
  * It's inspired by the excellent [ng-animate](http://www.nganimate.org/) library.
@@ -5307,6 +5216,7 @@ var propTypes =  true ? _extends({}, _Transition.default.propTypes, {
  * the `example-enter` CSS class and the `example-enter-active` CSS class
  * added in the next tick. This is a convention based on the `classNames` prop.
  */
+
 
 var CSSTransition =
 /*#__PURE__*/
@@ -5331,7 +5241,7 @@ function (_React$Component) {
       addClass(node, className);
 
       if (_this.props.onEnter) {
-        _this.props.onEnter(node);
+        _this.props.onEnter(node, appearing);
       }
     };
 
@@ -5342,7 +5252,7 @@ function (_React$Component) {
       _this.reflowAndAddClass(node, activeClassName);
 
       if (_this.props.onEntering) {
-        _this.props.onEntering(node);
+        _this.props.onEntering(node, appearing);
       }
     };
 
@@ -5355,7 +5265,7 @@ function (_React$Component) {
       addClass(node, doneClassName);
 
       if (_this.props.onEntered) {
-        _this.props.onEntered(node);
+        _this.props.onEntered(node, appearing);
       }
     };
 
@@ -5455,7 +5365,101 @@ function (_React$Component) {
   return CSSTransition;
 }(_react.default.Component);
 
-CSSTransition.propTypes =  true ? propTypes : undefined;
+CSSTransition.propTypes =  true ? _extends({}, _Transition.default.propTypes, {
+  /**
+   * The animation classNames applied to the component as it enters, exits or has finished the transition.
+   * A single name can be provided and it will be suffixed for each stage: e.g.
+   *
+   * `classNames="fade"` applies `fade-enter`, `fade-enter-active`, `fade-enter-done`,
+   * `fade-exit`, `fade-exit-active`, `fade-exit-done`, `fade-appear`, and `fade-appear-active`.
+   * Each individual classNames can also be specified independently like:
+   *
+   * ```js
+   * classNames={{
+   *  appear: 'my-appear',
+   *  appearActive: 'my-active-appear',
+   *  enter: 'my-enter',
+   *  enterActive: 'my-active-enter',
+   *  enterDone: 'my-done-enter',
+   *  exit: 'my-exit',
+   *  exitActive: 'my-active-exit',
+   *  exitDone: 'my-done-exit',
+   * }}
+   * ```
+   *
+   * If you want to set these classes using CSS Modules:
+   *
+   * ```js
+   * import styles from './styles.css';
+   * ```
+   *
+   * you might want to use camelCase in your CSS file, that way could simply spread
+   * them instead of listing them one by one:
+   *
+   * ```js
+   * classNames={{ ...styles }}
+   * ```
+   *
+   * @type {string | {
+   *  appear?: string,
+   *  appearActive?: string,
+   *  enter?: string,
+   *  enterActive?: string,
+   *  enterDone?: string,
+   *  exit?: string,
+   *  exitActive?: string,
+   *  exitDone?: string,
+   * }}
+   */
+  classNames: _PropTypes.classNamesShape,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
+   * applied.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */
+  onEnter: PropTypes.func,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'enter-active' or
+   * 'appear-active' class is applied.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */
+  onEntering: PropTypes.func,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'enter' or
+   * 'appear' classes are **removed** and the `done` class is added to the DOM node.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */
+  onEntered: PropTypes.func,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'exit' class is
+   * applied.
+   *
+   * @type Function(node: HtmlElement)
+   */
+  onExit: PropTypes.func,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
+   *
+   * @type Function(node: HtmlElement)
+   */
+  onExiting: PropTypes.func,
+
+  /**
+   * A `<Transition>` callback fired immediately after the 'exit' classes
+   * are **removed** and the `exit-done` class is added to the DOM node.
+   *
+   * @type Function(node: HtmlElement)
+   */
+  onExited: PropTypes.func
+}) : undefined;
 var _default = CSSTransition;
 exports.default = _default;
 module.exports = exports["default"];
@@ -5489,13 +5493,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
-var propTypes =  true ? {
-  in: _propTypes.default.bool.isRequired,
-  children: function children(props, propName) {
-    if (_react.default.Children.count(props[propName]) !== 2) return new Error("\"" + propName + "\" must be exactly two transition components.");
-    return null;
-  }
-} : undefined;;
 /**
  * The `<ReplaceTransition>` component is a specialized `Transition` component
  * that animates between two children.
@@ -5507,7 +5504,6 @@ var propTypes =  true ? {
  * </ReplaceTransition>
  * ```
  */
-
 var ReplaceTransition =
 /*#__PURE__*/
 function (_React$Component) {
@@ -5618,7 +5614,13 @@ function (_React$Component) {
   return ReplaceTransition;
 }(_react.default.Component);
 
-ReplaceTransition.propTypes =  true ? propTypes : undefined;
+ReplaceTransition.propTypes =  true ? {
+  in: _propTypes.default.bool.isRequired,
+  children: function children(props, propName) {
+    if (_react.default.Children.count(props[propName]) !== 2) return new Error("\"" + propName + "\" must be exactly two transition components.");
+    return null;
+  }
+} : undefined;
 var _default = ReplaceTransition;
 exports.default = _default;
 module.exports = exports["default"];
@@ -5662,57 +5664,6 @@ var values = Object.values || function (obj) {
   });
 };
 
-var propTypes =  true ? {
-  /**
-   * `<TransitionGroup>` renders a `<div>` by default. You can change this
-   * behavior by providing a `component` prop.
-   * If you use React v16+ and would like to avoid a wrapping `<div>` element
-   * you can pass in `component={null}`. This is useful if the wrapping div
-   * borks your css styles.
-   */
-  component: _propTypes.default.any,
-
-  /**
-   * A set of `<Transition>` components, that are toggled `in` and out as they
-   * leave. the `<TransitionGroup>` will inject specific transition props, so
-   * remember to spread them through if you are wrapping the `<Transition>` as
-   * with our `<Fade>` example.
-   */
-  children: _propTypes.default.node,
-
-  /**
-   * A convenience prop that enables or disables appear animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */
-  appear: _propTypes.default.bool,
-
-  /**
-   * A convenience prop that enables or disables enter animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */
-  enter: _propTypes.default.bool,
-
-  /**
-   * A convenience prop that enables or disables exit animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */
-  exit: _propTypes.default.bool,
-
-  /**
-   * You may need to apply reactive updates to a child as it is exiting.
-   * This is generally done by using `cloneElement` however in the case of an exiting
-   * child the element has already been removed and not accessible to the consumer.
-   *
-   * If you do need to update a child as it leaves you can provide a `childFactory`
-   * to wrap every child, even the ones that are leaving.
-   *
-   * @type Function(child: ReactElement) -> ReactElement
-   */
-  childFactory: _propTypes.default.func
-} : undefined;;
 var defaultProps = {
   component: 'div',
   childFactory: function childFactory(child) {
@@ -5767,6 +5718,11 @@ function (_React$Component) {
 
   _proto.componentDidMount = function componentDidMount() {
     this.appeared = true;
+    this.mounted = true;
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    this.mounted = false;
   };
 
   TransitionGroup.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, _ref) {
@@ -5787,14 +5743,16 @@ function (_React$Component) {
       child.props.onExited(node);
     }
 
-    this.setState(function (state) {
-      var children = _extends({}, state.children);
+    if (this.mounted) {
+      this.setState(function (state) {
+        var children = _extends({}, state.children);
 
-      delete children[child.key];
-      return {
-        children: children
-      };
-    });
+        delete children[child.key];
+        return {
+          children: children
+        };
+      });
+    }
   };
 
   _proto.render = function render() {
@@ -5821,7 +5779,57 @@ function (_React$Component) {
 TransitionGroup.childContextTypes = {
   transitionGroup: _propTypes.default.object.isRequired
 };
-TransitionGroup.propTypes =  true ? propTypes : undefined;
+TransitionGroup.propTypes =  true ? {
+  /**
+   * `<TransitionGroup>` renders a `<div>` by default. You can change this
+   * behavior by providing a `component` prop.
+   * If you use React v16+ and would like to avoid a wrapping `<div>` element
+   * you can pass in `component={null}`. This is useful if the wrapping div
+   * borks your css styles.
+   */
+  component: _propTypes.default.any,
+
+  /**
+   * A set of `<Transition>` components, that are toggled `in` and out as they
+   * leave. the `<TransitionGroup>` will inject specific transition props, so
+   * remember to spread them through if you are wrapping the `<Transition>` as
+   * with our `<Fade>` example.
+   */
+  children: _propTypes.default.node,
+
+  /**
+   * A convenience prop that enables or disables appear animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */
+  appear: _propTypes.default.bool,
+
+  /**
+   * A convenience prop that enables or disables enter animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */
+  enter: _propTypes.default.bool,
+
+  /**
+   * A convenience prop that enables or disables exit animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */
+  exit: _propTypes.default.bool,
+
+  /**
+   * You may need to apply reactive updates to a child as it is exiting.
+   * This is generally done by using `cloneElement` however in the case of an exiting
+   * child the element has already been removed and not accessible to the consumer.
+   *
+   * If you do need to update a child as it leaves you can provide a `childFactory`
+   * to wrap every child, even the ones that are leaving.
+   *
+   * @type Function(child: ReactElement) -> ReactElement
+   */
+  childFactory: _propTypes.default.func
+} : undefined;
 TransitionGroup.defaultProps = defaultProps;
 
 var _default = (0, _reactLifecyclesCompat.polyfill)(TransitionGroup);
@@ -6357,18 +6365,21 @@ function (_Component) {
           onToggle: _this.onKebabToggle
         }),
         isOpen: isKebabOpen,
+        dropdownItems: [react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["DropdownItem"], {
+          component: "button",
+          "aria-label": "Edit Portfolio",
+          key: "edit-portfolio"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+          to: _this.props.editPortfolioRoute
+        }, "Edit Portfolio")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["DropdownItem"], {
+          component: "button",
+          "aria-label": "Remove Portfolio",
+          key: "delete-portfolio"
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+          to: _this.props.removePortfolioRoute
+        }, "Remove Portfolio"))],
         isPlain: true
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["DropdownItem"], {
-        component: "button",
-        "aria-label": "Edit Portfolio"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
-        to: _this.props.editPortfolioRoute
-      }, "Edit Portfolio")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["DropdownItem"], {
-        component: "button",
-        "aria-label": "Remove Portfolio"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
-        to: _this.props.removePortfolioRoute
-      }, "Remove Portfolio")));
+      });
     });
 
     return _this;
