@@ -116,3 +116,9 @@ ul.navigation-secondary {
   text-align: left;
   font-size: small; }
 
+.remove {
+  margin: 41px 25px 7px 25px; }
+
+.buttons_right {
+  float: right; }
+

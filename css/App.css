@@ -63,9 +63,6 @@ ul.navigation-secondary {
 button:focus {
   outline: none; }
 
-.editable-item {
-  visibility: hidden; }
-
 .portal-nav .pf-c-nav__link.active {
   color: #007bba;
   font-weight: 500;
