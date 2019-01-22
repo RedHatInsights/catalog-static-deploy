@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2],{
 
+/***/ "./node_modules/@patternfly/patternfly-next/utilities/Flex/flex.css":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@patternfly/patternfly-next/utilities/Flex/flex.css ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "./node_modules/memoize-one/dist/memoize-one.esm.js":
 /*!**********************************************************!*\
   !*** ./node_modules/memoize-one/dist/memoize-one.esm.js ***!
@@ -6304,16 +6315,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
-/* harmony import */ var _patternfly_react_styles__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @patternfly/react-styles */ "./node_modules/@patternfly/react-styles/dist/esm/index.js");
-/* harmony import */ var _patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @patternfly/patternfly-next/utilities/Spacing/spacing.css */ "./node_modules/@patternfly/patternfly-next/utilities/Spacing/spacing.css");
-/* harmony import */ var _patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _patternfly_patternfly_next_utilities_Flex_flex_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @patternfly/patternfly-next/utilities/Flex/flex.css */ "./node_modules/@patternfly/patternfly-next/utilities/Flex/flex.css");
-/* harmony import */ var _patternfly_patternfly_next_utilities_Flex_flex_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_patternfly_patternfly_next_utilities_Flex_flex_css__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../SmartComponents/Portfolio/portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
-/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_14__);
-
-
-
+/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../SmartComponents/Portfolio/portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
+/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_11__);
 
 
 
@@ -6389,23 +6392,17 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Toolbar"], {
-        className: Object(_patternfly_react_styles__WEBPACK_IMPORTED_MODULE_11__["css"])(_patternfly_patternfly_next_utilities_Flex_flex_css__WEBPACK_IMPORTED_MODULE_13___default.a.justifyContentSpaceBetween, _patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_12___default.a.mxXl, _patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_12___default.a.myMd)
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarGroup"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarItem"], {
-        className: Object(_patternfly_react_styles__WEBPACK_IMPORTED_MODULE_11__["css"])(_patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_12___default.a.mrXl)
-      }, this.props.title && react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Title"], {
+        className: "toolbar-padding"
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarGroup"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarItem"], null, this.props.title && react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Title"], {
         size: '2xl'
       }, " ", this.props.title))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarGroup"], {
         className: 'pf-u-ml-auto-on-xl'
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarItem"], {
-        className: Object(_patternfly_react_styles__WEBPACK_IMPORTED_MODULE_11__["css"])(_patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_12___default.a.mxLg)
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarItem"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
         to: this.props.addProductsRoute
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Button"], {
         variant: "link",
         "aria-label": "Add Products to Portfolio"
-      }, "Add Products"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarItem"], {
-        className: Object(_patternfly_react_styles__WEBPACK_IMPORTED_MODULE_11__["css"])(_patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_12___default.a.mxLg)
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+      }, "Add Products"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarItem"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
         to: this.props.removeProductsRoute
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Button"], {
         variant: "plain",
@@ -7125,20 +7122,14 @@ function (_Component) {
           removeProductsRoute = _ref3.removeProductsRoute,
           editPortfolioRoute = _ref3.editPortfolioRoute,
           removePortfolioRoute = _ref3.removePortfolioRoute;
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_10__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioFilterToolbar__WEBPACK_IMPORTED_MODULE_19__["default"], null), !_this.props.isLoading && react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        style: {
-          marginTop: '15px',
-          marginLeft: '25px',
-          marginRight: '25px'
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioActionToolbar__WEBPACK_IMPORTED_MODULE_20__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_10__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioFilterToolbar__WEBPACK_IMPORTED_MODULE_19__["default"], null), !_this.props.isLoading && react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioActionToolbar__WEBPACK_IMPORTED_MODULE_20__["default"], {
         title: title,
         filterItems: _this.filterItems,
         addProductsRoute: addProductsRoute,
         removeProductsRoute: removeProductsRoute,
         editPortfolioRoute: editPortfolioRoute,
         removePortfolioRoute: removePortfolioRoute
-      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
         exact: true,
         path: "/portfolio/:id/edit-portfolio",
         component: _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_23__["default"]

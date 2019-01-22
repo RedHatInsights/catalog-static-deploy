@@ -27,6 +27,9 @@ ul.navigation-secondary {
   white-space: nowrap;
   overflow: hidden; }
 
+.toolbar-padding {
+  padding: 24px 24px 0 24px; }
+
 /* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
@@ -55,6 +58,9 @@ ul.navigation-secondary {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden; }
+
+.toolbar-padding {
+  padding: 24px 24px 0 24px; }
 
 .pcard_header {
   height: 60px; }
@@ -97,6 +103,9 @@ ul.navigation-secondary {
   white-space: nowrap;
   overflow: hidden; }
 
+.toolbar-padding {
+  padding: 24px 24px 0 24px; }
+
 /* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
@@ -125,6 +134,9 @@ ul.navigation-secondary {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden; }
+
+.toolbar-padding {
+  padding: 24px 24px 0 24px; }
 
 .searchToolbar {
   background-color: white;
@@ -167,6 +179,9 @@ ul.navigation-secondary {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden; }
+
+.toolbar-padding {
+  padding: 24px 24px 0 24px; }
 
 .pcard_header {
   height: 60px; }

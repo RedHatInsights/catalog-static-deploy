@@ -488,16 +488,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components */ "./node_modules/@red-hat-insights/insights-frontend-components/index.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../redux/Actions/PlatformActions */ "./src/redux/Actions/PlatformActions.js");
-/* harmony import */ var _SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../SmartComponents/ContentGallery/ContentGallery */ "./src/SmartComponents/ContentGallery/ContentGallery.js");
-/* harmony import */ var _PresentationalComponents_Platform_PlatformToolbar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformToolbar */ "./src/PresentationalComponents/Platform/PlatformToolbar.js");
-/* harmony import */ var _PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformItem */ "./src/PresentationalComponents/Platform/PlatformItem.js");
-/* harmony import */ var _Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../Helpers/Shared/helpers */ "./src/Helpers/Shared/helpers.js");
-/* harmony import */ var _platform_scss__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./platform.scss */ "./src/SmartComponents/Platform/platform.scss");
-/* harmony import */ var _platform_scss__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_platform_scss__WEBPACK_IMPORTED_MODULE_18__);
-
+/* harmony import */ var _redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../redux/Actions/PlatformActions */ "./src/redux/Actions/PlatformActions.js");
+/* harmony import */ var _SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../SmartComponents/ContentGallery/ContentGallery */ "./src/SmartComponents/ContentGallery/ContentGallery.js");
+/* harmony import */ var _PresentationalComponents_Platform_PlatformToolbar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformToolbar */ "./src/PresentationalComponents/Platform/PlatformToolbar.js");
+/* harmony import */ var _PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformItem */ "./src/PresentationalComponents/Platform/PlatformItem.js");
+/* harmony import */ var _Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../Helpers/Shared/helpers */ "./src/Helpers/Shared/helpers.js");
+/* harmony import */ var _platform_scss__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./platform.scss */ "./src/SmartComponents/Platform/platform.scss");
+/* harmony import */ var _platform_scss__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_platform_scss__WEBPACK_IMPORTED_MODULE_17__);
 
 
 
@@ -553,14 +550,14 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.fetchData(this.props.match.params.id);
-      Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_17__["scrollToTop"])();
+      Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_16__["scrollToTop"])();
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       if (prevProps.match.params.id !== this.props.match.params.id) {
         this.fetchData(this.props.match.params.id);
-        Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_17__["scrollToTop"])();
+        Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_16__["scrollToTop"])();
       }
     }
   }, {
@@ -568,27 +565,18 @@ function (_Component) {
     value: function render() {
       var filteredItems = {
         items: this.props.platformItems.map(function (data) {
-          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_16__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_15__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
             key: data.id
           }, data));
         }),
         isLoading: this.props.isPlatformDataLoading
       };
       var title = this.props.platform ? this.props.platform.name : '';
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_12__["Main"], {
-        style: {
-          marginLeft: 0,
-          paddingLeft: 0,
-          paddingTop: 0
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_PresentationalComponents_Platform_PlatformToolbar__WEBPACK_IMPORTED_MODULE_15__["default"], null), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
-        style: {
-          marginLeft: 25,
-          paddingTop: 40
-        }
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_PresentationalComponents_Platform_PlatformToolbar__WEBPACK_IMPORTED_MODULE_14__["default"], null), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "toolbar-padding"
       }, title && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Title"], {
         size: '2xl'
-      }, " ", title)), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_14__["default"], filteredItems));
+      }, " ", title)), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_13__["default"], filteredItems));
     }
   }]);
 
@@ -610,10 +598,10 @@ var mapStateToProps = function mapStateToProps(_ref) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchSelectedPlatform: function fetchSelectedPlatform(platformId) {
-      return dispatch(Object(_redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_13__["fetchSelectedPlatform"])(platformId));
+      return dispatch(Object(_redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_12__["fetchSelectedPlatform"])(platformId));
     },
     fetchPlatformItems: function fetchPlatformItems(apiProps) {
-      return dispatch(Object(_redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_13__["fetchPlatformItems"])(apiProps));
+      return dispatch(Object(_redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_12__["fetchPlatformItems"])(apiProps));
     }
   };
 };
