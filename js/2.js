@@ -7379,10 +7379,13 @@ function (_Component) {
       });
 
       _this.props.showModal({
-        open: true,
-        servicedata: _this.props,
-        closeModal: _this.props.hideModal
-      }, 'order');
+        modalProps: {
+          open: true,
+          servicedata: _this.props,
+          closeModal: _this.props.hideModal
+        },
+        modalType: 'order'
+      });
     });
 
     return _this;
@@ -7400,7 +7403,7 @@ function (_Component) {
         xl: 3
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_17__["Card"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         onClick: function onClick() {
-          _this2.handleOnClick(_this2.props);
+          return _this2.handleOnClick(_this2.props);
         }
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_17__["CardHeader"], {
         className: "card_header"
