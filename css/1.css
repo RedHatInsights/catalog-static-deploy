@@ -2607,6 +2607,11 @@ ul.navigation-secondary {
 .toolbar-padding {
   padding: 24px 24px 0 24px; }
 
+.card-link {
+  cursor: pointer; }
+  .card-link:hover {
+    text-decoration: none; }
+
 /* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
@@ -2638,6 +2643,11 @@ ul.navigation-secondary {
 
 .toolbar-padding {
   padding: 24px 24px 0 24px; }
+
+.card-link {
+  cursor: pointer; }
+  .card-link:hover {
+    text-decoration: none; }
 
 .searchToolbar {
   background-color: white;
@@ -2683,6 +2693,11 @@ ul.navigation-secondary {
 
 .toolbar-padding {
   padding: 24px 24px 0 24px; }
+
+.card-link {
+  cursor: pointer; }
+  .card-link:hover {
+    text-decoration: none; }
 
 .card-image-header {
   padding: 0 !important; }
@@ -2730,6 +2745,11 @@ ul.navigation-secondary {
 
 .toolbar-padding {
   padding: 24px 24px 0 24px; }
+
+.card-link {
+  cursor: pointer; }
+  .card-link:hover {
+    text-decoration: none; }
 
 .searchToolbar {
   background-color: white;
