@@ -1,11 +1,11 @@
 {
   "app_name": "service-portal",
-  "src_hash": "b308ea6fb3492052d2ff2dc2924d2e065b00b5ac",
+  "src_hash": "39bd3a526a604dd157f08673350a9cebe12bfc2e",
   "src_tag": "",
   "src_branch": "master",
   "travis": {
     "event_type": "push",
-    "build_number": "368",
-    "build_web_url": "https://travis-ci.org/ManageIQ/service_portal-ui/builds/483885717"
+    "build_number": "369",
+    "build_web_url": "https://travis-ci.org/ManageIQ/service_portal-ui/builds/483886368"
   }
 }
