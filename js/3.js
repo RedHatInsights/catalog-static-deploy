@@ -6410,7 +6410,10 @@ function (_Component) {
       }, "Add Products"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarItem"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
         to: this.props.removeProductsRoute
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Button"], {
-        variant: "plain",
+        variant: "link",
+        style: {
+          color: '#FF0000'
+        },
         "aria-label": "Remove Products from Portfolio"
       }, "Remove Products"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["ToolbarItem"], null, this.buildPortfolioActionKebab())));
     }
