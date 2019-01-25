@@ -6248,6 +6248,7 @@ __webpack_require__.r(__webpack_exports__);
 var AddProductsTitleToolbar = function AddProductsTitleToolbar(_ref) {
   var title = _ref.title,
       onClickAddToPortfolio = _ref.onClickAddToPortfolio,
+      itemsSelected = _ref.itemsSelected,
       portfolioRoute = _ref.portfolioRoute;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Toolbar"], {
     className: Object(_patternfly_react_styles__WEBPACK_IMPORTED_MODULE_4__["css"])(_patternfly_patternfly_next_utilities_Flex_flex_css__WEBPACK_IMPORTED_MODULE_6___default.a.justifyContentSpaceBetween, _patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_5___default.a.mxXl, _patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_5___default.a.myMd),
@@ -6270,9 +6271,12 @@ var AddProductsTitleToolbar = function AddProductsTitleToolbar(_ref) {
   }, "Cancel"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["ToolbarItem"], {
     className: Object(_patternfly_react_styles__WEBPACK_IMPORTED_MODULE_4__["css"])(_patternfly_patternfly_next_utilities_Spacing_spacing_css__WEBPACK_IMPORTED_MODULE_5___default.a.mxLg)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-    variant: "plain",
+    key: "addproducts",
+    variant: "primary",
     "aria-label": "Add Products to Portfolio",
-    onClick: onClickAddToPortfolio
+    type: "button",
+    onClick: onClickAddToPortfolio,
+    isDisabled: !itemsSelected
   }, "Add"))));
 };
 
@@ -6280,6 +6284,7 @@ AddProductsTitleToolbar.propTypes = {
   history: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
   title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   onClickAddToPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  itemsSelected: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   portfolioRoute: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
 };
 /* harmony default export */ __webpack_exports__["default"] = (AddProductsTitleToolbar);
@@ -6855,6 +6860,10 @@ function (_Component) {
       });
     });
 
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "itemsSelected", function () {
+      return _this.state.checkedItems.length > 0;
+    });
+
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this)), "createItems", function () {
       var selectedPlatforms = _this.state.selectedPlatforms;
       var platformItems = _this.props.platformItems;
@@ -6898,6 +6907,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_14__["Section"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioOrderToolbar__WEBPACK_IMPORTED_MODULE_21__["default"], null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Portfolio_AddProductsTitleToolbar__WEBPACK_IMPORTED_MODULE_22__["default"], {
         title: title,
         onClickAddToPortfolio: this.onAddToPortfolio,
+        itemsSelected: this.itemsSelected(),
         portfolioRoute: this.props.portfolioRoute
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_SmartComponents_Common_PlatformSelectToolbar__WEBPACK_IMPORTED_MODULE_24__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
         searchValue: this.state.searchValue,
