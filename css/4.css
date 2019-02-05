@@ -35,6 +35,9 @@ ul.navigation-secondary {
   .card-link:hover {
     text-decoration: none; }
 
+.text-align-right {
+  text-align: right; }
+
 /* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
@@ -71,6 +74,9 @@ ul.navigation-secondary {
   cursor: pointer; }
   .card-link:hover {
     text-decoration: none; }
+
+.text-align-right {
+  text-align: right; }
 
 .pcard_header {
   height: 60px; }
@@ -121,6 +127,9 @@ ul.navigation-secondary {
   .card-link:hover {
     text-decoration: none; }
 
+.text-align-right {
+  text-align: right; }
+
 /* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
@@ -157,6 +166,9 @@ ul.navigation-secondary {
   cursor: pointer; }
   .card-link:hover {
     text-decoration: none; }
+
+.text-align-right {
+  text-align: right; }
 
 .searchToolbar {
   background-color: white;
@@ -207,6 +219,9 @@ ul.navigation-secondary {
   cursor: pointer; }
   .card-link:hover {
     text-decoration: none; }
+
+.text-align-right {
+  text-align: right; }
 
 .pcard_header {
   height: 60px; }
