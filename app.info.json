@@ -1,6 +1,6 @@
 {
   "app_name": "service-portal",
-  "src_hash": "e6ba128e3e156bbde67237d8a24d439ff0a6084f",
+  "src_hash": "130b6c503c061d74cba31a1181afc35f75bea2fd",
   "src_tag": "",
   "src_branch": "master",
   "npm_info": {
@@ -48,14 +48,14 @@
       "resolved": "https://registry.npmjs.org/@data-driven-forms/react-form-renderer/-/react-form-renderer-1.5.0.tgz"
     },
     "@manageiq/service-portal-api": {
-      "version": "1.2.0",
-      "from": "@manageiq/service-portal-api@1.2.0",
-      "resolved": "https://registry.npmjs.org/@manageiq/service-portal-api/-/service-portal-api-1.2.0.tgz"
+      "version": "1.3.0",
+      "from": "@manageiq/service-portal-api@1.3.0",
+      "resolved": "https://registry.npmjs.org/@manageiq/service-portal-api/-/service-portal-api-1.3.0.tgz"
     },
     "@manageiq/topological_inventory": {
-      "version": "1.0.5",
-      "from": "@manageiq/topological_inventory@1.0.5",
-      "resolved": "https://registry.npmjs.org/@manageiq/topological_inventory/-/topological_inventory-1.0.5.tgz"
+      "version": "1.1.0",
+      "from": "@manageiq/topological_inventory@1.1.0",
+      "resolved": "https://registry.npmjs.org/@manageiq/topological_inventory/-/topological_inventory-1.1.0.tgz"
     },
     "@patternfly/patternfly-next": {
       "version": "1.0.131",
@@ -381,7 +381,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "412",
-    "build_web_url": "https://travis-ci.org/ManageIQ/service_portal-ui/builds/489947680"
+    "build_number": "415",
+    "build_web_url": "https://travis-ci.org/ManageIQ/service_portal-ui/builds/490101388"
   }
 }
