@@ -1,6 +1,6 @@
 {
   "app_name": "service-portal",
-  "src_hash": "130b6c503c061d74cba31a1181afc35f75bea2fd",
+  "src_hash": "9c6ad53a2e1d3bf21c0de4891a8b80fb86953aba",
   "src_tag": "",
   "src_branch": "master",
   "npm_info": {
@@ -161,6 +161,11 @@
       "version": "7.12.4",
       "from": "eslint-plugin-react@7.12.4",
       "resolved": "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.12.4.tgz"
+    },
+    "fetch-mock": {
+      "version": "7.3.0",
+      "from": "fetch-mock@7.3.0",
+      "resolved": "https://registry.npmjs.org/fetch-mock/-/fetch-mock-7.3.0.tgz"
     },
     "file-loader": {
       "version": "1.1.11",
@@ -367,6 +372,11 @@
       "from": "webpack-visualizer-plugin@0.1.11",
       "resolved": "https://registry.npmjs.org/webpack-visualizer-plugin/-/webpack-visualizer-plugin-0.1.11.tgz"
     },
+    "whatwg-fetch": {
+      "version": "3.0.0",
+      "from": "whatwg-fetch@3.0.0",
+      "resolved": "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.0.0.tgz"
+    },
     "write-file-webpack-plugin": {
       "version": "4.5.0",
       "from": "write-file-webpack-plugin@4.5.0",
@@ -381,7 +391,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "415",
-    "build_web_url": "https://travis-ci.org/ManageIQ/service_portal-ui/builds/490101388"
+    "build_number": "423",
+    "build_web_url": "https://travis-ci.org/ManageIQ/service_portal-ui/builds/490534986"
   }
 }
