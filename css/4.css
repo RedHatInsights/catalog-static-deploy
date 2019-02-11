@@ -38,57 +38,14 @@ ul.navigation-secondary {
 .text-align-right {
   text-align: right; }
 
-/* stylelint-enable */
-:root {
-  --ins-color--orange: #ec7a08; }
+.w-100 {
+  width: 100%; }
 
-button:focus {
-  outline: none; }
+.align-items-base {
+  align-items: baseline; }
 
-ul.navigation-secondary {
-  margin-top: 20px; }
-  ul.navigation-secondary li {
-    cursor: pointer;
-    font-size: 15px;
-    width: 100%;
-    box-shadow: none;
-    padding: 5px 0;
-    color: #1d1d1d; }
-    ul.navigation-secondary li span {
-      margin-left: 50px; }
-    ul.navigation-secondary li:active, ul.navigation-secondary li.active {
-      background: #f5f5f5;
-      color: var(--pf-global--link--Color); }
-    ul.navigation-secondary li:hover {
-      color: var(--pf-global--link--Color); }
-
-.elipsis-text-overflow {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden; }
-
-.toolbar-padding {
-  padding: 24px 24px 0 24px; }
-
-.card-link {
-  cursor: pointer; }
-  .card-link:hover {
-    text-decoration: none; }
-
-.text-align-right {
-  text-align: right; }
-
-.pcard_header {
-  height: 60px; }
-
-.pcard_body {
-  height: 140px;
-  overflow: hidden;
-  font-size: small; }
-
-.pcard_element {
-  text-align: left;
-  font-size: small; }
+.modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
+  margin-left: auto; }
 
 /* stylelint-enable */
 :root {
@@ -130,49 +87,14 @@ ul.navigation-secondary {
 .text-align-right {
   text-align: right; }
 
-/* stylelint-enable */
-:root {
-  --ins-color--orange: #ec7a08; }
+.w-100 {
+  width: 100%; }
 
-button:focus {
-  outline: none; }
+.align-items-base {
+  align-items: baseline; }
 
-ul.navigation-secondary {
-  margin-top: 20px; }
-  ul.navigation-secondary li {
-    cursor: pointer;
-    font-size: 15px;
-    width: 100%;
-    box-shadow: none;
-    padding: 5px 0;
-    color: #1d1d1d; }
-    ul.navigation-secondary li span {
-      margin-left: 50px; }
-    ul.navigation-secondary li:active, ul.navigation-secondary li.active {
-      background: #f5f5f5;
-      color: var(--pf-global--link--Color); }
-    ul.navigation-secondary li:hover {
-      color: var(--pf-global--link--Color); }
-
-.elipsis-text-overflow {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden; }
-
-.toolbar-padding {
-  padding: 24px 24px 0 24px; }
-
-.card-link {
-  cursor: pointer; }
-  .card-link:hover {
-    text-decoration: none; }
-
-.text-align-right {
-  text-align: right; }
-
-.searchToolbar {
-  background-color: white;
-  padding: 10px; }
+.modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
+  margin-left: auto; }
 
 .space-between-toolbar-items > div {
   margin-right: var(--pf-global--gutter);
@@ -223,6 +145,15 @@ ul.navigation-secondary {
 .text-align-right {
   text-align: right; }
 
+.w-100 {
+  width: 100%; }
+
+.align-items-base {
+  align-items: baseline; }
+
+.modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
+  margin-left: auto; }
+
 .pcard_header {
   height: 60px; }
 
@@ -250,4 +181,70 @@ ul.navigation-secondary {
   margin-top: 35px;
   margin-left: 25px;
   margin-right: 25px; }
+
+/* stylelint-enable */
+:root {
+  --ins-color--orange: #ec7a08; }
+
+button:focus {
+  outline: none; }
+
+ul.navigation-secondary {
+  margin-top: 20px; }
+  ul.navigation-secondary li {
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+    box-shadow: none;
+    padding: 5px 0;
+    color: #1d1d1d; }
+    ul.navigation-secondary li span {
+      margin-left: 50px; }
+    ul.navigation-secondary li:active, ul.navigation-secondary li.active {
+      background: #f5f5f5;
+      color: var(--pf-global--link--Color); }
+    ul.navigation-secondary li:hover {
+      color: var(--pf-global--link--Color); }
+
+.elipsis-text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.toolbar-padding {
+  padding: 24px 24px 0 24px; }
+
+.card-link {
+  cursor: pointer; }
+  .card-link:hover {
+    text-decoration: none; }
+
+.text-align-right {
+  text-align: right; }
+
+.w-100 {
+  width: 100%; }
+
+.align-items-base {
+  align-items: baseline; }
+
+.modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
+  margin-left: auto; }
+
+.card_header {
+  height: 60px; }
+
+.card_body {
+  height: 140px;
+  overflow: hidden; }
+
+.card_element {
+  text-align: left;
+  font-size: small; }
+
+.remove {
+  margin: 41px 25px 7px 25px; }
+
+.buttons_right {
+  float: right; }
 
