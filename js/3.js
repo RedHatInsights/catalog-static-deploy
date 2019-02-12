@@ -29,18 +29,10 @@ var api = new _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_2__["AdminsA
 var sspDefaultClient = _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_2__["ApiClient"].instance;
 sspDefaultClient.basePath = _Utilities_Constants__WEBPACK_IMPORTED_MODULE_3__["SERVICE_PORTAL_API_BASE"];
 function getServicePlans(portfolioItemId) {
-  return api.fetchPlansWithPortfolioItemId(portfolioItemId).then(function (data) {
-    return data;
-  }, function (error) {
-    return console.error(error);
-  });
+  return api.fetchPlansWithPortfolioItemId(portfolioItemId);
 }
 function listOrders() {
-  return api.listOrders().then(function (data) {
-    return data;
-  }, function (error) {
-    return console.error(error);
-  });
+  return api.listOrders();
 }
 function sendSubmitOrder(_x) {
   return _sendSubmitOrder.apply(this, arguments);
@@ -72,11 +64,7 @@ function _sendSubmitOrder() {
             return api.addToOrder(order.id, orderItem);
 
           case 11:
-            return _context.abrupt("return", api.submitOrder(order.id).then(function (result) {
-              return result;
-            }, function (error) {
-              return console.error(error);
-            }));
+            return _context.abrupt("return", api.submitOrder(order.id));
 
           case 12:
           case "end":
@@ -848,9 +836,7 @@ var setSelectedPlan = function setSelectedPlan(data) {
 var sendSubmitOrder = function sendSubmitOrder(apiProps) {
   return {
     type: _ActionTypes__WEBPACK_IMPORTED_MODULE_0__["SUBMIT_SERVICE_ORDER"],
-    payload: new Promise(function (resolve) {
-      resolve(_Helpers_Order_OrderHelper__WEBPACK_IMPORTED_MODULE_1__["sendSubmitOrder"](apiProps));
-    })
+    payload: _Helpers_Order_OrderHelper__WEBPACK_IMPORTED_MODULE_1__["sendSubmitOrder"](apiProps)
   };
 };
 
