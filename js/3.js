@@ -232,7 +232,9 @@ function (_React$Component) {
         isOpen: this.props.modalProps.open,
         id: "mainModal",
         title: this.props.title || '',
-        className: "modal-dialog modal-lg",
+        style: {
+          width: 600
+        },
         onClose: this.closeModal
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(SpecifiedModal, _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
         closeModal: this.closeModal
@@ -457,30 +459,35 @@ var OrderServiceFormSteps = [{
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
-/* harmony import */ var _Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Utilities/jschema.scss */ "./src/Utilities/jschema.scss");
-/* harmony import */ var _Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../redux/Actions/OrderActions */ "./src/redux/Actions/OrderActions.js");
-/* harmony import */ var _Common_FormRenderer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Common/FormRenderer */ "./src/SmartComponents/Common/FormRenderer.js");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var _Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../Utilities/jschema.scss */ "./src/Utilities/jschema.scss");
+/* harmony import */ var _Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../redux/Actions/OrderActions */ "./src/redux/Actions/OrderActions.js");
+/* harmony import */ var _Common_FormRenderer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Common/FormRenderer */ "./src/SmartComponents/Common/FormRenderer.js");
+/* harmony import */ var _Helpers_Portfolio_PortfolioHelper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../Helpers/Portfolio/PortfolioHelper */ "./src/Helpers/Portfolio/PortfolioHelper.js");
+
+
 
 
 
@@ -499,28 +506,29 @@ __webpack_require__.r(__webpack_exports__);
 var OrderServiceFormStepConfiguration =
 /*#__PURE__*/
 function (_React$Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(OrderServiceFormStepConfiguration, _React$Component);
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default()(OrderServiceFormStepConfiguration, _React$Component);
 
   function OrderServiceFormStepConfiguration() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, OrderServiceFormStepConfiguration);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, OrderServiceFormStepConfiguration);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(OrderServiceFormStepConfiguration)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(OrderServiceFormStepConfiguration)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "state", {
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_this)), "state", {
       showOrder: false,
-      selectedPlanIdx: 0
+      selectedPlanIdx: 0,
+      controlParametersLoaded: false
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "optionRow", function (plan, option, selectedId, onChange) {
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Radio"], {
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_this)), "optionRow", function (plan, option, selectedId, onChange) {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Radio"], {
         id: plan.id,
         key: plan.id,
         value: plan.id,
@@ -532,7 +540,7 @@ function (_React$Component) {
       });
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "handlePlanChange", function (arg, event) {
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_this)), "handlePlanChange", function (arg, event) {
       var planId = event.currentTarget.value;
 
       _this.setState({
@@ -542,7 +550,7 @@ function (_React$Component) {
       });
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "planOptions", function () {
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_this)), "planOptions", function () {
       var selectedId = _this.props.servicePlans[_this.state.selectedPlanIdx].id;
       var onChange = _this.handlePlanChange;
       return _this.props.servicePlans.map(function (plan, option) {
@@ -550,7 +558,7 @@ function (_React$Component) {
       });
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "onSubmit", function (data) {
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_this)), "onSubmit", function (data) {
       var portfolioItemId = _this.props.id;
       var service_plan_id = _this.props.servicePlans[_this.state.selectedPlanIdx].id;
 
@@ -566,57 +574,75 @@ function (_React$Component) {
     return _this;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(OrderServiceFormStepConfiguration, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(OrderServiceFormStepConfiguration, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
       var id = this.props.id;
       this.props.fetchPlans(id);
+      Object(_Helpers_Portfolio_PortfolioHelper__WEBPACK_IMPORTED_MODULE_15__["fetchProviderControlParameters"])(id).then(function (providerControlParameters) {
+        return _this2.setState({
+          providerControlParameters: providerControlParameters,
+          controlParametersLoaded: true
+        });
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      console.log('service plan', this.props);
+      var _this$state = this.state,
+          controlParametersLoaded = _this$state.controlParametersLoaded,
+          providerControlParameters = _this$state.providerControlParameters;
 
-      if (!this.props.isLoading) {
-        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Stack"], {
+      if (!this.props.isLoading && controlParametersLoaded) {
+        var initialSchema = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, this.props.servicePlans[this.state.selectedPlanIdx].create_json_schema);
+
+        var formSchema = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, initialSchema, {
+          properties: _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({
+            providerControlParameters: providerControlParameters
+          }, initialSchema.properties)
+        });
+
+        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Stack"], {
           gutter: 'md',
           className: "order_card"
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["StackItem"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Title"], {
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["StackItem"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Title"], {
           size: 'lg'
-        }, " Configuration ")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["StackItem"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Form"], null, this.props.servicePlans.length > 1 && react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Title"], {
+        }, " Configuration ")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["StackItem"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Form"], null, this.props.servicePlans.length > 1 && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Title"], {
           size: 'md'
-        }, "Select Plan:"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, this.planOptions())), !this.props.isLoading && this.props.servicePlans.length > 0 && react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Common_FormRenderer__WEBPACK_IMPORTED_MODULE_13__["default"], {
-          schema: this.props.servicePlans[this.state.selectedPlanIdx].create_json_schema,
+        }, "Select Plan:"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, this.planOptions()))), !this.props.isLoading && this.props.servicePlans.length > 0 && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_Common_FormRenderer__WEBPACK_IMPORTED_MODULE_14__["default"], {
+          schema: formSchema,
           onSubmit: this.onSubmit,
           schemaType: "mozilla",
           formContainer: "modal"
-        })))));
+        }))));
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Form"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_10__["Bullseye"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, this.props.isLoading && react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Form"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Bullseye"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, this.props.isLoading && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
         color: '#00b9e4'
       }, " Loading..."))));
     }
   }]);
 
   return OrderServiceFormStepConfiguration;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
 
 OrderServiceFormStepConfiguration.propTypes = {
-  orderData: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.func,
-  fetchPlans: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.func,
-  hideModal: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.func,
-  showOrder: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.bool,
-  isLoading: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.bool,
-  serviceData: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.object,
-  servicePlans: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.array,
-  stepParametersValid: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.bool,
-  fulfilled: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.bool,
-  error: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.bool,
-  imageUrl: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.string,
-  id: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.string,
-  name: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.string,
-  sendSubmitOrder: prop_types__WEBPACK_IMPORTED_MODULE_8___default.a.func.isRequired
+  orderData: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func,
+  fetchPlans: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func,
+  hideModal: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func,
+  showOrder: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.bool,
+  isLoading: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.bool,
+  serviceData: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.object,
+  servicePlans: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.array,
+  stepParametersValid: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.bool,
+  fulfilled: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.bool,
+  error: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.bool,
+  imageUrl: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
+  id: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
+  name: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
+  sendSubmitOrder: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func.isRequired
 };
 OrderServiceFormStepConfiguration.defaultProps = {
   servicePlans: []
@@ -635,15 +661,15 @@ var mapStateToProps = function mapStateToProps(_ref) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchPlans: function fetchPlans(portfolioItemId) {
-      return dispatch(Object(_redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_12__["fetchServicePlans"])(portfolioItemId));
+      return dispatch(Object(_redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_13__["fetchServicePlans"])(portfolioItemId));
     },
     sendSubmitOrder: function sendSubmitOrder(data) {
-      return dispatch(Object(_redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_12__["sendSubmitOrder"])(data));
+      return dispatch(Object(_redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_13__["sendSubmitOrder"])(data));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["connect"])(mapStateToProps, mapDispatchToProps)(OrderServiceFormStepConfiguration));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_10__["connect"])(mapStateToProps, mapDispatchToProps)(OrderServiceFormStepConfiguration));
 
 /***/ }),
 
