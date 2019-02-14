@@ -6880,6 +6880,13 @@ ul.navigation-secondary {
 .modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
   margin-left: auto; }
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-wrap: break-word; }
+
 .OrderForm {
   border: 10px;
   padding-top: 20px;
@@ -6948,16 +6955,19 @@ ul.navigation-secondary {
 .modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
   margin-left: auto; }
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-wrap: break-word; }
+
 .pcard_header {
   height: 60px; }
 
 .pcard_body {
   height: 140px;
   overflow: hidden;
-  font-size: small; }
-
-.pcard_element {
-  text-align: left;
   font-size: small; }
 
 /* stylelint-enable */
@@ -7008,6 +7018,13 @@ ul.navigation-secondary {
 
 .modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
   margin-left: auto; }
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-wrap: break-word; }
 
 .rjsf {
   border: 10px;

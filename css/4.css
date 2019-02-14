@@ -47,6 +47,13 @@ ul.navigation-secondary {
 .modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
   margin-left: auto; }
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-wrap: break-word; }
+
 /* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
@@ -95,6 +102,13 @@ ul.navigation-secondary {
 
 .modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
   margin-left: auto; }
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-wrap: break-word; }
 
 .space-between-toolbar-items > div {
   margin-right: var(--pf-global--gutter);
@@ -154,16 +168,19 @@ ul.navigation-secondary {
 .modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
   margin-left: auto; }
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-wrap: break-word; }
+
 .pcard_header {
   height: 60px; }
 
 .pcard_body {
   height: 140px;
   overflow: hidden;
-  font-size: small; }
-
-.pcard_element {
-  text-align: left;
   font-size: small; }
 
 .admin-dashboard {
@@ -231,16 +248,15 @@ ul.navigation-secondary {
 .modal-form-right-align .pf-m-action:last-child .data-driven-forms__pf4-button-group:first-child {
   margin-left: auto; }
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-wrap: break-word; }
+
 .card_header {
   height: 60px; }
-
-.card_body {
-  height: 140px;
-  overflow: hidden; }
-
-.card_element {
-  text-align: left;
-  font-size: small; }
 
 .remove {
   margin: 41px 25px 7px 25px; }

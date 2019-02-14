@@ -235,6 +235,35 @@ h1 {
       --pf-c-form-control--invalid--BackgroundPosition: calc(100% - var(--pf-global--spacer--sm) - var(--pf-global--spacer--lg));
       --pf-c-form-control--invalid--Background: var(--pf-c-form-control__select--invalid--Background); }
 
+/* stylelint-enable */
+.pf-c-form-control {
+  --pf-global--Color--100: var(--pf-global--Color--dark-100);
+  --pf-global--Color--200: var(--pf-global--Color--dark-200);
+  --pf-global--BorderColor: var(--pf-global--BorderColor--dark);
+  --pf-global--primary-color--100: var(--pf-global--primary-color--dark-100);
+  --pf-global--link--Color: var(--pf-global--link--Color--dark);
+  --pf-global--link--Color--hover: var(--pf-global--link--Color--dark--hover);
+  --pf-global--BackgroundColor--100: var(--pf-global--BackgroundColor--light-100); }
+
+:root {
+  --ins-color--orange: #ec7a08; }
+
+button:focus {
+  outline: none; }
+
+.pf-c-input-group.ins-c-filter.ins-u-no-title input {
+  padding-right: 35px;
+  padding-right: 2.1875rem;
+  margin-right: -23px;
+  margin-right: -1.4375rem; }
+
+.pf-c-input-group.ins-c-filter .ins-c-search-icon {
+  position: relative;
+  left: -5px;
+  left: -0.3125rem;
+  top: 5px;
+  top: 0.3125rem; }
+
 .pf-c-table.ins-c-table {
   /* stylelint-disable */
   --pf-c-table-tbody--MarginTop:                              var(--pf-global--spacer--sm);
@@ -735,6 +764,8 @@ button:focus {
 .pf-c-modal-box.ins-c-wizard {
   min-height: 75vh;
   min-width: 75vw; }
+  .pf-c-modal-box.ins-c-wizard .pf-c-modal-box__body {
+    max-height: none; }
 
 /* stylelint-enable */
 :root {
@@ -803,6 +834,22 @@ button:focus {
 .ins-c-table__toolbar-results {
   padding: 10px 20px;
   padding: 0.625rem 1.25rem; }
+
+/* stylelint-enable */
+:root {
+  --ins-color--orange: #ec7a08; }
+
+button:focus {
+  outline: none; }
+
+.ins-c-table__empty {
+  background: var(--pf-global--Color--light-100);
+  border-bottom: 1px solid var(--pf-global--BorderColor--light-200);
+  padding: 20px;
+  padding: 1.25rem; }
+  .ins-c-table__empty .is-centered {
+    display: flex;
+    justify-content: center; }
 
 /* stylelint-enable */
 :root {
