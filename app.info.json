@@ -1,6 +1,6 @@
 {
   "app_name": "service-portal",
-  "src_hash": "a0d1fc2c352eb3ab20bf044ebb6bbce993708987",
+  "src_hash": "7b7b5e9e89303337d2f0b10bfa744e6531f8de3e",
   "src_tag": "",
   "src_branch": "master",
   "npm_info": {
@@ -78,9 +78,9 @@
       "resolved": "https://registry.npmjs.org/@patternfly/react-tokens/-/react-tokens-1.10.0.tgz"
     },
     "@red-hat-insights/insights-frontend-components": {
-      "version": "3.34.5",
-      "from": "@red-hat-insights/insights-frontend-components@^3.33.65",
-      "resolved": "https://registry.npmjs.org/@red-hat-insights/insights-frontend-components/-/insights-frontend-components-3.34.5.tgz"
+      "version": "3.34.8",
+      "from": "@red-hat-insights/insights-frontend-components@3.34.8",
+      "resolved": "https://registry.npmjs.org/@red-hat-insights/insights-frontend-components/-/insights-frontend-components-3.34.8.tgz"
     },
     "babel-core": {
       "version": "7.0.0-bridge.0",
@@ -391,7 +391,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "453",
-    "build_web_url": "https://travis-ci.org/ManageIQ/service_portal-ui/builds/493690692"
+    "build_number": "456",
+    "build_web_url": "https://travis-ci.org/ManageIQ/service_portal-ui/builds/495343548"
   }
 }
