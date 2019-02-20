@@ -14,20 +14,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sendSubmitOrder", function() { return sendSubmitOrder; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @manageiq/service-portal-api */ "./node_modules/@manageiq/service-portal-api/dist/main.js");
-/* harmony import */ var _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Utilities_Constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Utilities/Constants */ "./src/Utilities/Constants.js");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @manageiq/service-portal-api */ "./node_modules/@manageiq/service-portal-api/dist/main.js");
+/* harmony import */ var _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Utilities_Constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Utilities/Constants */ "./src/Utilities/Constants.js");
+
+
 
 
 
 /* eslint camelcase: 0 */
 
 
-var api = new _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_2__["AdminsApi"]();
-var sspDefaultClient = _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_2__["ApiClient"].instance;
-sspDefaultClient.basePath = _Utilities_Constants__WEBPACK_IMPORTED_MODULE_3__["SERVICE_PORTAL_API_BASE"];
+var api = new _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_4__["AdminsApi"]();
+var sspDefaultClient = _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_4__["ApiClient"].instance;
+sspDefaultClient.basePath = _Utilities_Constants__WEBPACK_IMPORTED_MODULE_5__["SERVICE_PORTAL_API_BASE"];
 function getServicePlans(portfolioItemId) {
   return api.fetchPlansWithPortfolioItemId(portfolioItemId);
 }
@@ -39,34 +45,34 @@ function sendSubmitOrder(_x) {
 }
 
 function _sendSubmitOrder() {
-  _sendSubmitOrder = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(
+  _sendSubmitOrder = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3___default()(
   /*#__PURE__*/
-  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(parameters) {
-    var order, orderItem;
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
+    var _ref$service_paramete, providerControlParameters, service_parameters, parameters, order, orderItem;
+
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
+            _ref$service_paramete = _ref.service_parameters, providerControlParameters = _ref$service_paramete.providerControlParameters, service_parameters = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2___default()(_ref$service_paramete, ["providerControlParameters"]), parameters = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2___default()(_ref, ["service_parameters"]);
+            _context.next = 3;
             return api.newOrder();
 
-          case 2:
+          case 3:
             order = _context.sent;
-            orderItem = new _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_2__["OrderItem"]();
+            orderItem = new _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_4__["OrderItem"]();
             orderItem.count = 1;
-            orderItem.provider_control_parameters = {
-              namespace: 'default'
-            };
-            orderItem.portfolio_item_id = parameters.portfolio_item_id;
-            orderItem.service_plan_ref = parameters.service_plan_ref;
-            orderItem.service_parameters = parameters.service_parameters;
-            _context.next = 11;
+            orderItem = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_1___default()({}, orderItem, parameters, {
+              service_parameters: service_parameters,
+              provider_control_parameters: providerControlParameters
+            });
+            _context.next = 9;
             return api.addToOrder(order.id, orderItem);
 
-          case 11:
+          case 9:
             return _context.abrupt("return", api.submitOrder(order.id));
 
-          case 12:
+          case 10:
           case "end":
             return _context.stop();
         }
