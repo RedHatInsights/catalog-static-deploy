@@ -1,6 +1,6 @@
 {
   "app_name": "service-portal",
-  "src_hash": "7b7b5e9e89303337d2f0b10bfa744e6531f8de3e",
+  "src_hash": "720e61814fc0f7fe48f7114ed5564d70391425fa",
   "src_tag": "",
   "src_branch": "master",
   "npm_info": {
@@ -93,9 +93,9 @@
       "resolved": "https://registry.npmjs.org/babel-eslint/-/babel-eslint-10.0.1.tgz"
     },
     "babel-jest": {
-      "version": "23.6.0",
-      "from": "babel-jest@23.6.0",
-      "resolved": "https://registry.npmjs.org/babel-jest/-/babel-jest-23.6.0.tgz"
+      "version": "24.1.0",
+      "from": "babel-jest@24.1.0",
+      "resolved": "https://registry.npmjs.org/babel-jest/-/babel-jest-24.1.0.tgz"
     },
     "babel-loader": {
       "version": "8.0.5",
@@ -203,14 +203,9 @@
       "resolved": "https://registry.npmjs.org/identity-obj-proxy/-/identity-obj-proxy-3.0.0.tgz"
     },
     "jest": {
-      "version": "23.6.0",
-      "from": "jest@23.6.0",
-      "resolved": "https://registry.npmjs.org/jest/-/jest-23.6.0.tgz"
-    },
-    "jest-cli": {
-      "version": "23.6.0",
-      "from": "jest-cli@23.6.0",
-      "resolved": "https://registry.npmjs.org/jest-cli/-/jest-cli-23.6.0.tgz"
+      "version": "24.1.0",
+      "from": "jest@24.1.0",
+      "resolved": "https://registry.npmjs.org/jest/-/jest-24.1.0.tgz"
     },
     "koa-connect": {
       "version": "2.0.1",
@@ -391,7 +386,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "456",
-    "build_web_url": "https://travis-ci.org/ManageIQ/service_portal-ui/builds/495343548"
+    "build_number": "462",
+    "build_web_url": "https://travis-ci.org/ManageIQ/service_portal-ui/builds/495888357"
   }
 }
