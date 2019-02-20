@@ -6400,7 +6400,9 @@ __webpack_require__.r(__webpack_exports__);
 var PortfolioFilterToolbar = function PortfolioFilterToolbar(props) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_top_toolbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     paddingBottom: true
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["ToolbarSection"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_FilterToolbarItem__WEBPACK_IMPORTED_MODULE_5__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, props, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["ToolbarSection"], {
+    "aria-label": "portfolio-filter-toolbar"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_FilterToolbarItem__WEBPACK_IMPORTED_MODULE_5__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, props, {
     placeholder: 'Find a Product'
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Shared_OrderToolbarItem__WEBPACK_IMPORTED_MODULE_4__["default"], props)));
 };
@@ -6563,6 +6565,9 @@ var CardCheckbox = function CardCheckbox(_ref) {
       float: 'right'
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Checkbox"], {
+    onClick: function onClick(event) {
+      return event.stopPropagation();
+    },
     checked: isChecked,
     onChange: handleCheck,
     "aria-label": "card checkbox",
@@ -6674,155 +6679,6 @@ ServiceOfferingCardBody.propTypes = {
 
 /***/ }),
 
-/***/ "./src/SmartComponents/Common/MainModal.js":
-/*!*************************************************!*\
-  !*** ./src/SmartComponents/Common/MainModal.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
-/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
-/* harmony import */ var _ModalTypes__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ModalTypes */ "./src/SmartComponents/Common/ModalTypes.js");
-
-
-
-
-
-
-
-
-
-
-
-
- // why ???
-
-var MODAL_TYPES = {
-  order: _ModalTypes__WEBPACK_IMPORTED_MODULE_12__["default"].orderModal
-};
-
-var mapStateToProps = function mapStateToProps(_ref) {
-  var mainModalReducer = _ref.mainModalReducer;
-  return _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_7___default()({}, mainModalReducer);
-}; // TO DO define hide on click outside the model
-
-
-var MainModalContainer =
-/*#__PURE__*/
-function (_React$Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default()(MainModalContainer, _React$Component);
-
-  function MainModalContainer(props) {
-    var _this;
-
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, MainModalContainer);
-
-    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(MainModalContainer).call(this, props));
-    _this.state = {
-      modalIsOpen: false
-    }; // transform class properties
-
-    _this.closeModal = _this.closeModal.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_this)));
-    return _this;
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(MainModalContainer, [{
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps !== this.props) {
-        this.setState({
-          modalIsOpen: nextProps.modalProps.open
-        });
-      }
-    }
-  }, {
-    key: "closeModal",
-    value: function closeModal() {
-      this.setState({
-        modalIsOpen: false
-      });
-      this.props.modalProps.closeModal();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      if (!this.props.modalType) {
-        // why? this should fail, should be required props oneOf
-        return null;
-      }
-
-      var SpecifiedModal = MODAL_TYPES[this.props.modalType];
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Modal"], {
-        isOpen: this.props.modalProps.open,
-        id: "mainModal",
-        title: this.props.title || '',
-        style: {
-          width: 600
-        },
-        onClose: this.closeModal
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(SpecifiedModal, _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
-        closeModal: this.closeModal
-      }, this.props.modalProps))));
-    }
-  }]);
-
-  return MainModalContainer;
-}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
-
-MainModalContainer.propTypes = {
-  modalProps: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.shape({
-    open: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.bool,
-    closeModal: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func.isRequired
-  }).isRequired,
-  modalType: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.node,
-  title: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string
-};
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_10__["connect"])(mapStateToProps)(MainModalContainer));
-
-/***/ }),
-
-/***/ "./src/SmartComponents/Common/ModalTypes.js":
-/*!**************************************************!*\
-  !*** ./src/SmartComponents/Common/ModalTypes.js ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _OrderModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./OrderModal */ "./src/SmartComponents/Common/OrderModal.js");
- // not type but some mappers
-
-var modalTypes = {
-  orderModal: _OrderModal__WEBPACK_IMPORTED_MODULE_0__["default"]
-};
-/* harmony default export */ __webpack_exports__["default"] = (modalTypes);
-
-/***/ }),
-
 /***/ "./src/SmartComponents/Common/OrderModal.js":
 /*!**************************************************!*\
   !*** ./src/SmartComponents/Common/OrderModal.js ***!
@@ -6848,16 +6704,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _Order_orderservice_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Order/orderservice.scss */ "./src/SmartComponents/Order/orderservice.scss");
-/* harmony import */ var _Order_orderservice_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_Order_orderservice_scss__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _Order_OrderServiceFormConstants__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Order/OrderServiceFormConstants */ "./src/SmartComponents/Order/OrderServiceFormConstants.js");
-/* harmony import */ var _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../assets/images/vendor-openshift.svg */ "./src/assets/images/vendor-openshift.svg");
-/* harmony import */ var _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _PresentationalComponents_Shared_ImageWithDefault__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/ImageWithDefault */ "./src/PresentationalComponents/Shared/ImageWithDefault.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _Order_orderservice_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Order/orderservice.scss */ "./src/SmartComponents/Order/orderservice.scss");
+/* harmony import */ var _Order_orderservice_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_Order_orderservice_scss__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _Order_OrderServiceFormConstants__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Order/OrderServiceFormConstants */ "./src/SmartComponents/Order/OrderServiceFormConstants.js");
+/* harmony import */ var _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../assets/images/vendor-openshift.svg */ "./src/assets/images/vendor-openshift.svg");
+/* harmony import */ var _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _PresentationalComponents_Shared_ImageWithDefault__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/ImageWithDefault */ "./src/PresentationalComponents/Shared/ImageWithDefault.js");
+
 
 
 
@@ -6893,7 +6751,6 @@ function (_Component) {
     _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(OrderModal)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "state", {
-      serviceData: {},
       activeStepIndex: 0
     });
 
@@ -6916,24 +6773,29 @@ function (_Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(OrderModal, [{
     key: "render",
     value: function render() {
-      var showOrder = this.props.open;
-
-      if (!showOrder) {
-        return null;
-      }
+      var _this2 = this;
 
       var activeStepIndex = this.state.activeStepIndex;
-      var steps = _Order_OrderServiceFormConstants__WEBPACK_IMPORTED_MODULE_12__["OrderServiceFormSteps"];
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_8__["CardHeader"], {
+      var steps = _Order_OrderServiceFormConstants__WEBPACK_IMPORTED_MODULE_13__["OrderServiceFormSteps"];
+      return this.props.serviceData ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_9__["Modal"], {
+        isOpen: true,
+        title: "",
+        onClose: function onClose() {
+          return _this2.props.history.push(_this2.props.closeUrl);
+        },
+        style: {
+          maxWidth: 800
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_9__["CardHeader"], {
         className: "order_header"
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_PresentationalComponents_Shared_ImageWithDefault__WEBPACK_IMPORTED_MODULE_14__["default"], {
-        src: this.props.servicedata.imageUrl || _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_PresentationalComponents_Shared_ImageWithDefault__WEBPACK_IMPORTED_MODULE_15__["default"], {
+        src: this.props.serviceData.imageUrl || _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_14___default.a,
         width: "40"
-      }), this.props.servicedata.name), this.renderStepPage(steps[activeStepIndex].page, this.props.servicedata), activeStepIndex < steps.length - 1 && react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_8__["Button"], {
+      }), this.props.serviceData.name), this.renderStepPage(steps[activeStepIndex].page, this.props.serviceData), activeStepIndex < steps.length - 1 && react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_9__["Button"], {
         variant: "primary",
         "aria-label": "Order portfolio item",
         onClick: this.onNext
-      }, "Order"));
+      }, "Order")) : null;
     }
   }]);
 
@@ -6941,28 +6803,33 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
 
 OrderModal.propTypes = {
-  orderData: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.func,
-  showOrder: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.bool,
-  servicedata: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.object,
-  stepParametersValid: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.bool,
-  fulfilled: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.bool,
-  error: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.bool,
-  open: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.bool
+  orderData: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func,
+  serviceData: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.object,
+  closeUrl: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.string.isRequired,
+  history: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.shape({
+    push: prop_types__WEBPACK_IMPORTED_MODULE_12___default.a.func.isRequired
+  }).isRequired
 };
 
-var mapStateToProps = function mapStateToProps(_ref) {
-  var _ref$orderReducer = _ref.orderReducer,
+var mapStateToProps = function mapStateToProps(_ref, _ref2) {
+  var portfolioItems = _ref.portfolioReducer.portfolioItems,
+      _ref$orderReducer = _ref.orderReducer,
       isLoading = _ref$orderReducer.isLoading,
       selectedItem = _ref$orderReducer.selectedItem,
       servicePlans = _ref$orderReducer.servicePlans;
+  var itemId = _ref2.match.params.itemId;
   return {
     isLoading: isLoading,
     selectedItem: selectedItem,
-    servicePlans: servicePlans
+    servicePlans: servicePlans,
+    serviceData: portfolioItems.find(function (_ref3) {
+      var id = _ref3.id;
+      return id === itemId;
+    })
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["connect"])(mapStateToProps)(OrderModal));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_10__["connect"])(mapStateToProps)(OrderModal)));
 
 /***/ }),
 
@@ -7388,16 +7255,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../redux/Actions/PlatformActions */ "./src/redux/Actions/PlatformActions.js");
 /* harmony import */ var _SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../SmartComponents/ContentGallery/ContentGallery */ "./src/SmartComponents/ContentGallery/ContentGallery.js");
-/* harmony import */ var _Common_MainModal__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../Common/MainModal */ "./src/SmartComponents/Common/MainModal.js");
-/* harmony import */ var _Platform_platform_scss__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../Platform/platform.scss */ "./src/SmartComponents/Platform/platform.scss");
-/* harmony import */ var _Platform_platform_scss__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_Platform_platform_scss__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../SmartComponents/Portfolio/portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
-/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _PresentationalComponents_Portfolio_PortfolioOrderToolbar__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../PresentationalComponents/Portfolio/PortfolioOrderToolbar */ "./src/PresentationalComponents/Portfolio/PortfolioOrderToolbar.js");
-/* harmony import */ var _PresentationalComponents_Platform_PlatformDashboard__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformDashboard */ "./src/PresentationalComponents/Platform/PlatformDashboard.js");
-/* harmony import */ var _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../redux/Actions/PortfolioActions */ "./src/redux/Actions/PortfolioActions.js");
-/* harmony import */ var _PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformItem */ "./src/PresentationalComponents/Platform/PlatformItem.js");
-
+/* harmony import */ var _Platform_platform_scss__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../Platform/platform.scss */ "./src/SmartComponents/Platform/platform.scss");
+/* harmony import */ var _Platform_platform_scss__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_Platform_platform_scss__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../SmartComponents/Portfolio/portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
+/* harmony import */ var _SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_SmartComponents_Portfolio_portfolio_scss__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _PresentationalComponents_Portfolio_PortfolioOrderToolbar__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../PresentationalComponents/Portfolio/PortfolioOrderToolbar */ "./src/PresentationalComponents/Portfolio/PortfolioOrderToolbar.js");
+/* harmony import */ var _PresentationalComponents_Platform_PlatformDashboard__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformDashboard */ "./src/PresentationalComponents/Platform/PlatformDashboard.js");
+/* harmony import */ var _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../redux/Actions/PortfolioActions */ "./src/redux/Actions/PortfolioActions.js");
+/* harmony import */ var _PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformItem */ "./src/PresentationalComponents/Platform/PlatformItem.js");
 
 
 
@@ -7508,7 +7373,7 @@ function (_Component) {
           var name = _ref5.name;
           return name.trim().toLowerCase().includes(_this.state.searchValue.toLocaleLowerCase());
         }).map(function (item) {
-          return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_24__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+          return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_23__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
             key: item.id
           }, item, {
             editMode: true,
@@ -7539,7 +7404,7 @@ function (_Component) {
       }
 
       var title = this.props.portfolio ? this.props.portfolio.name : '';
-      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_14__["Section"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioOrderToolbar__WEBPACK_IMPORTED_MODULE_21__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_14__["Section"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioOrderToolbar__WEBPACK_IMPORTED_MODULE_20__["default"], {
         portfolioName: title,
         onClickAddToPortfolio: this.onAddToPortfolio,
         itemsSelected: this.itemsSelected(),
@@ -7563,7 +7428,7 @@ function (_Component) {
           onToggleSelect: _this2.onToggleItemSelect,
           checkedItems: _this2.state.checkedItems
         }));
-      }), this.state.selectedPlatforms.length < 1 && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Platform_PlatformDashboard__WEBPACK_IMPORTED_MODULE_22__["default"], null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_Common_MainModal__WEBPACK_IMPORTED_MODULE_18__["default"], null));
+      }), this.state.selectedPlatforms.length < 1 && react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Platform_PlatformDashboard__WEBPACK_IMPORTED_MODULE_21__["default"], null));
     }
   }]);
 
@@ -7586,8 +7451,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return Object(redux__WEBPACK_IMPORTED_MODULE_11__["bindActionCreators"])({
     addNotification: _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_15__["addNotification"],
     fetchMultiplePlatformItems: _redux_Actions_PlatformActions__WEBPACK_IMPORTED_MODULE_16__["fetchMultiplePlatformItems"],
-    addToPortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_23__["addToPortfolio"],
-    fetchPortfolioItemsWithPortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_23__["fetchPortfolioItemsWithPortfolio"]
+    addToPortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_22__["addToPortfolio"],
+    fetchPortfolioItemsWithPortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_22__["fetchPortfolioItemsWithPortfolio"]
   }, dispatch);
 };
 
@@ -7660,21 +7525,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../SmartComponents/ContentGallery/ContentGallery */ "./src/SmartComponents/ContentGallery/ContentGallery.js");
 /* harmony import */ var _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../redux/Actions/PortfolioActions */ "./src/redux/Actions/PortfolioActions.js");
-/* harmony import */ var _Common_MainModal__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../Common/MainModal */ "./src/SmartComponents/Common/MainModal.js");
-/* harmony import */ var _redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../redux/Actions/MainModalActions */ "./src/redux/Actions/MainModalActions.js");
-/* harmony import */ var _SmartComponents_Portfolio_AddProductsToPortfolio__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../SmartComponents/Portfolio/AddProductsToPortfolio */ "./src/SmartComponents/Portfolio/AddProductsToPortfolio.js");
-/* harmony import */ var _PresentationalComponents_Portfolio_PortfolioFilterToolbar__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../PresentationalComponents/Portfolio/PortfolioFilterToolbar */ "./src/PresentationalComponents/Portfolio/PortfolioFilterToolbar.js");
-/* harmony import */ var _PresentationalComponents_Portfolio_PortfolioActionToolbar__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../PresentationalComponents/Portfolio/PortfolioActionToolbar */ "./src/PresentationalComponents/Portfolio/PortfolioActionToolbar.js");
-/* harmony import */ var _PortfolioItem__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./PortfolioItem */ "./src/SmartComponents/Portfolio/PortfolioItem.js");
-/* harmony import */ var _PresentationalComponents_Shared_404Route__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/404Route */ "./src/PresentationalComponents/Shared/404Route.js");
-/* harmony import */ var _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./add-portfolio-modal */ "./src/SmartComponents/Portfolio/add-portfolio-modal.js");
-/* harmony import */ var _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./remove-portfolio-modal */ "./src/SmartComponents/Portfolio/remove-portfolio-modal.js");
-/* harmony import */ var _Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../Helpers/Shared/helpers */ "./src/Helpers/Shared/helpers.js");
-/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
-/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(_portfolio_scss__WEBPACK_IMPORTED_MODULE_26__);
-/* harmony import */ var _SmartComponents_Portfolio_RemovePortfolioItems__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../../SmartComponents/Portfolio/RemovePortfolioItems */ "./src/SmartComponents/Portfolio/RemovePortfolioItems.js");
-/* harmony import */ var _Helpers_Portfolio_PortfolioHelper__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../Helpers/Portfolio/PortfolioHelper */ "./src/Helpers/Portfolio/PortfolioHelper.js");
-
+/* harmony import */ var _SmartComponents_Portfolio_AddProductsToPortfolio__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../SmartComponents/Portfolio/AddProductsToPortfolio */ "./src/SmartComponents/Portfolio/AddProductsToPortfolio.js");
+/* harmony import */ var _PresentationalComponents_Portfolio_PortfolioFilterToolbar__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../PresentationalComponents/Portfolio/PortfolioFilterToolbar */ "./src/PresentationalComponents/Portfolio/PortfolioFilterToolbar.js");
+/* harmony import */ var _PresentationalComponents_Portfolio_PortfolioActionToolbar__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../PresentationalComponents/Portfolio/PortfolioActionToolbar */ "./src/PresentationalComponents/Portfolio/PortfolioActionToolbar.js");
+/* harmony import */ var _PortfolioItem__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./PortfolioItem */ "./src/SmartComponents/Portfolio/PortfolioItem.js");
+/* harmony import */ var _PresentationalComponents_Shared_404Route__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/404Route */ "./src/PresentationalComponents/Shared/404Route.js");
+/* harmony import */ var _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./add-portfolio-modal */ "./src/SmartComponents/Portfolio/add-portfolio-modal.js");
+/* harmony import */ var _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./remove-portfolio-modal */ "./src/SmartComponents/Portfolio/remove-portfolio-modal.js");
+/* harmony import */ var _Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../Helpers/Shared/helpers */ "./src/Helpers/Shared/helpers.js");
+/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
+/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_portfolio_scss__WEBPACK_IMPORTED_MODULE_24__);
+/* harmony import */ var _SmartComponents_Portfolio_RemovePortfolioItems__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../SmartComponents/Portfolio/RemovePortfolioItems */ "./src/SmartComponents/Portfolio/RemovePortfolioItems.js");
+/* harmony import */ var _Helpers_Portfolio_PortfolioHelper__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../../Helpers/Portfolio/PortfolioHelper */ "./src/Helpers/Portfolio/PortfolioHelper.js");
+/* harmony import */ var _Common_OrderModal__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../Common/OrderModal */ "./src/SmartComponents/Common/OrderModal.js");
 
 
 
@@ -7725,7 +7588,6 @@ function (_Component) {
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_this)), "state", {
       portfolioId: '',
       isKebabOpen: false,
-      isOpen: false,
       filteredItems: [],
       selectedItems: [],
       filterValue: ''
@@ -7742,7 +7604,7 @@ function (_Component) {
 
       _this.props.history.goBack();
 
-      Object(_Helpers_Portfolio_PortfolioHelper__WEBPACK_IMPORTED_MODULE_28__["removePortfolioItems"])(itemIdsToRemove).then(function () {
+      Object(_Helpers_Portfolio_PortfolioHelper__WEBPACK_IMPORTED_MODULE_26__["removePortfolioItems"])(itemIdsToRemove).then(function () {
         _this.fetchData(_this.props.match.params.id);
 
         _this.setState({
@@ -7777,8 +7639,6 @@ function (_Component) {
     });
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_this)), "handleFilterChange", function (filterValue) {
-      console.log('filterValue: ', filterValue);
-
       _this.setState({
         filterValue: filterValue
       });
@@ -7791,10 +7651,10 @@ function (_Component) {
           removeProductsRoute = _ref3.removeProductsRoute,
           editPortfolioRoute = _ref3.editPortfolioRoute,
           removePortfolioRoute = _ref3.removePortfolioRoute;
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_10__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioFilterToolbar__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_10__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioFilterToolbar__WEBPACK_IMPORTED_MODULE_17__["default"], {
         searchValue: _this.state.filterValue,
         onFilterChange: _this.handleFilterChange
-      }), !_this.props.isLoading && react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioActionToolbar__WEBPACK_IMPORTED_MODULE_20__["default"], {
+      }), !_this.props.isLoading && react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioActionToolbar__WEBPACK_IMPORTED_MODULE_18__["default"], {
         title: title,
         addProductsRoute: addProductsRoute,
         removeProductsRoute: removeProductsRoute,
@@ -7803,17 +7663,25 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
         exact: true,
         path: "/portfolio/:id/edit-portfolio",
-        component: _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_23__["default"]
+        component: _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_21__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
         exact: true,
         path: "/portfolio/:id/remove-portfolio",
-        component: _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_24__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_14__["default"], filteredItems), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_Common_MainModal__WEBPACK_IMPORTED_MODULE_16__["default"], null));
+        component: _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_22__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
+        exact: true,
+        path: "/portfolio/:id/order/:itemId",
+        render: function render(props) {
+          return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_Common_OrderModal__WEBPACK_IMPORTED_MODULE_27__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({}, props, {
+            closeUrl: _this.props.match.url
+          }));
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_14__["default"], filteredItems));
     });
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_this)), "renderAddProducts", function (_ref4) {
       var portfolioRoute = _ref4.portfolioRoute;
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_SmartComponents_Portfolio_AddProductsToPortfolio__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_SmartComponents_Portfolio_AddProductsToPortfolio__WEBPACK_IMPORTED_MODULE_16__["default"], {
         portfolio: _this.props.portfolio,
         portfolioRoute: portfolioRoute
       });
@@ -7823,7 +7691,7 @@ function (_Component) {
       var portfolioRoute = _ref5.portfolioRoute,
           filteredItems = _ref5.filteredItems,
           title = _ref5.title;
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_10___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_SmartComponents_Portfolio_RemovePortfolioItems__WEBPACK_IMPORTED_MODULE_27__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_10___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_SmartComponents_Portfolio_RemovePortfolioItems__WEBPACK_IMPORTED_MODULE_25__["default"], {
         filterValue: _this.state.filterValue,
         onFilterChange: _this.handleFilterChange,
         portfolioName: title,
@@ -7840,14 +7708,14 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.fetchData(this.props.match.params.id);
-      Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_25__["scrollToTop"])();
+      Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_23__["scrollToTop"])();
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       if (prevProps.match.params.id !== this.props.match.params.id) {
         this.fetchData(this.props.match.params.id);
-        Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_25__["scrollToTop"])();
+        Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_23__["scrollToTop"])();
       }
     }
   }, {
@@ -7866,12 +7734,13 @@ function (_Component) {
           var name = _ref6.name;
           return name.toLowerCase().includes(_this2.state.filterValue.toLowerCase());
         }).map(function (item) {
-          return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PortfolioItem__WEBPACK_IMPORTED_MODULE_21__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({
+          return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PortfolioItem__WEBPACK_IMPORTED_MODULE_19__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({
             key: item.id
           }, item, {
             isSelectable: _this2.props.location.pathname.includes('/remove-products'),
             onSelect: _this2.handleItemSelect,
-            isSelected: _this2.state.selectedItems.includes(item.id)
+            isSelected: _this2.state.selectedItems.includes(item.id),
+            orderUrl: "".concat(_this2.props.match.url, "/order/").concat(item.id)
           }));
         }),
         isLoading: this.props.isLoading
@@ -7905,7 +7774,7 @@ function (_Component) {
           }, props));
         }
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
-        component: _PresentationalComponents_Shared_404Route__WEBPACK_IMPORTED_MODULE_22__["default"]
+        component: _PresentationalComponents_Shared_404Route__WEBPACK_IMPORTED_MODULE_20__["default"]
       }));
     }
   }]);
@@ -7932,15 +7801,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchSelectedPortfolio: function fetchSelectedPortfolio(apiProps) {
       return dispatch(Object(_redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_15__["fetchSelectedPortfolio"])(apiProps));
-    },
-    hideModal: function hideModal() {
-      return dispatch(Object(_redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_17__["hideModal"])());
-    },
-    showModal: function showModal(modalProps, modalType) {
-      dispatch(Object(_redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_17__["showModal"])({
-        modalProps: modalProps,
-        modalType: modalType
-      }));
     }
   };
 };
@@ -7949,8 +7809,6 @@ Portfolio.propTypes = {
   isLoading: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.bool,
   fetchPortfolioItemsWithPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.func,
   fetchSelectedPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.func,
-  showModal: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.func,
-  hideModal: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.func,
   match: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.object,
   portfolio: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.shape({
     name: prop_types__WEBPACK_IMPORTED_MODULE_13___default.a.string,
@@ -7976,35 +7834,19 @@ Portfolio.defaultProps = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _portfolioitem_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./portfolioitem.scss */ "./src/SmartComponents/Portfolio/portfolioitem.scss");
-/* harmony import */ var _portfolioitem_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_portfolioitem_scss__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../assets/images/vendor-openshift.svg */ "./src/assets/images/vendor-openshift.svg");
-/* harmony import */ var _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _PresentationalComponents_Shared_ImageWithDefault__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/ImageWithDefault */ "./src/PresentationalComponents/Shared/ImageWithDefault.js");
-/* harmony import */ var _redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../redux/Actions/MainModalActions */ "./src/redux/Actions/MainModalActions.js");
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
-/* harmony import */ var _PresentationalComponents_Shared_service_offering_body__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/service-offering-body */ "./src/PresentationalComponents/Shared/service-offering-body.js");
-/* harmony import */ var _PresentationalComponents_Shared_CardCheckbox__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/CardCheckbox */ "./src/PresentationalComponents/Shared/CardCheckbox.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/images/vendor-openshift.svg */ "./src/assets/images/vendor-openshift.svg");
+/* harmony import */ var _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _PresentationalComponents_Shared_ImageWithDefault__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/ImageWithDefault */ "./src/PresentationalComponents/Shared/ImageWithDefault.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var _PresentationalComponents_Shared_service_offering_body__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/service-offering-body */ "./src/PresentationalComponents/Shared/service-offering-body.js");
+/* harmony import */ var _PresentationalComponents_Shared_CardCheckbox__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../PresentationalComponents/Shared/CardCheckbox */ "./src/PresentationalComponents/Shared/CardCheckbox.js");
+/* harmony import */ var _portfolioitem_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./portfolioitem.scss */ "./src/SmartComponents/Portfolio/portfolioitem.scss");
+/* harmony import */ var _portfolioitem_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_portfolioitem_scss__WEBPACK_IMPORTED_MODULE_8__);
 
 
 
@@ -8015,103 +7857,47 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var PortfolioItem = function PortfolioItem(props) {
+  var renderCardContent = function renderCardContent() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["CardHeader"], {
+      className: "card_header"
+    }, props.isSelectable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PresentationalComponents_Shared_CardCheckbox__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      handleCheck: function handleCheck() {
+        return props.onSelect(props.id);
+      },
+      isChecked: props.isSelected,
+      id: props.id
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PresentationalComponents_Shared_ImageWithDefault__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      src: props.imageUrl || _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_3___default.a,
+      width: "30",
+      height: "20"
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PresentationalComponents_Shared_service_offering_body__WEBPACK_IMPORTED_MODULE_6__["default"], props), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["CardFooter"], null));
+  };
 
-
-
-
-
-
-
-
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return Object(redux__WEBPACK_IMPORTED_MODULE_8__["bindActionCreators"])({
-    hideModal: _redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_14__["hideModal"],
-    showModal: _redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_14__["showModal"]
-  }, dispatch);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["GridItem"], {
+    sm: 6,
+    md: 4,
+    lg: 4,
+    xl: 3
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["Card"], null, props.isSelectable ? renderCardContent() : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: props.orderUrl,
+    className: "card-link"
+  }, renderCardContent())));
 };
-
-var PortfolioItem =
-/*#__PURE__*/
-function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(PortfolioItem, _Component);
-
-  function PortfolioItem() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, PortfolioItem);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(PortfolioItem)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this)), "handleOnClick", function () {
-      _this.setState({
-        showOrder: true
-      });
-
-      _this.props.showModal({
-        modalProps: {
-          open: true,
-          servicedata: _this.props,
-          closeModal: _this.props.hideModal
-        },
-        modalType: 'order'
-      });
-    });
-
-    return _this;
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(PortfolioItem, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_15__["GridItem"], {
-        sm: 6,
-        md: 4,
-        lg: 4,
-        xl: 3
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_15__["Card"], null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        onClick: function onClick() {
-          return _this2.handleOnClick(_this2.props);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_15__["CardHeader"], {
-        className: "card_header"
-      }, this.props.isSelectable && react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_PresentationalComponents_Shared_CardCheckbox__WEBPACK_IMPORTED_MODULE_17__["default"], {
-        handleCheck: function handleCheck() {
-          _this2.props.onSelect(_this2.props.id);
-        },
-        isChecked: this.props.isSelected,
-        id: this.props.id
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_PresentationalComponents_Shared_ImageWithDefault__WEBPACK_IMPORTED_MODULE_13__["default"], {
-        src: this.props.imageUrl || _assets_images_vendor_openshift_svg__WEBPACK_IMPORTED_MODULE_12___default.a,
-        width: "30",
-        height: "20"
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_PresentationalComponents_Shared_service_offering_body__WEBPACK_IMPORTED_MODULE_16__["default"], this.props), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_15__["CardFooter"], null))));
-    }
-  }]);
-
-  return PortfolioItem;
-}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
 
 PortfolioItem.propTypes = {
-  history: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.object,
-  showModal: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.func,
-  hideModal: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.func,
-  imageUrl: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.string,
-  name: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.string,
-  id: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.string,
-  isSelectable: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.bool,
-  isSelected: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.bool,
-  onSelect: prop_types__WEBPACK_IMPORTED_MODULE_11___default.a.func
+  history: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object,
+  showModal: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
+  hideModal: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
+  imageUrl: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+  name: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+  id: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+  isSelectable: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+  isSelected: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+  onSelect: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
+  orderUrl: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["connect"])(null, mapDispatchToProps)(PortfolioItem));
+/* harmony default export */ __webpack_exports__["default"] = (PortfolioItem);
 
 /***/ }),
 

@@ -30,10 +30,11 @@ ul.navigation-secondary {
 .toolbar-padding {
   padding: 24px 24px 0 24px; }
 
-.card-link {
-  cursor: pointer; }
-  .card-link:hover {
-    text-decoration: none; }
+.card-link, .card-link:hover, .card-link:active {
+  text-decoration: none !important;
+  cursor: pointer !important;
+  color: #282d33 !important;
+  font-weight: 400 !important; }
 
 .text-align-right {
   text-align: right; }
@@ -94,10 +95,11 @@ ul.navigation-secondary {
 .toolbar-padding {
   padding: 24px 24px 0 24px; }
 
-.card-link {
-  cursor: pointer; }
-  .card-link:hover {
-    text-decoration: none; }
+.card-link, .card-link:hover, .card-link:active {
+  text-decoration: none !important;
+  cursor: pointer !important;
+  color: #282d33 !important;
+  font-weight: 400 !important; }
 
 .text-align-right {
   text-align: right; }
@@ -150,10 +152,11 @@ ul.navigation-secondary {
 .toolbar-padding {
   padding: 24px 24px 0 24px; }
 
-.card-link {
-  cursor: pointer; }
-  .card-link:hover {
-    text-decoration: none; }
+.card-link, .card-link:hover, .card-link:active {
+  text-decoration: none !important;
+  cursor: pointer !important;
+  color: #282d33 !important;
+  font-weight: 400 !important; }
 
 .text-align-right {
   text-align: right; }
@@ -215,10 +218,11 @@ ul.navigation-secondary {
 .toolbar-padding {
   padding: 24px 24px 0 24px; }
 
-.card-link {
-  cursor: pointer; }
-  .card-link:hover {
-    text-decoration: none; }
+.card-link, .card-link:hover, .card-link:active {
+  text-decoration: none !important;
+  cursor: pointer !important;
+  color: #282d33 !important;
+  font-weight: 400 !important; }
 
 .text-align-right {
   text-align: right; }

@@ -6449,11 +6449,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components/components/Notifications */ "./node_modules/@red-hat-insights/insights-frontend-components/components/Notifications.js");
 /* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../redux/Actions/PortfolioActions */ "./src/redux/Actions/PortfolioActions.js");
-/* harmony import */ var _redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../redux/Actions/MainModalActions */ "./src/redux/Actions/MainModalActions.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
-/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_portfolio_scss__WEBPACK_IMPORTED_MODULE_10__);
-
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./portfolio.scss */ "./src/SmartComponents/Portfolio/portfolio.scss");
+/* harmony import */ var _portfolio_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_portfolio_scss__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -6477,12 +6475,12 @@ var RemovePortfolioModal = function RemovePortfolioModal(_ref) {
 
   var onSubmit = function onSubmit() {
     return removePortfolio(portfolioId).then(function () {
-      return Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["pipe"])(fetchPortfolios(), push('/portfolios'));
+      return Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["pipe"])(fetchPortfolios(), push('/portfolios'));
     });
   };
 
   var onCancel = function onCancel() {
-    return Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["pipe"])(addNotification({
+    return Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["pipe"])(addNotification({
       variant: 'warning',
       title: 'Removing portfolio',
       description: 'Removing portfolio was cancelled by the user.'
@@ -6542,45 +6540,11 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return Object(redux__WEBPACK_IMPORTED_MODULE_4__["bindActionCreators"])({
     addNotification: _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_6__["addNotification"],
     fetchPortfolios: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_7__["fetchPortfolios"],
-    removePortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_7__["removePortfolio"],
-    hideModal: _redux_Actions_MainModalActions__WEBPACK_IMPORTED_MODULE_8__["hideModal"]
+    removePortfolio: _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_7__["removePortfolio"]
   }, dispatch);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(RemovePortfolioModal)));
-
-/***/ }),
-
-/***/ "./src/redux/Actions/MainModalActions.js":
-/*!***********************************************!*\
-  !*** ./src/redux/Actions/MainModalActions.js ***!
-  \***********************************************/
-/*! exports provided: showModal, hideModal */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showModal", function() { return showModal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hideModal", function() { return hideModal; });
-/* harmony import */ var _ActionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ActionTypes */ "./src/redux/ActionTypes.js");
-
-var showModal = function showModal(_ref) {
-  var modalProps = _ref.modalProps,
-      modalType = _ref.modalType;
-  return {
-    type: _ActionTypes__WEBPACK_IMPORTED_MODULE_0__["SHOW_MODAL"],
-    payload: {
-      modalProps: modalProps,
-      modalType: modalType
-    }
-  };
-};
-var hideModal = function hideModal() {
-  return {
-    type: _ActionTypes__WEBPACK_IMPORTED_MODULE_0__["HIDE_MODAL"],
-    payload: null
-  };
-};
 
 /***/ })
 
