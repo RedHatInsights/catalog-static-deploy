@@ -54,13 +54,12 @@ ul.navigation-secondary {
   overflow: hidden;
   word-wrap: break-word; }
 
-.card-image-header {
-  padding: 0 !important; }
+.space-between-toolbar-items > div {
+  margin-right: var(--pf-global--gutter);
+  align-self: flex-end; }
 
-.portfolio-card-header {
-  min-height: 100px;
-  max-height: 200px;
-  background-size: stretch;
-  color: white;
-  padding: 8px 24px; }
+.searchPlatforms {
+  min-width: 30%; }
+  .searchPlatforms > div {
+    width: 100%; }
 
