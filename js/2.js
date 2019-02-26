@@ -6064,7 +6064,7 @@ var api = new _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_4__["AdminsA
 var sspDefaultClient = _manageiq_service_portal_api__WEBPACK_IMPORTED_MODULE_4__["ApiClient"].instance;
 sspDefaultClient.basePath = _Utilities_Constants__WEBPACK_IMPORTED_MODULE_5__["SERVICE_PORTAL_API_BASE"];
 function getServicePlans(portfolioItemId) {
-  return api.fetchPlansWithPortfolioItemId(portfolioItemId);
+  return api.listServicePlans(portfolioItemId);
 }
 function listOrders() {
   return api.listOrders();
@@ -6085,7 +6085,7 @@ function _sendSubmitOrder() {
           case 0:
             _ref$service_paramete = _ref.service_parameters, providerControlParameters = _ref$service_paramete.providerControlParameters, service_parameters = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2___default()(_ref$service_paramete, ["providerControlParameters"]), parameters = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2___default()(_ref, ["service_parameters"]);
             _context.next = 3;
-            return api.newOrder();
+            return api.createOrder();
 
           case 3:
             order = _context.sent;
@@ -6824,8 +6824,9 @@ var mapStateToProps = function mapStateToProps(_ref, _ref2) {
     servicePlans: servicePlans,
     serviceData: portfolioItems.find(function (_ref3) {
       var id = _ref3.id;
-      return id === itemId;
-    })
+      return id == itemId;
+    }) // eslint-disable-line eqeqeq
+
   };
 };
 
@@ -6893,13 +6894,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
-/* harmony import */ var _Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../Utilities/jschema.scss */ "./src/Utilities/jschema.scss");
-/* harmony import */ var _Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../redux/Actions/OrderActions */ "./src/redux/Actions/OrderActions.js");
-/* harmony import */ var _Common_FormRenderer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Common/FormRenderer */ "./src/SmartComponents/Common/FormRenderer.js");
-/* harmony import */ var _Helpers_Portfolio_PortfolioHelper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../Helpers/Portfolio/PortfolioHelper */ "./src/Helpers/Portfolio/PortfolioHelper.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var _Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../Utilities/jschema.scss */ "./src/Utilities/jschema.scss");
+/* harmony import */ var _Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_Utilities_jschema_scss__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../redux/Actions/OrderActions */ "./src/redux/Actions/OrderActions.js");
+/* harmony import */ var _Common_FormRenderer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../Common/FormRenderer */ "./src/SmartComponents/Common/FormRenderer.js");
+/* harmony import */ var _Helpers_Portfolio_PortfolioHelper__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../Helpers/Portfolio/PortfolioHelper */ "./src/Helpers/Portfolio/PortfolioHelper.js");
+
 
 
 
@@ -6942,7 +6945,7 @@ function (_React$Component) {
     });
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6___default()(_this)), "optionRow", function (plan, option, selectedId, onChange) {
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Radio"], {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_12__["Radio"], {
         id: plan.id,
         key: plan.id,
         value: plan.id,
@@ -6982,7 +6985,7 @@ function (_React$Component) {
         service_parameters: data
       });
 
-      _this.props.hideModal();
+      _this.props.history.push('/orders');
     });
 
     return _this;
@@ -6995,7 +6998,7 @@ function (_React$Component) {
 
       var id = this.props.id;
       this.props.fetchPlans(id);
-      Object(_Helpers_Portfolio_PortfolioHelper__WEBPACK_IMPORTED_MODULE_15__["fetchProviderControlParameters"])(id).then(function (providerControlParameters) {
+      Object(_Helpers_Portfolio_PortfolioHelper__WEBPACK_IMPORTED_MODULE_16__["fetchProviderControlParameters"])(id).then(function (providerControlParameters) {
         return _this2.setState({
           providerControlParameters: providerControlParameters,
           controlParametersLoaded: true
@@ -7018,14 +7021,14 @@ function (_React$Component) {
           }, initialSchema.properties)
         });
 
-        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Stack"], {
+        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_12__["Stack"], {
           gutter: 'md',
           className: "order_card"
-        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["StackItem"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Title"], {
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_12__["StackItem"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_12__["Title"], {
           size: 'lg'
-        }, " Configuration ")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["StackItem"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Form"], null, this.props.servicePlans.length > 1 && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Title"], {
+        }, " Configuration ")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_12__["StackItem"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_12__["Form"], null, this.props.servicePlans.length > 1 && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_12__["Title"], {
           size: 'md'
-        }, "Select Plan:"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, this.planOptions()))), !this.props.isLoading && this.props.servicePlans.length > 0 && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_Common_FormRenderer__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        }, "Select Plan:"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, this.planOptions()))), !this.props.isLoading && this.props.servicePlans.length > 0 && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_Common_FormRenderer__WEBPACK_IMPORTED_MODULE_15__["default"], {
           schema: formSchema,
           onSubmit: this.onSubmit,
           schemaType: "mozilla",
@@ -7033,7 +7036,7 @@ function (_React$Component) {
         }))));
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Form"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_11__["Bullseye"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, this.props.isLoading && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_12__["Form"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_12__["Bullseye"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, this.props.isLoading && react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
         color: '#00b9e4'
       }, " Loading..."))));
     }
@@ -7056,7 +7059,10 @@ OrderServiceFormStepConfiguration.propTypes = {
   imageUrl: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
   id: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
   name: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
-  sendSubmitOrder: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func.isRequired
+  sendSubmitOrder: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func.isRequired,
+  history: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.shape({
+    push: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func.isRequired
+  }).isRequired
 };
 OrderServiceFormStepConfiguration.defaultProps = {
   servicePlans: []
@@ -7075,15 +7081,15 @@ var mapStateToProps = function mapStateToProps(_ref) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchPlans: function fetchPlans(portfolioItemId) {
-      return dispatch(Object(_redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_13__["fetchServicePlans"])(portfolioItemId));
+      return dispatch(Object(_redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_14__["fetchServicePlans"])(portfolioItemId));
     },
     sendSubmitOrder: function sendSubmitOrder(data) {
-      return dispatch(Object(_redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_13__["sendSubmitOrder"])(data));
+      return dispatch(Object(_redux_Actions_OrderActions__WEBPACK_IMPORTED_MODULE_14__["sendSubmitOrder"])(data));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_10__["connect"])(mapStateToProps, mapDispatchToProps)(OrderServiceFormStepConfiguration));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_11__["connect"])(mapStateToProps, mapDispatchToProps)(OrderServiceFormStepConfiguration)));
 
 /***/ }),
 
@@ -7263,6 +7269,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PresentationalComponents_Platform_PlatformDashboard__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformDashboard */ "./src/PresentationalComponents/Platform/PlatformDashboard.js");
 /* harmony import */ var _redux_Actions_PortfolioActions__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../redux/Actions/PortfolioActions */ "./src/redux/Actions/PortfolioActions.js");
 /* harmony import */ var _PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../PresentationalComponents/Platform/PlatformItem */ "./src/PresentationalComponents/Platform/PlatformItem.js");
+/* harmony import */ var _Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../Helpers/Shared/helpers */ "./src/Helpers/Shared/helpers.js");
+
 
 
 
@@ -7369,9 +7377,8 @@ function (_Component) {
       var platformItems = _this.props.platformItems;
       return selectedPlatforms.map(function (_ref4) {
         var id = _ref4.id;
-        return platformItems[id] ? platformItems[id].filter(function (_ref5) {
-          var name = _ref5.name;
-          return name.trim().toLowerCase().includes(_this.state.searchValue.toLocaleLowerCase());
+        return platformItems[id] ? platformItems[id].filter(function (item) {
+          return Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_24__["filterServiceOffering"])(item, _this.state.searchValue);
         }).map(function (item) {
           return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_PresentationalComponents_Platform_PlatformItem__WEBPACK_IMPORTED_MODULE_23__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
             key: item.id
@@ -7435,11 +7442,11 @@ function (_Component) {
   return AddProductsToPortfolio;
 }(react__WEBPACK_IMPORTED_MODULE_9__["Component"]);
 
-var mapStateToProps = function mapStateToProps(_ref6) {
-  var _ref6$platformReducer = _ref6.platformReducer,
-      platformItems = _ref6$platformReducer.platformItems,
-      isPlatformDataLoading = _ref6$platformReducer.isPlatformDataLoading,
-      platforms = _ref6$platformReducer.platforms;
+var mapStateToProps = function mapStateToProps(_ref5) {
+  var _ref5$platformReducer = _ref5.platformReducer,
+      platformItems = _ref5$platformReducer.platformItems,
+      isPlatformDataLoading = _ref5$platformReducer.isPlatformDataLoading,
+      platforms = _ref5$platformReducer.platforms;
   return {
     platformItems: platformItems,
     isLoading: isPlatformDataLoading,
@@ -7567,6 +7574,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var Portfolio =
 /*#__PURE__*/
 function (_Component) {
@@ -7629,9 +7637,8 @@ function (_Component) {
 
       if (_this.props.portfolioItems && _this.props.portfolioItems.portfolioItems) {
         filteredItems = _this.props.portfolioItems.portfolioItems;
-        filteredItems = filteredItems.filter(function (_ref2) {
-          var name = _ref2.name;
-          return name.toLowerCase().includes(filterValue.toLowerCase());
+        filteredItems = filteredItems.filter(function (item) {
+          return Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_23__["filterServiceOffering"])(item, filterValue);
         });
       }
 
@@ -7644,13 +7651,13 @@ function (_Component) {
       });
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_this)), "renderProducts", function (_ref3) {
-      var title = _ref3.title,
-          filteredItems = _ref3.filteredItems,
-          addProductsRoute = _ref3.addProductsRoute,
-          removeProductsRoute = _ref3.removeProductsRoute,
-          editPortfolioRoute = _ref3.editPortfolioRoute,
-          removePortfolioRoute = _ref3.removePortfolioRoute;
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_this)), "renderProducts", function (_ref2) {
+      var title = _ref2.title,
+          filteredItems = _ref2.filteredItems,
+          addProductsRoute = _ref2.addProductsRoute,
+          removeProductsRoute = _ref2.removeProductsRoute,
+          editPortfolioRoute = _ref2.editPortfolioRoute,
+          removePortfolioRoute = _ref2.removePortfolioRoute;
       return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_10__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PresentationalComponents_Portfolio_PortfolioFilterToolbar__WEBPACK_IMPORTED_MODULE_17__["default"], {
         searchValue: _this.state.filterValue,
         onFilterChange: _this.handleFilterChange
@@ -7679,18 +7686,18 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_SmartComponents_ContentGallery_ContentGallery__WEBPACK_IMPORTED_MODULE_14__["default"], filteredItems));
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_this)), "renderAddProducts", function (_ref4) {
-      var portfolioRoute = _ref4.portfolioRoute;
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_this)), "renderAddProducts", function (_ref3) {
+      var portfolioRoute = _ref3.portfolioRoute;
       return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_SmartComponents_Portfolio_AddProductsToPortfolio__WEBPACK_IMPORTED_MODULE_16__["default"], {
         portfolio: _this.props.portfolio,
         portfolioRoute: portfolioRoute
       });
     });
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_this)), "renderRemoveProducts", function (_ref5) {
-      var portfolioRoute = _ref5.portfolioRoute,
-          filteredItems = _ref5.filteredItems,
-          title = _ref5.title;
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8___default()(_this)), "renderRemoveProducts", function (_ref4) {
+      var portfolioRoute = _ref4.portfolioRoute,
+          filteredItems = _ref4.filteredItems,
+          title = _ref4.title;
       return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_10___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_SmartComponents_Portfolio_RemovePortfolioItems__WEBPACK_IMPORTED_MODULE_25__["default"], {
         filterValue: _this.state.filterValue,
         onFilterChange: _this.handleFilterChange,
@@ -7730,9 +7737,8 @@ function (_Component) {
       var removePortfolioRoute = "".concat(this.props.match.url, "/remove-portfolio");
       var title = this.props.portfolio ? this.props.portfolio.name : '';
       var filteredItems = {
-        items: this.props.portfolioItems.filter(function (_ref6) {
-          var name = _ref6.name;
-          return name.toLowerCase().includes(_this2.state.filterValue.toLowerCase());
+        items: this.props.portfolioItems.filter(function (item) {
+          return Object(_Helpers_Shared_helpers__WEBPACK_IMPORTED_MODULE_23__["filterServiceOffering"])(item, _this2.state.filterValue);
         }).map(function (item) {
           return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_PortfolioItem__WEBPACK_IMPORTED_MODULE_19__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({
             key: item.id
@@ -7782,11 +7788,11 @@ function (_Component) {
   return Portfolio;
 }(react__WEBPACK_IMPORTED_MODULE_10__["Component"]);
 
-var mapStateToProps = function mapStateToProps(_ref7) {
-  var _ref7$portfolioReduce = _ref7.portfolioReducer,
-      selectedPortfolio = _ref7$portfolioReduce.selectedPortfolio,
-      portfolioItems = _ref7$portfolioReduce.portfolioItems,
-      isLoading = _ref7$portfolioReduce.isLoading;
+var mapStateToProps = function mapStateToProps(_ref5) {
+  var _ref5$portfolioReduce = _ref5.portfolioReducer,
+      selectedPortfolio = _ref5$portfolioReduce.selectedPortfolio,
+      portfolioItems = _ref5$portfolioReduce.portfolioItems,
+      isLoading = _ref5$portfolioReduce.isLoading;
   return {
     portfolio: selectedPortfolio,
     portfolioItems: portfolioItems,
