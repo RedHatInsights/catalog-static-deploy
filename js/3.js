@@ -12544,7 +12544,7 @@ var PortfolioCard = function PortfolioCard(_ref) {
       id = _ref.id,
       props = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2___default()(_ref, ["imageUrl", "name", "id"]);
 
-  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_7__["Card"], {
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_7__["GalleryItem"], null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_7__["Card"], {
     className: "content-gallery-card"
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
     className: "card-link",
@@ -12559,7 +12559,7 @@ var PortfolioCard = function PortfolioCard(_ref) {
     imageUrl: imageUrl
   }, props), {
     toDisplay: TO_DISPLAY
-  }))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_7__["CardFooter"], null)));
+  }))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_7__["CardFooter"], null))));
 };
 
 PortfolioCard.propTypes = {
@@ -14367,12 +14367,7 @@ var PortfolioItem = function PortfolioItem(props) {
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PresentationalComponents_Shared_service_offering_body__WEBPACK_IMPORTED_MODULE_6__["default"], props), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["CardFooter"], null));
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["GridItem"], {
-    sm: 12,
-    md: 6,
-    lg: 4,
-    xl: 3
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["Card"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["GalleryItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_5__["Card"], {
     className: "content-gallery-card"
   }, props.isSelectable ? renderCardContent() : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: props.orderUrl,
