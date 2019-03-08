@@ -6,7 +6,7 @@ node {
                       passphraseVariable: "",
                       usernameVariable: "")]) {
 
-      String APP_NAME = "service-portal"
+      String APP_NAME = "catalog"
       String BRANCH = env.BRANCH_NAME.replaceAll("origin/", "")
 
       if (BRANCH == "prod-stable") {
