@@ -1,6 +1,6 @@
 {
   "app_name": "catalog",
-  "src_hash": "db2b87433ef93c20e88fe70fdd293f5e4209aec3",
+  "src_hash": "31224c4707134f5ae4d228bd3c0cc6d2617c130e",
   "src_tag": "",
   "src_branch": "master",
   "npm_info": {
@@ -26513,7 +26513,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "504",
-    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/504750814"
+    "build_number": "505",
+    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/504813705"
   }
 }
