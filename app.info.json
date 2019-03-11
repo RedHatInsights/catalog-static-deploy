@@ -1,6 +1,6 @@
 {
   "app_name": "catalog",
-  "src_hash": "9aef9fc424795933cf54641f0b5f1d550f536dda",
+  "src_hash": "db2b87433ef93c20e88fe70fdd293f5e4209aec3",
   "src_tag": "",
   "src_branch": "master",
   "npm_info": {
@@ -26200,9 +26200,14 @@
       "resolved": "https://registry.npmjs.org/@patternfly/react-tokens/-/react-tokens-1.10.3.tgz"
     },
     "@red-hat-insights/insights-frontend-components": {
-      "version": "3.35.7",
-      "from": "@red-hat-insights/insights-frontend-components@3.35.7",
-      "resolved": "https://registry.npmjs.org/@red-hat-insights/insights-frontend-components/-/insights-frontend-components-3.35.7.tgz"
+      "version": "3.39.1",
+      "from": "@red-hat-insights/insights-frontend-components@3.39.1",
+      "resolved": "https://registry.npmjs.org/@red-hat-insights/insights-frontend-components/-/insights-frontend-components-3.39.1.tgz"
+    },
+    "awesome-debounce-promise": {
+      "version": "2.1.0",
+      "from": "awesome-debounce-promise@2.1.0",
+      "resolved": "https://registry.npmjs.org/awesome-debounce-promise/-/awesome-debounce-promise-2.1.0.tgz"
     },
     "babel-core": {
       "version": "7.0.0-bridge.0",
@@ -26290,9 +26295,9 @@
       "resolved": "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.12.4.tgz"
     },
     "fetch-mock": {
-      "version": "7.3.1",
-      "from": "fetch-mock@7.3.1",
-      "resolved": "https://registry.npmjs.org/fetch-mock/-/fetch-mock-7.3.1.tgz"
+      "version": "7.3.0",
+      "from": "fetch-mock@7.3.0",
+      "resolved": "https://registry.npmjs.org/fetch-mock/-/fetch-mock-7.3.0.tgz"
     },
     "file-loader": {
       "version": "1.1.11",
@@ -26508,7 +26513,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "500",
-    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/503819026"
+    "build_number": "504",
+    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/504750814"
   }
 }

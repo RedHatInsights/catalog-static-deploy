@@ -1,4 +1,3 @@
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -30,7 +29,6 @@ section.ins-l-icon-group__with-major .ins-battery:last-of-type {
     font-weight: 500;
     margin: 0 10px; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -112,7 +110,6 @@ h1 {
 .pf-c-pagination__menu-text {
   color: var(--pf-c-pagination__menu-text--Color); }
 
-/* stylelint-enable */
 .pf-c-options-menu {
   --pf-c-options-menu__toggle--Background: transparent;
   --pf-c-options-menu__toggle--PaddingTop: var(--pf-global--spacer--form-element);
@@ -120,14 +117,18 @@ h1 {
   --pf-c-options-menu__toggle--PaddingBottom: var(--pf-global--spacer--form-element);
   --pf-c-options-menu__toggle--PaddingLeft: var(--pf-global--spacer--sm);
   --pf-c-options-menu__toggle--MinWidth: var(--pf-global--target-size--MinWidth);
+  --pf-c-options-menu__toggle--LineHeight: var(--pf-global--LineHeight--md);
   --pf-c-options-menu__toggle--BorderWidth: var(--pf-global--BorderWidth--sm);
   --pf-c-options-menu__toggle--BorderTopColor: var(--pf-global--BorderColor--light-200);
   --pf-c-options-menu__toggle--BorderRightColor: var(--pf-global--BorderColor--light-200);
   --pf-c-options-menu__toggle--BorderBottomColor: var(--pf-global--BorderColor--dark);
   --pf-c-options-menu__toggle--BorderLeftColor: var(--pf-global--BorderColor--light-200);
+  --pf-c-options-menu__toggle--Color: var(--pf-global--Color--100);
   --pf-c-options-menu__toggle--hover--BorderBottomColor: var(--pf-global--active-color--100);
   --pf-c-options-menu__toggle--active--BorderBottomWidth: var(--pf-global--BorderWidth--md);
   --pf-c-options-menu__toggle--active--BorderBottomColor: var(--pf-global--active-color--100);
+  --pf-c-options-menu__toggle--focus--BorderBottomWidth: var(--pf-global--BorderWidth--md);
+  --pf-c-options-menu__toggle--focus--BorderBottomColor: var(--pf-global--active-color--100);
   --pf-c-options-menu__toggle--expanded--BorderBottomWidth: var(--pf-global--BorderWidth--md);
   --pf-c-options-menu__toggle--expanded--BorderBottomColor: var(--pf-global--active-color--100);
   --pf-c-options-menu__toggle--m-plain--Color: var(--pf-global--Color--200);
@@ -188,6 +189,12 @@ h1 {
   --pf-c-options-menu__toggle--BorderBottomColor: var(--pf-c-options-menu__toggle--active--BorderBottomColor);
   border-bottom-width: var(--pf-c-options-menu__toggle--active--BorderBottomWidth); }
 
+.pf-c-options-menu__toggle:not(.pf-m-plain):focus::before, .pf-c-options-menu__toggle:not(.pf-m-plain).pf-m-focus::before,
+.pf-c-options-menu.pf-m-text:not(.pf-m-plain) .pf-c-options-menu__toggle-button:focus::before,
+.pf-c-options-menu.pf-m-text:not(.pf-m-plain) .pf-c-options-menu__toggle-button.pf-m-focus::before {
+  --pf-c-options-menu__toggle--BorderBottomColor: var(--pf-c-options-menu__toggle--focus--BorderBottomColor);
+  border-bottom-width: var(--pf-c-options-menu__toggle--focus--BorderBottomWidth); }
+
 .pf-c-options-menu__toggle {
   position: relative;
   display: flex;
@@ -196,6 +203,8 @@ h1 {
   min-width: var(--pf-c-options-menu__toggle--MinWidth);
   max-width: 100%;
   padding-left: var(--pf-c-options-menu__toggle--PaddingLeft);
+  line-height: var(--pf-c-options-menu__toggle--LineHeight);
+  color: var(--pf-c-options-menu__toggle--Color);
   background: var(--pf-c-options-menu__toggle--Background);
   border: none; }
   .pf-c-options-menu__toggle > * {
@@ -209,7 +218,9 @@ h1 {
     border-bottom-width: var(--pf-c-options-menu__toggle--expanded--BorderBottomWidth); }
   .pf-c-options-menu__toggle.pf-m-plain:not(.pf-m-text) {
     color: var(--pf-c-options-menu__toggle--m-plain--Color); }
-  .pf-c-options-menu__toggle.pf-m-plain:hover, .pf-c-options-menu__toggle.pf-m-plain.pf-m-hover, .pf-c-options-menu__toggle.pf-m-plain:active, .pf-c-options-menu__toggle.pf-m-plain.pf-m-active,
+  .pf-c-options-menu__toggle.pf-m-plain > * {
+    line-height: var(--pf-c-options-menu__toggle--LineHeight); }
+  .pf-c-options-menu__toggle.pf-m-plain:hover, .pf-c-options-menu__toggle.pf-m-plain.pf-m-hover, .pf-c-options-menu__toggle.pf-m-plain:active, .pf-c-options-menu__toggle.pf-m-plain.pf-m-active, .pf-c-options-menu__toggle.pf-m-plain.pf-m-focus, .pf-c-options-menu__toggle.pf-m-plain:focus,
   .pf-c-options-menu.pf-m-expanded > .pf-c-options-menu__toggle.pf-m-plain {
     --pf-c-options-menu__toggle--m-plain--Color: var(--pf-c-options-menu__toggle--m-plain--hover--Color); }
 
@@ -288,16 +299,6 @@ h1 {
   --pf-global--link--Color--hover: var(--pf-global--link--Color--dark--hover);
   --pf-global--BackgroundColor--100: var(--pf-global--BackgroundColor--light-100); }
 
-/* stylelint-enable */
-.pf-c-form-control {
-  --pf-global--Color--100: var(--pf-global--Color--dark-100);
-  --pf-global--Color--200: var(--pf-global--Color--dark-200);
-  --pf-global--BorderColor: var(--pf-global--BorderColor--dark);
-  --pf-global--primary-color--100: var(--pf-global--primary-color--dark-100);
-  --pf-global--link--Color: var(--pf-global--link--Color--dark);
-  --pf-global--link--Color--hover: var(--pf-global--link--Color--dark--hover);
-  --pf-global--BackgroundColor--100: var(--pf-global--BackgroundColor--light-100); }
-
 .pf-c-input-group {
   --pf-c-input-group__text--FontSize: var(--pf-global--FontSize--md);
   --pf-c-input-group__text--PaddingRight: var(--pf-global--spacer--sm);
@@ -356,20 +357,9 @@ h1 {
     border: var(--pf-c-input-group__text--BorderWidth) solid;
     border-color: var(--pf-c-input-group__text--BorderTopColor) var(--pf-c-input-group__text--BorderRightColor) var(--pf-c-input-group__text--BorderBottomColor) var(--pf-c-input-group__text--BorderLeftColor); }
 
-/* stylelint-enable */
-.pf-c-form-control {
-  --pf-global--Color--100: var(--pf-global--Color--dark-100);
-  --pf-global--Color--200: var(--pf-global--Color--dark-200);
-  --pf-global--BorderColor: var(--pf-global--BorderColor--dark);
-  --pf-global--primary-color--100: var(--pf-global--primary-color--dark-100);
-  --pf-global--link--Color: var(--pf-global--link--Color--dark);
-  --pf-global--link--Color--hover: var(--pf-global--link--Color--dark--hover);
-  --pf-global--BackgroundColor--100: var(--pf-global--BackgroundColor--light-100); }
-
 .pf-c-form-control {
   --pf-c-form-control--FontSize: var(--pf-global--FontSize--md);
   --pf-c-form-control--LineHeight: var(--pf-global--LineHeight--md);
-  --pf-c-form-control--Color: var(--pf-global--Color--dark-100);
   --pf-c-form-control--BorderWidth: var(--pf-global--BorderWidth--sm);
   --pf-c-form-control--BorderTopColor: var(--pf-global--BorderColor--light-200);
   --pf-c-form-control--BorderRightColor: var(--pf-global--BorderColor--light-200);
@@ -377,6 +367,7 @@ h1 {
   --pf-c-form-control--BorderLeftColor: var(--pf-global--BorderColor--light-200);
   --pf-c-form-control--BorderRadius: 0;
   --pf-c-form-control--BackgroundColor: var(--pf-global--BackgroundColor--light-100);
+  --pf-c-form-control--Height: calc(var(--pf-c-form-control--FontSize) * var(--pf-c-form-control--LineHeight) + var(--pf-c-form-control--BorderWidth) * 2 + var(--pf-c-form-control--PaddingTop) + var(--pf-c-form-control--PaddingBottom));
   --pf-c-form-control--PaddingTop: calc(var(--pf-global--spacer--form-element) - var(--pf-global--BorderWidth--sm));
   --pf-c-form-control--PaddingBottom: calc(var(--pf-global--spacer--form-element) - var(--pf-global--BorderWidth--sm));
   --pf-c-form-control--PaddingRight: var(--pf-global--spacer--sm);
@@ -410,12 +401,12 @@ h1 {
   --pf-c-form-control__select--Background: var(--pf-c-form-control__select--arrow--Background);
   --pf-c-form-control__select--invalid--Background: var(--pf-c-form-control--invalid--exclamation--Background), var(--pf-c-form-control__select--arrow--Background);
   --pf-c-form-control__select--invalid--PaddingRight: calc(var(--pf-global--spacer--sm) + var(--pf-global--spacer--2xl));
+  color: var(--pf-global--Color--100);
   position: relative;
   width: 100%;
   padding: var(--pf-c-form-control--PaddingTop) var(--pf-c-form-control--PaddingRight) var(--pf-c-form-control--PaddingBottom) var(--pf-c-form-control--PaddingLeft);
   font-size: var(--pf-c-form-control--FontSize);
   line-height: var(--pf-c-form-control--LineHeight);
-  color: var(--pf-c-form-control--Color);
   background-color: var(--pf-c-form-control--BackgroundColor);
   border: var(--pf-c-form-control--BorderWidth) solid;
   border-color: var(--pf-c-form-control--BorderTopColor) var(--pf-c-form-control--BorderRightColor) var(--pf-c-form-control--BorderBottomColor) var(--pf-c-form-control--BorderLeftColor);
@@ -426,6 +417,8 @@ h1 {
   /* stylelint-enable */ }
   .pf-c-form-control::placeholder {
     --pf-c-form-control--Color: var(--pf-c-form-control--placeholder--Color); }
+  .pf-c-form-control:not(textarea) {
+    height: var(--pf-c-form-control--Height); }
   .pf-c-form-control[readonly], .pf-c-form-control[readonly].pf-m-hover, .pf-c-form-control[readonly]:hover, .pf-c-form-control[readonly].pf-m-focus, .pf-c-form-control[readonly]:focus {
     --pf-c-form-control--BorderBottomColor: var(--pf-c-form-control--readonly--focus--BorderBottomColor);
     padding-bottom: var(--pf-c-form-control--readonly--focus--PaddingBottom);
@@ -455,16 +448,6 @@ h1 {
       --pf-c-form-control--PaddingRight: var(--pf-c-form-control__select--invalid--PaddingRight);
       --pf-c-form-control--invalid--BackgroundPosition: calc(100% - var(--pf-global--spacer--sm) - var(--pf-global--spacer--lg));
       --pf-c-form-control--invalid--Background: var(--pf-c-form-control__select--invalid--Background); }
-
-/* stylelint-enable */
-.pf-c-form-control {
-  --pf-global--Color--100: var(--pf-global--Color--dark-100);
-  --pf-global--Color--200: var(--pf-global--Color--dark-200);
-  --pf-global--BorderColor: var(--pf-global--BorderColor--dark);
-  --pf-global--primary-color--100: var(--pf-global--primary-color--dark-100);
-  --pf-global--link--Color: var(--pf-global--link--Color--dark);
-  --pf-global--link--Color--hover: var(--pf-global--link--Color--dark--hover);
-  --pf-global--BackgroundColor--100: var(--pf-global--BackgroundColor--light-100); }
 
 :root {
   --ins-color--orange: #ec7a08; }
@@ -894,7 +877,6 @@ button:focus {
   .pf-c-table.ins-c-table td, .pf-c-table.ins-c-table th {
     border: none; } }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -933,7 +915,6 @@ button:focus {
     color: var(--pf-global--link--Color--hover);
     border-bottom: 3px var(--pf-global--link--Color--hover) solid; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -948,7 +929,6 @@ button:focus {
   margin-bottom: 15px;
   margin-bottom: 0.9375rem; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -968,7 +948,6 @@ button:focus {
   .pf-c-modal-box.ins-c-wizard .pf-c-modal-box__body {
     max-height: none; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -980,9 +959,8 @@ button:focus {
   margin-left: 0.25rem; }
 
 .ins-c-reboot.ins-m-red span, .ins-c-reboot.ins-m-red svg {
-  color: #c00; }
+  color: var(--pf-global--danger-color--100); }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -1017,26 +995,23 @@ button:focus {
     background-position: 500px 0px;
     background-position: 31.25rem 0rem; } }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
 button:focus {
   outline: none; }
 
+:root {
+  --ins-c-table-toolbar--PaddingVertical: 16px;
+  --ins-c-table-toolbar--PaddingHorizontal: 32px; }
+
 .ins-c-table__toolbar, .ins-c-table__toolbar-results {
   background: var(--pf-global--Color--light-100);
   border-bottom: 1px solid var(--pf-global--BorderColor--light-200); }
 
-.ins-c-table__toolbar {
-  padding: 20px;
-  padding: 1.25rem; }
+.ins-c-table__toolbar, .ins-c-table__toolbar-results {
+  padding: var(--ins-c-table-toolbar--PaddingVertical) var(--ins-c-table-toolbar--PaddingHorizontal); }
 
-.ins-c-table__toolbar-results {
-  padding: 10px 20px;
-  padding: 0.625rem 1.25rem; }
-
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -1052,7 +1027,6 @@ button:focus {
     display: flex;
     justify-content: center; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -1122,7 +1096,6 @@ button:focus {
       display: inline-block;
       margin-right: 5px; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -1175,7 +1148,7 @@ button:focus {
   .ins-l-donut__legend {
     grid-template-columns: auto; } }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: var(--pf-global--breakpoint--lg)) {
   .ins-l-donut__legend {
     grid-template-columns: auto auto; } }
 
@@ -1210,12 +1183,12 @@ button:focus {
   align-items: center;
   justify-content: center;
   grid-column-gap: 15px; }
-  @media only screen and (min-width: 0) {
+  @media only screen and (min-width: var(--pf-global--breakpoint--xs)) {
     .ins-l-donut-wrapper.legend-right {
       grid-template: 'donut' 'legend'; }
     .ins-l-donut-wrapper.legend-left {
       grid-template: 'legend' 'donut'; } }
-  @media only screen and (min-width: 576px) {
+  @media only screen and (min-width: var(--pf-global--breakpoint--sm)) {
     .ins-l-donut-wrapper.legend-right {
       grid-template: 'donut legend'; }
     .ins-l-donut-wrapper.legend-left {
@@ -1225,7 +1198,6 @@ button:focus {
   .ins-l-donut-wrapper.legend-bottom {
     grid-template: 'donut' 'legend'; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -1264,7 +1236,7 @@ button:focus {
   .ins-l-pie__legend {
     grid-template-columns: auto; } }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: var(--pf-global--breakpoint--lg)) {
   .ins-l-pie__legend {
     grid-template-columns: auto auto; } }
 
@@ -1299,12 +1271,12 @@ button:focus {
   align-items: center;
   justify-content: center;
   grid-column-gap: 15px; }
-  @media only screen and (min-width: 0) {
+  @media only screen and (min-width: var(--pf-global--breakpoint--xs)) {
     .ins-l-pie-wrapper.legend-right {
       grid-template: 'pie' 'legend'; }
     .ins-l-pie-wrapper.legend-left {
       grid-template: 'legend' 'pie'; } }
-  @media only screen and (min-width: 576px) {
+  @media only screen and (min-width: var(--pf-global--breakpoint--sm)) {
     .ins-l-pie-wrapper.legend-right {
       grid-template: 'pie legend'; }
     .ins-l-pie-wrapper.legend-left {
@@ -1965,7 +1937,6 @@ button:focus {
 
 /* stylelint-enable */
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -2077,6 +2048,28 @@ button:focus {
   min-width: 55px;
   text-align: right;
   margin-right: 5px; }
+
+.table-header-icon {
+  margin-right: 5px;
+  margin-right: 0.3125rem; }
+
+.status-dropdown-column {
+  padding: var(--pf-global--spacer--sm);
+  display: flex;
+  align-items: center;
+  border: transparent thin solid;
+  position: relative; }
+  .status-dropdown-column:hover {
+    background-color: var(--pf-global--active-color--200);
+    border-color: var(--pf-global--BorderColor--light);
+    cursor: pointer; }
+    .status-dropdown-column:hover > svg {
+      visibility: visible; }
+  .status-dropdown-column > svg {
+    visibility: hidden;
+    position: absolute;
+    top: var(--pf-global--spacer--sm);
+    right: var(--pf-global--spacer--sm); }
 
 .pf-c-card.ins-error-card div {
   text-align: center; }

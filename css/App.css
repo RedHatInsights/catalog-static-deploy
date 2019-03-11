@@ -1,4 +1,3 @@
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -88,7 +87,6 @@ ul.navigation-secondary {
   .top-toolbar .top-toolbar-title {
     min-width: 200px; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -159,7 +157,6 @@ ul.navigation-secondary {
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -239,7 +236,6 @@ ul.navigation-secondary {
   .searchPlatforms > div {
     width: 100%; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -334,7 +330,6 @@ ul.navigation-secondary {
   margin-left: 25px;
   margin-right: 25px; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -415,7 +410,6 @@ ul.navigation-secondary {
   color: white;
   padding: 8px 24px; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -486,7 +480,6 @@ ul.navigation-secondary {
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -566,7 +559,6 @@ ul.navigation-secondary {
   .searchPlatforms > div {
     width: 100%; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -652,7 +644,6 @@ ul.navigation-secondary {
   padding-left: 10px;
   padding-right: 10px; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -732,7 +723,6 @@ ul.navigation-secondary {
   .searchPlatforms > div {
     width: 100%; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -812,7 +802,6 @@ ul.navigation-secondary {
 .buttons_right {
   float: right; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -902,7 +891,6 @@ ul.navigation-secondary {
   margin-right: 20px;
   font-size: small; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -997,7 +985,6 @@ ul.navigation-secondary {
   .searchPlatforms > div {
     width: 100%; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -1077,7 +1064,6 @@ ul.navigation-secondary {
 .order-data-list .order-cell {
   align-self: center; }
 
-/* stylelint-enable */
 :root {
   --ins-color--orange: #ec7a08; }
 
