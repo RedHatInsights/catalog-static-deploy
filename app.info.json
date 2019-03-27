@@ -1,6 +1,6 @@
 {
   "app_name": "catalog",
-  "src_hash": "c97d0742a73951f704cf1e17377b6ebfb53786fe",
+  "src_hash": "650bef177732b836db7fb4471a35318410655697",
   "src_tag": "",
   "src_branch": "qa-beta",
   "npm_info": {
@@ -26845,6 +26845,11 @@
       "from": "sass-loader@7.1.0",
       "resolved": "https://registry.npmjs.org/sass-loader/-/sass-loader-7.1.0.tgz"
     },
+    "smoothscroll-polyfill": {
+      "version": "0.4.4",
+      "from": "smoothscroll-polyfill@0.4.4",
+      "resolved": "https://registry.npmjs.org/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.4.tgz"
+    },
     "source-map-loader": {
       "version": "0.2.4",
       "from": "source-map-loader@0.2.4",
@@ -26914,7 +26919,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "602",
-    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/511991791"
+    "build_number": "609",
+    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/512240286"
   }
 }
