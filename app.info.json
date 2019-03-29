@@ -1,6 +1,6 @@
 {
   "app_name": "catalog",
-  "src_hash": "c16292ffc756ccc46b51dd0b8879aca8eb338623",
+  "src_hash": "89bfc7d1662ae0946603a579424ede6f224cd1af",
   "src_tag": "",
   "src_branch": "qa-beta",
   "npm_info": {
@@ -51,10 +51,10 @@
       "from": "@data-driven-forms/react-form-renderer@1.9.6",
       "resolved": "https://registry.npmjs.org/@data-driven-forms/react-form-renderer/-/react-form-renderer-1.9.6.tgz"
     },
-    "@manageiq/service-portal-api": {
-      "version": "1.3.3",
-      "from": "@manageiq/service-portal-api@1.3.3",
-      "resolved": "https://registry.npmjs.org/@manageiq/service-portal-api/-/service-portal-api-1.3.3.tgz"
+    "@manageiq/catalog-api-jsclient": {
+      "version": "1.0.0",
+      "from": "@manageiq/catalog-api-jsclient@1.0.0",
+      "resolved": "https://registry.npmjs.org/@manageiq/catalog-api-jsclient/-/catalog-api-jsclient-1.0.0.tgz"
     },
     "@manageiq/topological_inventory": {
       "version": "1.1.0",
@@ -14887,13 +14887,10 @@
                             "_requiredBy": [
                               "/@babel/preset-env",
                               "/babel-traverse",
-                              "/history",
                               "/jest-haste-map",
                               "/react-bootstrap",
                               "/react-bootstrap-typeahead",
                               "/react-redux",
-                              "/react-router",
-                              "/react-router-dom",
                               "/uncontrollable"
                             ],
                             "_resolved": "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz",
@@ -26801,9 +26798,9 @@
       "resolved": "https://registry.npmjs.org/react-redux/-/react-redux-5.1.1.tgz"
     },
     "react-router-dom": {
-      "version": "4.3.1",
-      "from": "react-router-dom@4.3.1",
-      "resolved": "https://registry.npmjs.org/react-router-dom/-/react-router-dom-4.3.1.tgz"
+      "version": "5.0.0",
+      "from": "react-router-dom@5.0.0",
+      "resolved": "https://registry.npmjs.org/react-router-dom/-/react-router-dom-5.0.0.tgz"
     },
     "react-select": {
       "version": "2.4.1",
@@ -26919,7 +26916,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "630",
-    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/512762431"
+    "build_number": "636",
+    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/512950053"
   }
 }
