@@ -1,6 +1,6 @@
 {
   "app_name": "catalog",
-  "src_hash": "89bfc7d1662ae0946603a579424ede6f224cd1af",
+  "src_hash": "f89f6fef3a5f44cfd3d4a8ef47b67a172fd7c773",
   "src_tag": "",
   "src_branch": "qa-stable",
   "npm_info": {
@@ -50,11 +50,6 @@
       "version": "1.9.6",
       "from": "@data-driven-forms/react-form-renderer@1.9.6",
       "resolved": "https://registry.npmjs.org/@data-driven-forms/react-form-renderer/-/react-form-renderer-1.9.6.tgz"
-    },
-    "@manageiq/catalog-api-jsclient": {
-      "version": "1.0.0",
-      "from": "@manageiq/catalog-api-jsclient@1.0.0",
-      "resolved": "https://registry.npmjs.org/@manageiq/catalog-api-jsclient/-/catalog-api-jsclient-1.0.0.tgz"
     },
     "@manageiq/topological_inventory": {
       "version": "1.1.0",
@@ -14886,6 +14881,8 @@
                             },
                             "_requiredBy": [
                               "/@babel/preset-env",
+                              "/@red-hat-insights/insights-frontend-components/react-router",
+                              "/@red-hat-insights/insights-frontend-components/react-router-dom",
                               "/babel-traverse",
                               "/jest-haste-map",
                               "/react-bootstrap",
@@ -22937,6 +22934,8 @@
                 "_requiredBy": [
                   "#DEV:/",
                   "/@red-hat-insights/insights-frontend-components",
+                  "/@red-hat-insights/insights-frontend-components/react-router",
+                  "/@red-hat-insights/insights-frontend-components/react-router-dom",
                   "/@tippy.js/react",
                   "/enzyme-adapter-react-16",
                   "/enzyme-adapter-utils",
@@ -26602,10 +26601,20 @@
       "from": "@red-hat-insights/insights-frontend-components@3.39.1",
       "resolved": "https://registry.npmjs.org/@red-hat-insights/insights-frontend-components/-/insights-frontend-components-3.39.1.tgz"
     },
+    "@redhat-cloud-services/catalog-client": {
+      "version": "1.0.0",
+      "from": "@redhat-cloud-services/catalog-client@1.0.0",
+      "resolved": "https://registry.npmjs.org/@redhat-cloud-services/catalog-client/-/catalog-client-1.0.0.tgz"
+    },
     "awesome-debounce-promise": {
       "version": "2.1.0",
       "from": "awesome-debounce-promise@2.1.0",
       "resolved": "https://registry.npmjs.org/awesome-debounce-promise/-/awesome-debounce-promise-2.1.0.tgz"
+    },
+    "axios": {
+      "version": "0.18.0",
+      "from": "axios@0.18.0",
+      "resolved": "https://registry.npmjs.org/axios/-/axios-0.18.0.tgz"
     },
     "babel-core": {
       "version": "7.0.0-bridge.0",
@@ -26916,7 +26925,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "638",
-    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/512950084"
+    "build_number": "647",
+    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/513107952"
   }
 }
