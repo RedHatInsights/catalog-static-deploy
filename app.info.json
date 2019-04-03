@@ -1,6 +1,6 @@
 {
   "app_name": "catalog",
-  "src_hash": "474294c5d217a260dfd3da1e96b326341d32a7b9",
+  "src_hash": "12c0e322ea5d82c4154c18585fe31fea5a4674ad",
   "src_tag": "",
   "src_branch": "prod-beta",
   "npm_info": {
@@ -26601,6 +26601,11 @@
       "from": "@red-hat-insights/insights-frontend-components@3.39.1",
       "resolved": "https://registry.npmjs.org/@red-hat-insights/insights-frontend-components/-/insights-frontend-components-3.39.1.tgz"
     },
+    "@redhat-cloud-services/approval-client": {
+      "version": "1.0.4",
+      "from": "@redhat-cloud-services/approval-client@1.0.4",
+      "resolved": "https://registry.npmjs.org/@redhat-cloud-services/approval-client/-/approval-client-1.0.4.tgz"
+    },
     "@redhat-cloud-services/catalog-client": {
       "version": "1.0.0",
       "from": "@redhat-cloud-services/catalog-client@1.0.0",
@@ -26925,7 +26930,7 @@
 },
   "travis": {
     "event_type": "push",
-    "build_number": "653",
-    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/513196526"
+    "build_number": "694",
+    "build_web_url": "https://travis-ci.org/ManageIQ/catalog-ui/builds/515199014"
   }
 }

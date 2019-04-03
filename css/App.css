@@ -15,6 +15,9 @@ button:focus {
   color: #282d33 !important;
   font-weight: 400 !important; }
 
+.pf-c-dropdown__menu a {
+  text-decoration: none !important; }
+
 .text-align-right {
   text-align: right; }
 
@@ -67,6 +70,9 @@ button:focus {
   color: #282d33 !important;
   font-weight: 400 !important; }
 
+.pf-c-dropdown__menu a {
+  text-decoration: none !important; }
+
 .text-align-right {
   text-align: right; }
 
@@ -115,6 +121,9 @@ button:focus {
   color: #282d33 !important;
   font-weight: 400 !important; }
 
+.pf-c-dropdown__menu a {
+  text-decoration: none !important; }
+
 .text-align-right {
   text-align: right; }
 
@@ -155,6 +164,9 @@ button:focus {
   cursor: pointer !important;
   color: #282d33 !important;
   font-weight: 400 !important; }
+
+.pf-c-dropdown__menu a {
+  text-decoration: none !important; }
 
 .text-align-right {
   text-align: right; }
@@ -202,6 +214,9 @@ button:focus {
   cursor: pointer !important;
   color: #282d33 !important;
   font-weight: 400 !important; }
+
+.pf-c-dropdown__menu a {
+  text-decoration: none !important; }
 
 .text-align-right {
   text-align: right; }
