@@ -5077,21 +5077,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components/components/Notifications */ "./node_modules/@red-hat-insights/insights-frontend-components/components/Notifications.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _common_form_renderer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../common/form-renderer */ "./src/smart-components/common/form-renderer.js");
-/* harmony import */ var _redux_actions_approval_actions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../redux/actions/approval-actions */ "./src/redux/actions/approval-actions.js");
-/* harmony import */ var _forms_portfolio_form_schema__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../forms/portfolio-form.schema */ "./src/forms/portfolio-form.schema.js");
-/* harmony import */ var _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../redux/actions/portfolio-actions */ "./src/redux/actions/portfolio-actions.js");
-
-
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var _common_form_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../common/form-renderer */ "./src/smart-components/common/form-renderer.js");
+/* harmony import */ var _redux_actions_approval_actions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../redux/actions/approval-actions */ "./src/redux/actions/approval-actions.js");
+/* harmony import */ var _forms_portfolio_form_schema__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../forms/portfolio-form.schema */ "./src/forms/portfolio-form.schema.js");
+/* harmony import */ var _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../redux/actions/portfolio-actions */ "./src/redux/actions/portfolio-actions.js");
 
 
 
@@ -5107,7 +5102,6 @@ __webpack_require__.r(__webpack_exports__);
 var AddPortfolioModal = function AddPortfolioModal(_ref) {
   var goBack = _ref.history.goBack,
       addPortfolio = _ref.addPortfolio,
-      addNotification = _ref.addNotification,
       fetchPortfolios = _ref.fetchPortfolios,
       initialValues = _ref.initialValues,
       updatePortfolio = _ref.updatePortfolio,
@@ -5126,14 +5120,10 @@ var AddPortfolioModal = function AddPortfolioModal(_ref) {
   };
 
   var onCancel = function onCancel() {
-    return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["pipe"])(addNotification({
-      variant: 'warning',
-      title: initialValues ? 'Editing portfolio' : 'Adding portfolio',
-      description: initialValues ? 'Edit portfolio was cancelled by the user.' : 'Adding portfolio was cancelled by the user.'
-    }), goBack());
+    return goBack();
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_7__["Modal"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_6__["Modal"], {
     title: initialValues ? 'Edit portfolio' : 'Create portfolio',
     isOpen: true,
     onClose: onCancel,
@@ -5142,8 +5132,8 @@ var AddPortfolioModal = function AddPortfolioModal(_ref) {
     style: {
       padding: 8
     }
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common_form_renderer__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    schema: Object(_forms_portfolio_form_schema__WEBPACK_IMPORTED_MODULE_11__["createPortfolioSchema"])(!initialValues, workflows),
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_common_form_renderer__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    schema: Object(_forms_portfolio_form_schema__WEBPACK_IMPORTED_MODULE_9__["createPortfolioSchema"])(!initialValues, workflows),
     schemaType: "default",
     onSubmit: onSubmit,
     onCancel: onCancel,
@@ -5156,18 +5146,18 @@ var AddPortfolioModal = function AddPortfolioModal(_ref) {
 };
 
 AddPortfolioModal.propTypes = {
-  history: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
-    goBack: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired
+  history: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    goBack: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired
   }).isRequired,
-  addPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired,
-  addNotification: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired,
-  fetchPortfolios: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired,
-  initialValues: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object,
-  updatePortfolio: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired,
-  fetchWorkflows: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired,
-  workflows: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
-    value: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number, prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string]).isRequired,
-    label: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired
+  addPortfolio: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
+  addNotification: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
+  fetchPortfolios: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
+  initialValues: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object,
+  updatePortfolio: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
+  fetchWorkflows: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
+  workflows: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    value: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number, prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string]).isRequired,
+    label: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired
   })).isRequired
 };
 
@@ -5185,16 +5175,15 @@ var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return Object(redux__WEBPACK_IMPORTED_MODULE_5__["bindActionCreators"])({
-    addNotification: _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_8__["addNotification"],
-    addPortfolio: _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_12__["addPortfolio"],
-    updatePortfolio: _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_12__["updatePortfolio"],
-    fetchPortfolios: _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_12__["fetchPortfolios"],
-    fetchWorkflows: _redux_actions_approval_actions__WEBPACK_IMPORTED_MODULE_10__["fetchWorkflows"]
+  return Object(redux__WEBPACK_IMPORTED_MODULE_4__["bindActionCreators"])({
+    addPortfolio: _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_10__["addPortfolio"],
+    updatePortfolio: _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_10__["updatePortfolio"],
+    fetchPortfolios: _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_10__["fetchPortfolios"],
+    fetchWorkflows: _redux_actions_approval_actions__WEBPACK_IMPORTED_MODULE_8__["fetchWorkflows"]
   }, dispatch);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["connect"])(mapStateToProps, mapDispatchToProps)(AddPortfolioModal)));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(AddPortfolioModal)));
 
 /***/ }),
 
@@ -6849,7 +6838,6 @@ var RemovePortfolioModal = function RemovePortfolioModal(_ref) {
       goBack = _ref$history.goBack,
       push = _ref$history.push,
       removePortfolio = _ref.removePortfolio,
-      addNotification = _ref.addNotification,
       fetchPortfolios = _ref.fetchPortfolios,
       portfolio = _ref.portfolio;
 
@@ -6860,11 +6848,7 @@ var RemovePortfolioModal = function RemovePortfolioModal(_ref) {
   };
 
   var onCancel = function onCancel() {
-    return Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["pipe"])(addNotification({
-      variant: 'warning',
-      title: 'Removing portfolio',
-      description: 'Removing portfolio was cancelled by the user.'
-    }), goBack());
+    return goBack();
   };
 
   if (!portfolio) {
@@ -6955,15 +6939,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
 /* harmony import */ var _forms_portfolio_share_form_schema__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../forms/portfolio-share-form.schema */ "./src/forms/portfolio-share-form.schema.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components/components/Notifications */ "./node_modules/@red-hat-insights/insights-frontend-components/components/Notifications.js");
-/* harmony import */ var _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../redux/actions/portfolio-actions */ "./src/redux/actions/portfolio-actions.js");
-/* harmony import */ var _redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../redux/actions/share-actions */ "./src/redux/actions/share-actions.js");
-/* harmony import */ var _redux_actions_rbac_actions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../redux/actions/rbac-actions */ "./src/redux/actions/rbac-actions.js");
-/* harmony import */ var _presentational_components_shared_loader_placeholders__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../presentational-components/shared/loader-placeholders */ "./src/presentational-components/shared/loader-placeholders.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-
-
+/* harmony import */ var _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../redux/actions/portfolio-actions */ "./src/redux/actions/portfolio-actions.js");
+/* harmony import */ var _redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../redux/actions/share-actions */ "./src/redux/actions/share-actions.js");
+/* harmony import */ var _redux_actions_rbac_actions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../redux/actions/rbac-actions */ "./src/redux/actions/rbac-actions.js");
+/* harmony import */ var _presentational_components_shared_loader_placeholders__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../presentational-components/shared/loader-placeholders */ "./src/presentational-components/shared/loader-placeholders.js");
 
 
 
@@ -6982,7 +6961,6 @@ __webpack_require__.r(__webpack_exports__);
 var SharePortfolioModal = function SharePortfolioModal(_ref) {
   var goBack = _ref.history.goBack,
       isLoading = _ref.isLoading,
-      addNotification = _ref.addNotification,
       fetchPortfolios = _ref.fetchPortfolios,
       initialValues = _ref.initialValues,
       fetchShareInfo = _ref.fetchShareInfo,
@@ -7022,14 +7000,14 @@ var SharePortfolioModal = function SharePortfolioModal(_ref) {
 
       if (data[share.group_name] !== initialPerm) {
         if (!data[share.group_name]) {
-          sharePromises.push(Object(_redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_12__["unsharePortfolio"])({
+          sharePromises.push(Object(_redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_11__["unsharePortfolio"])({
             id: portfolioId,
             permissions: share.permissions,
             group_uuid: share.group_uuid
           }));
         } else {
           if (share.permissions.length > data[share.group_name].split(',').length) {
-            sharePromises.push(Object(_redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_12__["unsharePortfolio"])({
+            sharePromises.push(Object(_redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_11__["unsharePortfolio"])({
               id: portfolioId,
               permissions: ['catalog:portfolios:write'],
               group_uuid: share.group_uuid
@@ -7050,11 +7028,7 @@ var SharePortfolioModal = function SharePortfolioModal(_ref) {
   };
 
   var onCancel = function onCancel() {
-    return Object(rxjs__WEBPACK_IMPORTED_MODULE_15__["pipe"])(addNotification({
-      variant: 'warning',
-      title: 'Share portfolio',
-      description: 'Share portfolio was cancelled by the user.'
-    }), goBack());
+    return goBack();
   };
 
   var permissionOptions = [{
@@ -7083,7 +7057,7 @@ var SharePortfolioModal = function SharePortfolioModal(_ref) {
       isOpen: true,
       isLarge: true,
       onClose: onCancel
-    }, isLoading && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_presentational_components_shared_loader_placeholders__WEBPACK_IMPORTED_MODULE_14__["ShareLoader"], null), !isLoading && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }, isLoading && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_presentational_components_shared_loader_placeholders__WEBPACK_IMPORTED_MODULE_13__["ShareLoader"], null), !isLoading && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       style: {
         padding: 8
       }
@@ -7155,12 +7129,11 @@ var mapStateToProps = function mapStateToProps(_ref3, _ref4) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return Object(redux__WEBPACK_IMPORTED_MODULE_7__["bindActionCreators"])({
-    addNotification: _red_hat_insights_insights_frontend_components_components_Notifications__WEBPACK_IMPORTED_MODULE_10__["addNotification"],
-    fetchRbacGroups: _redux_actions_rbac_actions__WEBPACK_IMPORTED_MODULE_13__["fetchRbacGroups"],
-    fetchPortfolios: _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_11__["fetchPortfolios"],
-    sharePortfolio: _redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_12__["sharePortfolio"],
-    unsharePortfolio: _redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_12__["unsharePortfolio"],
-    fetchShareInfo: _redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_12__["fetchShareInfo"]
+    fetchRbacGroups: _redux_actions_rbac_actions__WEBPACK_IMPORTED_MODULE_12__["fetchRbacGroups"],
+    fetchPortfolios: _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_10__["fetchPortfolios"],
+    sharePortfolio: _redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_11__["sharePortfolio"],
+    unsharePortfolio: _redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_11__["unsharePortfolio"],
+    fetchShareInfo: _redux_actions_share_actions__WEBPACK_IMPORTED_MODULE_11__["fetchShareInfo"]
   }, dispatch);
 };
 
