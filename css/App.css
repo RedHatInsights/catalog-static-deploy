@@ -39,6 +39,14 @@ button:focus {
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
 
+.card-image {
+  height: 40px; }
+  .card-image.hide {
+    display: none;
+    float: left;
+    height: 0px;
+    width: 0px; }
+
 .pcard_body {
   min-height: 140px; }
 
@@ -94,6 +102,14 @@ button:focus {
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
 
+.card-image {
+  height: 40px; }
+  .card-image.hide {
+    display: none;
+    float: left;
+    height: 0px;
+    width: 0px; }
+
 .card-image-header {
   padding: 0 !important; }
 
@@ -145,6 +161,14 @@ button:focus {
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
 
+.card-image {
+  height: 40px; }
+  .card-image.hide {
+    display: none;
+    float: left;
+    height: 0px;
+    width: 0px; }
+
 .card_header {
   height: 60px; }
 
@@ -188,6 +212,14 @@ button:focus {
 
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
+
+.card-image {
+  height: 40px; }
+  .card-image.hide {
+    display: none;
+    float: left;
+    height: 0px;
+    width: 0px; }
 
 .order-tabs {
   background-color: #FFFFFF;
@@ -238,4 +270,12 @@ button:focus {
 
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
+
+.card-image {
+  height: 40px; }
+  .card-image.hide {
+    display: none;
+    float: left;
+    height: 0px;
+    width: 0px; }
 
