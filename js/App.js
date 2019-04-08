@@ -715,9 +715,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* eslint camelcase: 0 */
 
-var api = Object(_shared_user_login__WEBPACK_IMPORTED_MODULE_4__["getUserApi"])();
+var api = Object(_shared_user_login__WEBPACK_IMPORTED_MODULE_4__["getOrderApi"])();
+var portfolioItemApi = Object(_shared_user_login__WEBPACK_IMPORTED_MODULE_4__["getPortfolioItemApi"])();
 function getServicePlans(portfolioItemId) {
-  return api.listServicePlans(portfolioItemId);
+  return portfolioItemApi.listServicePlans(portfolioItemId);
 }
 function listOrders() {
   return api.listOrders();
@@ -844,15 +845,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var userApi = Object(_shared_user_login__WEBPACK_IMPORTED_MODULE_4__["getUserApi"])();
+var portfolioApi = Object(_shared_user_login__WEBPACK_IMPORTED_MODULE_4__["getPortfolioApi"])();
+var portfolioItemApi = Object(_shared_user_login__WEBPACK_IMPORTED_MODULE_4__["getPortfolioItemApi"])();
 function listPortfolios() {
-  return userApi.listPortfolios();
+  return portfolioApi.listPortfolios();
 }
 function getPortfolioItems() {
   return listPortfolioItems();
 }
 function listPortfolioItems() {
-  return userApi.listPortfolioItems();
+  return portfolioItemApi.listPortfolioItems();
 }
 function getPortfolioItem(portfolioItemId) {
   return fetch("".concat(_utilities_constants__WEBPACK_IMPORTED_MODULE_5__["CATALOG_API_BASE"], "/portfolio_items/").concat(portfolioItemId)).then(function (data) {
@@ -860,7 +862,7 @@ function getPortfolioItem(portfolioItemId) {
   });
 }
 function getPortfolio(portfolioId) {
-  return userApi.showPortfolio(portfolioId);
+  return portfolioApi.showPortfolio(portfolioId);
 }
 function getPortfolioItemsWithPortfolio(portfolioId) {
   return fetch("".concat(_utilities_constants__WEBPACK_IMPORTED_MODULE_5__["CATALOG_API_BASE"], "/portfolios/").concat(portfolioId, "/portfolio_items")).then(function (data) {
@@ -882,7 +884,7 @@ function _addPortfolio() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return userApi.createPortfolio(portfolioData);
+            return portfolioApi.createPortfolio(portfolioData);
 
           case 2:
             portfolio = _context.sent;
@@ -937,7 +939,7 @@ function _addToPortfolio() {
                     switch (_context2.prev = _context2.next) {
                       case 0:
                         _context2.next = 2;
-                        return userApi.createPortfolioItem({
+                        return portfolioItemApi.createPortfolioItem({
                           service_offering_ref: item
                         });
 
@@ -950,7 +952,7 @@ function _addToPortfolio() {
                         }
 
                         _context2.next = 6;
-                        return userApi.addPortfolioItemToPortfolio(portfolioId, {
+                        return portfolioApi.addPortfolioItemToPortfolio(portfolioId, {
                           portfolio_item_id: newItem.id
                         });
 
@@ -997,7 +999,7 @@ function _updatePortfolio() {
         switch (_context4.prev = _context4.next) {
           case 0:
             _context4.next = 2;
-            return userApi.updatePortfolio(portfolioData.id, portfolioData);
+            return portfolioApi.updatePortfolio(portfolioData.id, portfolioData);
 
           case 2:
           case "end":
@@ -1022,7 +1024,7 @@ function _removePortfolio() {
         switch (_context5.prev = _context5.next) {
           case 0:
             _context5.next = 2;
-            return userApi.destroyPortfolio(portfolioId);
+            return portfolioApi.destroyPortfolio(portfolioId);
 
           case 2:
           case "end":
@@ -1046,7 +1048,7 @@ function _removePortfolioItem() {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
-            return _context6.abrupt("return", userApi.destroyPortfolioItem(portfolioItemId));
+            return _context6.abrupt("return", portfolioItemApi.destroyPortfolioItem(portfolioItemId));
 
           case 1:
           case "end":
@@ -1233,7 +1235,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var userApi = Object(_shared_user_login__WEBPACK_IMPORTED_MODULE_2__["getUserApi"])();
+var userApi = Object(_shared_user_login__WEBPACK_IMPORTED_MODULE_2__["getPortfolioApi"])();
 function getShareInfo(_x) {
   return _getShareInfo.apply(this, arguments);
 }
@@ -1409,13 +1411,15 @@ var getNewPage = function getNewPage() {
 /*!******************************************!*\
   !*** ./src/helpers/shared/user-login.js ***!
   \******************************************/
-/*! exports provided: getTopologicalUserApi, getUserApi, getRbacAccessApi, getRbacPrincipalApi, getRbacGroupApi, getWorkflowApi */
+/*! exports provided: getTopologicalUserApi, getPortfolioApi, getPortfolioItemApi, getOrderApi, getRbacAccessApi, getRbacPrincipalApi, getRbacGroupApi, getWorkflowApi */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTopologicalUserApi", function() { return getTopologicalUserApi; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserApi", function() { return getUserApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPortfolioApi", function() { return getPortfolioApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPortfolioItemApi", function() { return getPortfolioItemApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getOrderApi", function() { return getOrderApi; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRbacAccessApi", function() { return getRbacAccessApi; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRbacPrincipalApi", function() { return getRbacPrincipalApi; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRbacGroupApi", function() { return getRbacGroupApi; });
@@ -1444,7 +1448,9 @@ var resolveInterceptor = function resolveInterceptor(response) {
 };
 
 axiosInstance.interceptors.response.use(resolveInterceptor);
-var catalogAdmin = new _redhat_cloud_services_catalog_client__WEBPACK_IMPORTED_MODULE_2__["AdminsApi"](undefined, _utilities_constants__WEBPACK_IMPORTED_MODULE_4__["CATALOG_API_BASE"], axiosInstance);
+var portfolioApi = new _redhat_cloud_services_catalog_client__WEBPACK_IMPORTED_MODULE_2__["PortfolioApi"](undefined, _utilities_constants__WEBPACK_IMPORTED_MODULE_4__["CATALOG_API_BASE"], axiosInstance);
+var portfolioItemApi = new _redhat_cloud_services_catalog_client__WEBPACK_IMPORTED_MODULE_2__["PortfolioItemApi"](undefined, _utilities_constants__WEBPACK_IMPORTED_MODULE_4__["CATALOG_API_BASE"], axiosInstance);
+var orderApi = new _redhat_cloud_services_catalog_client__WEBPACK_IMPORTED_MODULE_2__["OrderApi"](undefined, _utilities_constants__WEBPACK_IMPORTED_MODULE_4__["CATALOG_API_BASE"], axiosInstance);
 var workflowApi = new _redhat_cloud_services_approval_client__WEBPACK_IMPORTED_MODULE_1__["WorkflowApi"](undefined, _utilities_constants__WEBPACK_IMPORTED_MODULE_4__["APPROVAL_API_BASE"], axiosInstance);
 var defaultClient = _manageiq_topological_inventory__WEBPACK_IMPORTED_MODULE_3__["ApiClient"].instance;
 defaultClient.basePath = _utilities_constants__WEBPACK_IMPORTED_MODULE_4__["TOPOLOGICAL_INVENTORY_API_BASE"];
@@ -1452,8 +1458,14 @@ var userTopologicalApi = new _manageiq_topological_inventory__WEBPACK_IMPORTED_M
 function getTopologicalUserApi() {
   return userTopologicalApi;
 }
-function getUserApi() {
-  return catalogAdmin;
+function getPortfolioApi() {
+  return portfolioApi;
+}
+function getPortfolioItemApi() {
+  return portfolioItemApi;
+}
+function getOrderApi() {
+  return orderApi;
 }
 var defaultRbacClient = rbac_api_jsclient__WEBPACK_IMPORTED_MODULE_5__["ApiClient"].instance;
 defaultRbacClient.basePath = _utilities_constants__WEBPACK_IMPORTED_MODULE_4__["RBAC_API_BASE"];
