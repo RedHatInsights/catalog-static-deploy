@@ -2347,6 +2347,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_dotdotdot__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dotdotdot */ "./node_modules/react-dotdotdot/src/index.js");
+/* harmony import */ var react_dotdotdot__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dotdotdot__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -2365,8 +2368,8 @@ var ItemDetails = function ItemDetails(_ref2) {
       toDisplay = _ref2$toDisplay === void 0 ? [] : _ref2$toDisplay,
       item = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0___default()(_ref2, ["toDisplay"]);
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "line-clamp"
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_dotdotdot__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    clamp: 6
   }, toDisplay.map(function (prop) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PropLine, {
       key: "card-prop-".concat(prop),
