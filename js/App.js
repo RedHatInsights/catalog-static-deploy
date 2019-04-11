@@ -5561,34 +5561,13 @@ var DetailToolbarActions = function DetailToolbarActions(_ref) {
       editUrl = _ref.editUrl,
       isOpen = _ref.isOpen,
       setOpen = _ref.setOpen;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["LevelItem"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: orderUrl
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-    variant: "primary"
-  }, "Order"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["LevelItem"], {
-    style: {
-      marginLeft: 16
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Dropdown"], {
-    isPlain: true,
-    onToggle: setOpen,
-    onSelect: function onSelect() {
-      return setOpen(false);
-    },
-    position: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["DropdownPosition"].right,
-    toggle: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["KebabToggle"], {
-      onToggle: setOpen
-    }),
-    isOpen: isOpen,
-    dropdownItems: [react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["DropdownItem"], {
-      "aria-label": "Edit Portfolio",
-      key: "edit-portfolio"
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      to: editUrl,
-      role: "link",
-      className: "pf-c-dropdown__menu-item"
-    }, "Edit"))]
-  })));
+  return (// eslint-disable-line no-unused-vars
+    react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["LevelItem"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      to: orderUrl
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+      variant: "primary"
+    }, "Order"))))
+  );
 };
 
 DetailToolbarActions.propTypes = {
@@ -5658,87 +5637,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
-/* harmony import */ var _helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../helpers/shared/helpers */ "./src/helpers/shared/helpers.js");
-/* harmony import */ var _presentational_components_shared_pf4_select_wrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../presentational-components/shared/pf4-select-wrapper */ "./src/presentational-components/shared/pf4-select-wrapper.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var _helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../helpers/shared/helpers */ "./src/helpers/shared/helpers.js");
 
 
 
 
+/**const getWorkflowTitle = (workflows, workflowRef) => {
+ * let workflow = workflows.find(({ value }) => value === workflowRef);
+ * return workflow ? workflow.label : 'None';
+ * };
+ */
 
-
-
-var getWorkflowTitle = function getWorkflowTitle(workflows, workflowRef) {
-  var workflow = workflows.find(function (_ref) {
-    var value = _ref.value;
-    return value === workflowRef;
-  });
-  return workflow ? workflow.label : 'None';
-};
-
-var ItemDetailDescription = function ItemDetailDescription(_ref2) {
-  var product = _ref2.product,
-      url = _ref2.url,
-      workflows = _ref2.workflows,
-      workflow = _ref2.workflow,
-      setWorkflow = _ref2.setWorkflow;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextContent"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
-    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].p
-  }, product.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
-    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].p
+var ItemDetailDescription = function ItemDetailDescription(_ref) {
+  var product = _ref.product;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextContent"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].p
+  }, product.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].p
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "javascript:void(0)"
-  }, "Sample repository")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
-    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].h6
-  }, "Overview"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
-    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].p
-  }, product.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
-    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].p
-  }, product.long_description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
-    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].p
+  }, "Sample repository")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].h6
+  }, "Overview"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].p
+  }, product.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].p
+  }, product.long_description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].p
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: product.support_url,
     target: "_blank",
     rel: "noopener noreferrer"
-  }, "Learn more")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
-    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].h6
-  }, "Documentation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
-    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].p
+  }, "Learn more")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].h6
+  }, "Documentation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_2__["TextVariants"].p
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: product.documentation_url,
     target: "_blank",
     rel: "noopener noreferrer"
-  }, "Doc link")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    exact: true,
-    path: "".concat(url),
-    render: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
-        component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].h6
-      }, "Approval workflow"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
-        component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].p
-      }, getWorkflowTitle(workflows, product.workflow_ref)));
-    }
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    exact: true,
-    path: "".concat(url, "/edit"),
-    render: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["GridItem"], {
-        md: 6
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_presentational_components_shared_pf4_select_wrapper__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        input: {
-          onChange: function onChange(value) {
-            return setWorkflow(value);
-          },
-          value: workflow || undefined
-        },
-        meta: {},
-        label: "Approval workflow",
-        options: workflows,
-        id: "change-workflow"
-      })));
-    }
-  }));
+  }, "Doc link"))));
 };
 
 ItemDetailDescription.propTypes = {
@@ -5753,7 +5692,7 @@ ItemDetailDescription.propTypes = {
     label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
     value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
   })).isRequired,
-  workflow: Object(_helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_4__["allowNull"])(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string),
+  workflow: Object(_helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_3__["allowNull"])(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string),
   setWorkflow: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
 };
 /* harmony default export */ __webpack_exports__["default"] = (ItemDetailDescription);
@@ -5862,7 +5801,7 @@ var PortfolioItemDetailToolbar = function PortfolioItemDetailToolbar(_ref) {
     component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_4__["TextVariants"].h1
   }, product.display_name || product.name))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_4__["LevelItem"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_4__["Level"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     exact: true,
-    path: url,
+    path: [url, "".concat(url, "/order")],
     render: function render() {
       for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
         args[_key] = arguments[_key];
@@ -5933,8 +5872,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
 /* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components */ "./node_modules/@red-hat-insights/insights-frontend-components/index.js");
 /* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9__);
@@ -5971,13 +5910,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var PortfolioItemDetail = function PortfolioItemDetail(_ref) {
   var _ref$match = _ref.match,
       path = _ref$match.path,
       url = _ref$match.url,
       portfolioItemId = _ref$match.params.portfolioItemId,
       push = _ref.history.push,
+      pathname = _ref.location.pathname,
       source = _ref.source,
       product = _ref.product,
       portfolio = _ref.portfolio,
@@ -6019,6 +5958,12 @@ var PortfolioItemDetail = function PortfolioItemDetail(_ref) {
     });
   };
 
+  if (pathname.match(/\/product\/[0-9]+\/edit/)) {
+    return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Redirect"], {
+      to: url
+    });
+  }
+
   if (isLoading) {
     return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_9__["Section"], {
       style: {
@@ -6033,7 +5978,7 @@ var PortfolioItemDetail = function PortfolioItemDetail(_ref) {
       backgroundColor: 'white',
       minHeight: '100%'
     }
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Route"], {
     path: "".concat(url, "/order"),
     render: function render(props) {
       return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_common_order_modal__WEBPACK_IMPORTED_MODULE_10__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, props, {
@@ -6076,6 +6021,9 @@ PortfolioItemDetail.propTypes = {
   portfolio: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.shape({
     id: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string.isRequired
   }),
+  location: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.shape({
+    pathname: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string.isRequired
+  }).isRequired,
   product: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.shape({
     id: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string
   }).isRequired,
@@ -6123,7 +6071,7 @@ var mapStateToProps = function mapStateToProps(_ref2) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return Object(redux__WEBPACK_IMPORTED_MODULE_7__["bindActionCreators"])({
+  return Object(redux__WEBPACK_IMPORTED_MODULE_6__["bindActionCreators"])({
     fetchPlatforms: _redux_actions_platform_actions__WEBPACK_IMPORTED_MODULE_14__["fetchPlatforms"],
     fetchPortfolioItem: _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_19__["fetchPortfolioItem"],
     fetchWorkflows: _redux_actions_approval_actions__WEBPACK_IMPORTED_MODULE_15__["fetchWorkflows"],
@@ -6131,7 +6079,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   }, dispatch);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["connect"])(mapStateToProps, mapDispatchToProps)(PortfolioItemDetail)));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["connect"])(mapStateToProps, mapDispatchToProps)(PortfolioItemDetail)));
 
 /***/ }),
 
