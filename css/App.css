@@ -47,6 +47,48 @@ button:focus {
     height: 0px;
     width: 0px; }
 
+.data-list-expand-fix .pf-c-data-list__toggle {
+  align-self: flex-start;
+  margin-top: 32px; }
+
+.cell-grow {
+  flex-grow: 20 !important; }
+
+.requests-table {
+  width: 100%; }
+  .requests-table .requests-step-label span:first-child {
+    width: 24px;
+    border-radius: 50%;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #EDEDED;
+    margin-right: 4px;
+    line-height: 26px; }
+  .requests-table tr td:first-child, .requests-table tr td:last-child, .requests-table tr th:first-child, .requests-table tr th:last-child {
+    padding-left: calc(32px + 64px);
+    padding-right: 32px; }
+  .requests-table thead {
+    border-bottom: 1px solid #EDEDED; }
+    .requests-table thead th {
+      color: #292E34;
+      font-family: Overpass;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: normal;
+      padding-bottom: 16px; }
+  .requests-table tbody tr {
+    font-size: 14px; }
+    .requests-table tbody tr.finished .requests-step-label span:first-child {
+      background-color: #007BBA;
+      color: #FFFFFF; }
+    .requests-table tbody tr td {
+      padding-top: 8px;
+      padding-bottom: 8px; }
+    .requests-table tbody tr:first-child td {
+      padding-top: 16px; }
+
 .pcard_body {
   min-height: 140px; }
 
@@ -110,6 +152,48 @@ button:focus {
     height: 0px;
     width: 0px; }
 
+.data-list-expand-fix .pf-c-data-list__toggle {
+  align-self: flex-start;
+  margin-top: 32px; }
+
+.cell-grow {
+  flex-grow: 20 !important; }
+
+.requests-table {
+  width: 100%; }
+  .requests-table .requests-step-label span:first-child {
+    width: 24px;
+    border-radius: 50%;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #EDEDED;
+    margin-right: 4px;
+    line-height: 26px; }
+  .requests-table tr td:first-child, .requests-table tr td:last-child, .requests-table tr th:first-child, .requests-table tr th:last-child {
+    padding-left: calc(32px + 64px);
+    padding-right: 32px; }
+  .requests-table thead {
+    border-bottom: 1px solid #EDEDED; }
+    .requests-table thead th {
+      color: #292E34;
+      font-family: Overpass;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: normal;
+      padding-bottom: 16px; }
+  .requests-table tbody tr {
+    font-size: 14px; }
+    .requests-table tbody tr.finished .requests-step-label span:first-child {
+      background-color: #007BBA;
+      color: #FFFFFF; }
+    .requests-table tbody tr td {
+      padding-top: 8px;
+      padding-bottom: 8px; }
+    .requests-table tbody tr:first-child td {
+      padding-top: 16px; }
+
 .card_header {
   height: 60px; }
 
@@ -161,6 +245,48 @@ button:focus {
     float: left;
     height: 0px;
     width: 0px; }
+
+.data-list-expand-fix .pf-c-data-list__toggle {
+  align-self: flex-start;
+  margin-top: 32px; }
+
+.cell-grow {
+  flex-grow: 20 !important; }
+
+.requests-table {
+  width: 100%; }
+  .requests-table .requests-step-label span:first-child {
+    width: 24px;
+    border-radius: 50%;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #EDEDED;
+    margin-right: 4px;
+    line-height: 26px; }
+  .requests-table tr td:first-child, .requests-table tr td:last-child, .requests-table tr th:first-child, .requests-table tr th:last-child {
+    padding-left: calc(32px + 64px);
+    padding-right: 32px; }
+  .requests-table thead {
+    border-bottom: 1px solid #EDEDED; }
+    .requests-table thead th {
+      color: #292E34;
+      font-family: Overpass;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: normal;
+      padding-bottom: 16px; }
+  .requests-table tbody tr {
+    font-size: 14px; }
+    .requests-table tbody tr.finished .requests-step-label span:first-child {
+      background-color: #007BBA;
+      color: #FFFFFF; }
+    .requests-table tbody tr td {
+      padding-top: 8px;
+      padding-bottom: 8px; }
+    .requests-table tbody tr:first-child td {
+      padding-top: 16px; }
 
 .card-image-header {
   padding: 0 !important; }
@@ -221,14 +347,53 @@ button:focus {
     height: 0px;
     width: 0px; }
 
+.data-list-expand-fix .pf-c-data-list__toggle {
+  align-self: flex-start;
+  margin-top: 32px; }
+
+.cell-grow {
+  flex-grow: 20 !important; }
+
+.requests-table {
+  width: 100%; }
+  .requests-table .requests-step-label span:first-child {
+    width: 24px;
+    border-radius: 50%;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #EDEDED;
+    margin-right: 4px;
+    line-height: 26px; }
+  .requests-table tr td:first-child, .requests-table tr td:last-child, .requests-table tr th:first-child, .requests-table tr th:last-child {
+    padding-left: calc(32px + 64px);
+    padding-right: 32px; }
+  .requests-table thead {
+    border-bottom: 1px solid #EDEDED; }
+    .requests-table thead th {
+      color: #292E34;
+      font-family: Overpass;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: normal;
+      padding-bottom: 16px; }
+  .requests-table tbody tr {
+    font-size: 14px; }
+    .requests-table tbody tr.finished .requests-step-label span:first-child {
+      background-color: #007BBA;
+      color: #FFFFFF; }
+    .requests-table tbody tr td {
+      padding-top: 8px;
+      padding-bottom: 8px; }
+    .requests-table tbody tr:first-child td {
+      padding-top: 16px; }
+
 .order-tabs {
   background-color: #FFFFFF;
   padding: 32px 32px 0 32px; }
   .order-tabs li {
     padding: initial; }
-
-.order-data-list .order-cell {
-  align-self: center; }
 
 :root {
   --ins-color--orange: #ec7a08; }
@@ -278,4 +443,46 @@ button:focus {
     float: left;
     height: 0px;
     width: 0px; }
+
+.data-list-expand-fix .pf-c-data-list__toggle {
+  align-self: flex-start;
+  margin-top: 32px; }
+
+.cell-grow {
+  flex-grow: 20 !important; }
+
+.requests-table {
+  width: 100%; }
+  .requests-table .requests-step-label span:first-child {
+    width: 24px;
+    border-radius: 50%;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #EDEDED;
+    margin-right: 4px;
+    line-height: 26px; }
+  .requests-table tr td:first-child, .requests-table tr td:last-child, .requests-table tr th:first-child, .requests-table tr th:last-child {
+    padding-left: calc(32px + 64px);
+    padding-right: 32px; }
+  .requests-table thead {
+    border-bottom: 1px solid #EDEDED; }
+    .requests-table thead th {
+      color: #292E34;
+      font-family: Overpass;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: normal;
+      padding-bottom: 16px; }
+  .requests-table tbody tr {
+    font-size: 14px; }
+    .requests-table tbody tr.finished .requests-step-label span:first-child {
+      background-color: #007BBA;
+      color: #FFFFFF; }
+    .requests-table tbody tr td {
+      padding-top: 8px;
+      padding-bottom: 8px; }
+    .requests-table tbody tr:first-child td {
+      padding-top: 16px; }
 
