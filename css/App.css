@@ -110,15 +110,8 @@ button:focus {
     height: 0px;
     width: 0px; }
 
-.card-image-header {
-  padding: 0 !important; }
-
-.portfolio-card-header {
-  min-height: 100px;
-  max-height: 200px;
-  background-size: stretch;
-  color: white;
-  padding: 8px 24px; }
+.card_header {
+  height: 60px; }
 
 :root {
   --ins-color--orange: #ec7a08; }
@@ -169,8 +162,15 @@ button:focus {
     height: 0px;
     width: 0px; }
 
-.card_header {
-  height: 60px; }
+.card-image-header {
+  padding: 0 !important; }
+
+.portfolio-card-header {
+  min-height: 100px;
+  max-height: 200px;
+  background-size: stretch;
+  color: white;
+  padding: 8px 24px; }
 
 :root {
   --ins-color--orange: #ec7a08; }
