@@ -5810,9 +5810,7 @@ function (_Component) {
         component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["TextVariants"].p
       }, "To connect to a source, go to ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
         href: "".concat(document.baseURI, "hybrid/settings/catalog-sources")
-      }, "Catalog sources"), "\xA0 under ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
-        href: "javascript:void(0)"
-      }, "Settings")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["Text"], {
+      }, "Catalog sources"), "\xA0 under Settings"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["Text"], {
         component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["TextVariants"].p
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
         href: "javascript:void(0)"
