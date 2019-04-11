@@ -2466,6 +2466,73 @@ CardIcon.defaultProps = {
 
 /***/ }),
 
+/***/ "./src/presentational-components/shared/content-gallery-empty-state.js":
+/*!*****************************************************************************!*\
+  !*** ./src/presentational-components/shared/content-gallery-empty-state.js ***!
+  \*****************************************************************************/
+/*! exports provided: default, EmptyStatePrimaryAction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmptyStatePrimaryAction", function() { return EmptyStatePrimaryAction; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+
+
+
+
+
+var ContentGalleryEmptyState = function ContentGalleryEmptyState(_ref) {
+  var title = _ref.title,
+      Icon = _ref.Icon,
+      description = _ref.description,
+      PrimaryAction = _ref.PrimaryAction,
+      renderDescription = _ref.renderDescription;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Bullseye"], {
+    style: {
+      height: 'calc(100% - 197px)'
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["EmptyState"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["EmptyStateIcon"], {
+    icon: Icon
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextContent"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].h1
+  }, title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["EmptyStateBody"], null, description, renderDescription()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["EmptyStateSecondaryActions"], null, PrimaryAction && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PrimaryAction, null))));
+};
+
+ContentGalleryEmptyState.defaultProps = {
+  renderDescription: function renderDescription() {
+    return null;
+  }
+};
+ContentGalleryEmptyState.propTypes = {
+  title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  Icon: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.any.isRequired,
+  description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  PrimaryAction: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.any,
+  renderDescription: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+/* harmony default export */ __webpack_exports__["default"] = (ContentGalleryEmptyState);
+var EmptyStatePrimaryAction = function EmptyStatePrimaryAction(_ref2) {
+  var url = _ref2.url,
+      label = _ref2.label;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: url
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    variant: "secondary"
+  }, label));
+};
+EmptyStatePrimaryAction.propTypes = {
+  url: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+};
+
+/***/ }),
+
 /***/ "./src/presentational-components/shared/filter-toolbar-item.js":
 /*!*********************************************************************!*\
   !*** ./src/presentational-components/shared/filter-toolbar-item.js ***!
@@ -4180,8 +4247,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components */ "./node_modules/@red-hat-insights/insights-frontend-components/index.js");
 /* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _presentational_components_shared_loader_placeholders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../presentational-components/shared/loader-placeholders */ "./src/presentational-components/shared/loader-placeholders.js");
-/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var _presentational_components_shared_loader_placeholders__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../presentational-components/shared/loader-placeholders */ "./src/presentational-components/shared/loader-placeholders.js");
 
 
 
@@ -4189,25 +4256,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var NoItems = function NoItems() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_4__["Bullseye"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_4__["Text"], {
-    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_4__["TextVariants"].h1
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Text"], {
+    component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["TextVariants"].h1
   }, "No items found"));
 };
 
 var ContentGallery = function ContentGallery(_ref) {
   var isLoading = _ref.isLoading,
-      items = _ref.items;
-  return isLoading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_presentational_components_shared_loader_placeholders__WEBPACK_IMPORTED_MODULE_3__["CardLoader"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_2__["Section"], {
+      items = _ref.items,
+      renderEmptyState = _ref.renderEmptyState;
+  return isLoading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_presentational_components_shared_loader_placeholders__WEBPACK_IMPORTED_MODULE_4__["CardLoader"], null) : items.length === 0 ? renderEmptyState ? renderEmptyState() : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NoItems, null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_2__["Section"], {
     type: "content"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_4__["Gallery"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_3__["Gallery"], {
     gutter: "md",
     className: "content-gallery"
-  }, items.length > 0 ? items : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NoItems, null)));
+  }, items));
 };
 
 ContentGallery.propTypes = {
   isLoading: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
-  items: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array
+  items: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array,
+  renderEmptyState: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
 };
 /* harmony default export */ __webpack_exports__["default"] = (ContentGallery);
 
@@ -4933,12 +5002,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @red-hat-insights/insights-frontend-components */ "./node_modules/@red-hat-insights/insights-frontend-components/index.js");
 /* harmony import */ var _red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _content_gallery_content_gallery__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../content-gallery/content-gallery */ "./src/smart-components/content-gallery/content-gallery.js");
-/* harmony import */ var _presentational_components_platform_platform_card__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../presentational-components/platform/platform-card */ "./src/presentational-components/platform/platform-card.js");
-/* harmony import */ var _presentational_components_platform_platform_toolbar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../presentational-components/platform/platform-toolbar */ "./src/presentational-components/platform/platform-toolbar.js");
-/* harmony import */ var _redux_actions_platform_actions__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../redux/actions/platform-actions */ "./src/redux/actions/platform-actions.js");
-/* harmony import */ var _helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../helpers/shared/helpers */ "./src/helpers/shared/helpers.js");
-/* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./platform */ "./src/smart-components/platform/platform.js");
+/* harmony import */ var _patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @patternfly/react-core */ "./node_modules/@patternfly/react-core/dist/esm/index.js");
+/* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @patternfly/react-icons */ "./node_modules/@patternfly/react-icons/dist/esm/index.js");
+/* harmony import */ var _content_gallery_content_gallery__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../content-gallery/content-gallery */ "./src/smart-components/content-gallery/content-gallery.js");
+/* harmony import */ var _presentational_components_platform_platform_card__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../presentational-components/platform/platform-card */ "./src/presentational-components/platform/platform-card.js");
+/* harmony import */ var _presentational_components_platform_platform_toolbar__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../presentational-components/platform/platform-toolbar */ "./src/presentational-components/platform/platform-toolbar.js");
+/* harmony import */ var _redux_actions_platform_actions__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../redux/actions/platform-actions */ "./src/redux/actions/platform-actions.js");
+/* harmony import */ var _helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../helpers/shared/helpers */ "./src/helpers/shared/helpers.js");
+/* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./platform */ "./src/smart-components/platform/platform.js");
+/* harmony import */ var _presentational_components_shared_content_gallery_empty_state__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../presentational-components/shared/content-gallery-empty-state */ "./src/presentational-components/shared/content-gallery-empty-state.js");
+
+
+
 
 
 
@@ -4996,23 +5071,47 @@ function (_Component) {
       });
     });
 
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this), "renderEmptyStateDescription", function () {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["TextContent"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["Text"], {
+        component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["TextVariants"].p
+      }, "Configure a source in order to add products to portfolios."), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["Text"], {
+        component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["TextVariants"].p
+      }, "To connect to a source, go to ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "".concat(document.baseURI, "hybrid/settings/catalog-sources")
+      }, "Catalog sources"), "\xA0 under ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "javascript:void(0)"
+      }, "Settings")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["Text"], {
+        component: _patternfly_react_core__WEBPACK_IMPORTED_MODULE_13__["TextVariants"].p
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "javascript:void(0)"
+      }, "Learn more in the documentation"))));
+    });
+
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5___default()(_this), "renderPlatforms", function () {
       var filteredItems = {
         items: _this.props.platforms.filter(function (_ref) {
           var name = _ref.name;
           return name.toLowerCase().includes(_this.state.filterValue.toLowerCase());
         }).map(function (item) {
-          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_platform_platform_card__WEBPACK_IMPORTED_MODULE_14__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_platform_platform_card__WEBPACK_IMPORTED_MODULE_16__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
             key: item.id
           }, item));
         }),
         isLoading: _this.props.isLoading && _this.props.platforms.length === 0
       };
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_platform_platform_toolbar__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_platform_platform_toolbar__WEBPACK_IMPORTED_MODULE_17__["default"], {
         onFilterChange: _this.handleFilterChange,
         searchValue: _this.state.filterValue,
         title: "Platforms"
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_content_gallery_content_gallery__WEBPACK_IMPORTED_MODULE_13__["default"], filteredItems));
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_content_gallery_content_gallery__WEBPACK_IMPORTED_MODULE_15__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, filteredItems, {
+        renderEmptyState: function renderEmptyState() {
+          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_shared_content_gallery_empty_state__WEBPACK_IMPORTED_MODULE_21__["default"], {
+            title: "No platforms yet",
+            renderDescription: _this.renderEmptyStateDescription,
+            Icon: _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_14__["SearchIcon"]
+          });
+        }
+      })));
     });
 
     return _this;
@@ -5022,7 +5121,7 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.fetchData();
-      Object(_helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_17__["scrollToTop"])();
+      Object(_helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_19__["scrollToTop"])();
     }
   }, {
     key: "render",
@@ -5031,7 +5130,7 @@ function (_Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_red_hat_insights_insights_frontend_components__WEBPACK_IMPORTED_MODULE_12__["Section"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
         path: "/platforms".concat(platformsRoutes.detail),
-        component: _platform__WEBPACK_IMPORTED_MODULE_18__["default"]
+        component: _platform__WEBPACK_IMPORTED_MODULE_20__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
         exact: true,
         path: "/platforms".concat(platformsRoutes.platforms),
@@ -5060,7 +5159,7 @@ var mapStateToProps = function mapStateToProps(_ref2) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchPlatforms: function fetchPlatforms(apiProps) {
-      return dispatch(Object(_redux_actions_platform_actions__WEBPACK_IMPORTED_MODULE_16__["fetchPlatforms"])(apiProps));
+      return dispatch(Object(_redux_actions_platform_actions__WEBPACK_IMPORTED_MODULE_18__["fetchPlatforms"])(apiProps));
     }
   };
 };
@@ -6213,6 +6312,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _presentational_components_shared_top_toolbar__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../presentational-components/shared/top-toolbar */ "./src/presentational-components/shared/top-toolbar.js");
 /* harmony import */ var _portfolio_item_detail_portfolio_item_detail__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./portfolio-item-detail/portfolio-item-detail */ "./src/smart-components/portfolio/portfolio-item-detail/portfolio-item-detail.js");
 /* harmony import */ var _share_portfolio_modal__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./share-portfolio-modal */ "./src/smart-components/portfolio/share-portfolio-modal.js");
+/* harmony import */ var _presentational_components_shared_content_gallery_empty_state__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../presentational-components/shared/content-gallery-empty-state */ "./src/presentational-components/shared/content-gallery-empty-state.js");
+/* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @patternfly/react-icons */ "./node_modules/@patternfly/react-icons/dist/esm/index.js");
+
+
 
 
 
@@ -6309,6 +6412,20 @@ function (_Component) {
       });
     });
 
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this), "renderEmptyState", function () {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_presentational_components_shared_content_gallery_empty_state__WEBPACK_IMPORTED_MODULE_28__["default"], {
+        Icon: _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_29__["SearchIcon"],
+        title: "No products in ".concat(_this.props.portfolio.name, " portfolio"),
+        description: "You haven\u2019t added any products to the portfolio",
+        PrimaryAction: function PrimaryAction() {
+          return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_presentational_components_shared_content_gallery_empty_state__WEBPACK_IMPORTED_MODULE_28__["EmptyStatePrimaryAction"], {
+            url: "".concat(_this.props.match.url, "/add-products"),
+            label: "Add products"
+          });
+        }
+      });
+    });
+
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this), "renderProducts", function (_ref2) {
       var title = _ref2.title,
           filteredItems = _ref2.filteredItems,
@@ -6348,7 +6465,9 @@ function (_Component) {
             closeUrl: _this.props.match.url
           }));
         }
-      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_content_gallery_content_gallery__WEBPACK_IMPORTED_MODULE_14__["default"], filteredItems));
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_content_gallery_content_gallery__WEBPACK_IMPORTED_MODULE_14__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({}, filteredItems, {
+        renderEmptyState: _this.renderEmptyState
+      })));
     });
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this), "renderAddProducts", function (_ref3) {
@@ -6527,20 +6646,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _content_gallery_content_gallery__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../content-gallery/content-gallery */ "./src/smart-components/content-gallery/content-gallery.js");
-/* harmony import */ var _presentational_components_portfolio_porfolio_card__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../presentational-components/portfolio/porfolio-card */ "./src/presentational-components/portfolio/porfolio-card.js");
-/* harmony import */ var _presentational_components_portfolio_portfolios_filter_toolbar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../presentational-components/portfolio/portfolios-filter-toolbar */ "./src/presentational-components/portfolio/portfolios-filter-toolbar.js");
-/* harmony import */ var _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../redux/actions/portfolio-actions */ "./src/redux/actions/portfolio-actions.js");
-/* harmony import */ var _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./add-portfolio-modal */ "./src/smart-components/portfolio/add-portfolio-modal.js");
-/* harmony import */ var _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./remove-portfolio-modal */ "./src/smart-components/portfolio/remove-portfolio-modal.js");
-/* harmony import */ var _helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../helpers/shared/helpers */ "./src/helpers/shared/helpers.js");
-/* harmony import */ var _portfolio__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./portfolio */ "./src/smart-components/portfolio/portfolio.js");
-/* harmony import */ var _presentational_components_shared_top_toolbar__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../presentational-components/shared/top-toolbar */ "./src/presentational-components/shared/top-toolbar.js");
-/* harmony import */ var _share_portfolio_modal__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./share-portfolio-modal */ "./src/smart-components/portfolio/share-portfolio-modal.js");
+/* harmony import */ var _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @patternfly/react-icons */ "./node_modules/@patternfly/react-icons/dist/esm/index.js");
+/* harmony import */ var _portfolio__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./portfolio */ "./src/smart-components/portfolio/portfolio.js");
+/* harmony import */ var _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./add-portfolio-modal */ "./src/smart-components/portfolio/add-portfolio-modal.js");
+/* harmony import */ var _share_portfolio_modal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./share-portfolio-modal */ "./src/smart-components/portfolio/share-portfolio-modal.js");
+/* harmony import */ var _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./remove-portfolio-modal */ "./src/smart-components/portfolio/remove-portfolio-modal.js");
+/* harmony import */ var _helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../helpers/shared/helpers */ "./src/helpers/shared/helpers.js");
+/* harmony import */ var _content_gallery_content_gallery__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../content-gallery/content-gallery */ "./src/smart-components/content-gallery/content-gallery.js");
+/* harmony import */ var _redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../redux/actions/portfolio-actions */ "./src/redux/actions/portfolio-actions.js");
+/* harmony import */ var _presentational_components_portfolio_porfolio_card__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../presentational-components/portfolio/porfolio-card */ "./src/presentational-components/portfolio/porfolio-card.js");
+/* harmony import */ var _presentational_components_portfolio_portfolios_filter_toolbar__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../presentational-components/portfolio/portfolios-filter-toolbar */ "./src/presentational-components/portfolio/portfolios-filter-toolbar.js");
+/* harmony import */ var _presentational_components_shared_top_toolbar__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../presentational-components/shared/top-toolbar */ "./src/presentational-components/shared/top-toolbar.js");
+/* harmony import */ var _presentational_components_shared_content_gallery_empty_state__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../presentational-components/shared/content-gallery-empty-state */ "./src/presentational-components/shared/content-gallery-empty-state.js");
+
+
 
 
 
@@ -6608,34 +6731,48 @@ function (_Component) {
           var name = _ref.name;
           return name.toLowerCase().includes(_this.state.filterValue.trim().toLowerCase());
         }).map(function (item) {
-          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_portfolio_porfolio_card__WEBPACK_IMPORTED_MODULE_13__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_portfolio_porfolio_card__WEBPACK_IMPORTED_MODULE_20__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
             key: item.id
           }, item));
         }),
         isLoading: _this.props.isLoading && _this.props.portfolios.length === 0
       };
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_shared_top_toolbar__WEBPACK_IMPORTED_MODULE_20__["default"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_shared_top_toolbar__WEBPACK_IMPORTED_MODULE_20__["TopToolbarTitle"], {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_shared_top_toolbar__WEBPACK_IMPORTED_MODULE_22__["default"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_shared_top_toolbar__WEBPACK_IMPORTED_MODULE_22__["TopToolbarTitle"], {
         title: "Portfolios"
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_portfolio_portfolios_filter_toolbar__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_portfolio_portfolios_filter_toolbar__WEBPACK_IMPORTED_MODULE_21__["default"], {
         onFilterChange: _this.onFilterChange,
         filterValue: _this.state.filterValue
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, props, {
         exact: true,
         path: "/portfolios/add-portfolio",
-        component: _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_16__["default"]
+        component: _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_14__["default"]
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
         exact: true,
         path: "/portfolios/edit/:id",
-        component: _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_16__["default"]
+        component: _add_portfolio_modal__WEBPACK_IMPORTED_MODULE_14__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
         exact: true,
         path: "/portfolios/remove/:id",
-        component: _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_17__["default"]
+        component: _remove_portfolio_modal__WEBPACK_IMPORTED_MODULE_16__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
         exact: true,
         path: "/portfolios/share/:id",
-        component: _share_portfolio_modal__WEBPACK_IMPORTED_MODULE_21__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_content_gallery_content_gallery__WEBPACK_IMPORTED_MODULE_12__["default"], filteredItems));
+        component: _share_portfolio_modal__WEBPACK_IMPORTED_MODULE_15__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_content_gallery_content_gallery__WEBPACK_IMPORTED_MODULE_18__["default"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, filteredItems, {
+        renderEmptyState: function renderEmptyState() {
+          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_shared_content_gallery_empty_state__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            title: "No portfolios",
+            Icon: _patternfly_react_icons__WEBPACK_IMPORTED_MODULE_12__["SearchIcon"],
+            description: "You haven\u2019t created a portfolio yet.",
+            PrimaryAction: function PrimaryAction() {
+              return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_presentational_components_shared_content_gallery_empty_state__WEBPACK_IMPORTED_MODULE_23__["EmptyStatePrimaryAction"], {
+                url: "/portfolios/add-portfolio",
+                label: "Create portfolio"
+              });
+            }
+          });
+        }
+      })));
     });
 
     return _this;
@@ -6645,14 +6782,14 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.fetchData();
-      Object(_helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_18__["scrollToTop"])();
+      Object(_helpers_shared_helpers__WEBPACK_IMPORTED_MODULE_17__["scrollToTop"])();
     }
   }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
         path: "/portfolios/".concat(portfoliosRoutes.detail),
-        component: _portfolio__WEBPACK_IMPORTED_MODULE_19__["default"]
+        component: _portfolio__WEBPACK_IMPORTED_MODULE_13__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__["Route"], {
         path: "/portfolios/".concat(portfoliosRoutes.portfolios),
         render: this.renderItems
@@ -6678,24 +6815,24 @@ var mapStateToProps = function mapStateToProps(_ref2) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchPortfolios: function fetchPortfolios(apiProps) {
-      return dispatch(Object(_redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_15__["fetchPortfolios"])(apiProps));
+      return dispatch(Object(_redux_actions_portfolio_actions__WEBPACK_IMPORTED_MODULE_19__["fetchPortfolios"])(apiProps));
     }
   };
 };
 
 Portfolios.propTypes = {
-  filteredItems: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.array,
-  portfolios: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.array,
-  platforms: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.array,
-  isLoading: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.bool,
-  searchFilter: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.string,
-  showModal: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.func,
-  fetchPortfolios: prop_types__WEBPACK_IMPORTED_MODULE_10___default.a.func.isRequired
+  filteredItems: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.array,
+  portfolios: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.array,
+  platforms: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.array,
+  isLoading: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.bool,
+  searchFilter: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
+  showModal: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func,
+  fetchPortfolios: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.func.isRequired
 };
 Portfolios.defaultProps = {
   portfolios: []
 };
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["connect"])(mapStateToProps, mapDispatchToProps)(Portfolios));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_10__["connect"])(mapStateToProps, mapDispatchToProps)(Portfolios));
 
 /***/ }),
 
