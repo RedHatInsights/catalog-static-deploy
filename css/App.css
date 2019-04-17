@@ -89,6 +89,28 @@ button:focus {
     .requests-table tbody tr:first-child td {
       padding-top: 16px; }
 
+.toolbar-filter-input-group {
+  position: relative;
+  width: 300px;
+  height: 36px; }
+  .toolbar-filter-input-group input {
+    position: absolute;
+    width: 300px;
+    background: transparent; }
+  .toolbar-filter-input-group svg {
+    vertical-align: -0.125em;
+    z-index: 1000;
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    fill: #72767B; }
+
+.toolbar-override {
+  display: flex;
+  align-items: center; }
+  .toolbar-override .toolbar-override-item:not(:last-child) {
+    margin-right: 16px; }
+
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -179,6 +201,28 @@ button:focus {
       padding-bottom: 8px; }
     .requests-table tbody tr:first-child td {
       padding-top: 16px; }
+
+.toolbar-filter-input-group {
+  position: relative;
+  width: 300px;
+  height: 36px; }
+  .toolbar-filter-input-group input {
+    position: absolute;
+    width: 300px;
+    background: transparent; }
+  .toolbar-filter-input-group svg {
+    vertical-align: -0.125em;
+    z-index: 1000;
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    fill: #72767B; }
+
+.toolbar-override {
+  display: flex;
+  align-items: center; }
+  .toolbar-override .toolbar-override-item:not(:last-child) {
+    margin-right: 16px; }
 
 .pcard_body {
   min-height: 140px; }
@@ -285,6 +329,28 @@ button:focus {
     .requests-table tbody tr:first-child td {
       padding-top: 16px; }
 
+.toolbar-filter-input-group {
+  position: relative;
+  width: 300px;
+  height: 36px; }
+  .toolbar-filter-input-group input {
+    position: absolute;
+    width: 300px;
+    background: transparent; }
+  .toolbar-filter-input-group svg {
+    vertical-align: -0.125em;
+    z-index: 1000;
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    fill: #72767B; }
+
+.toolbar-override {
+  display: flex;
+  align-items: center; }
+  .toolbar-override .toolbar-override-item:not(:last-child) {
+    margin-right: 16px; }
+
 .card-image-header {
   padding: 0 !important; }
 
@@ -386,6 +452,28 @@ button:focus {
     .requests-table tbody tr:first-child td {
       padding-top: 16px; }
 
+.toolbar-filter-input-group {
+  position: relative;
+  width: 300px;
+  height: 36px; }
+  .toolbar-filter-input-group input {
+    position: absolute;
+    width: 300px;
+    background: transparent; }
+  .toolbar-filter-input-group svg {
+    vertical-align: -0.125em;
+    z-index: 1000;
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    fill: #72767B; }
+
+.toolbar-override {
+  display: flex;
+  align-items: center; }
+  .toolbar-override .toolbar-override-item:not(:last-child) {
+    margin-right: 16px; }
+
 .card_header {
   height: 60px; }
 
@@ -479,6 +567,28 @@ button:focus {
       padding-bottom: 8px; }
     .requests-table tbody tr:first-child td {
       padding-top: 16px; }
+
+.toolbar-filter-input-group {
+  position: relative;
+  width: 300px;
+  height: 36px; }
+  .toolbar-filter-input-group input {
+    position: absolute;
+    width: 300px;
+    background: transparent; }
+  .toolbar-filter-input-group svg {
+    vertical-align: -0.125em;
+    z-index: 1000;
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    fill: #72767B; }
+
+.toolbar-override {
+  display: flex;
+  align-items: center; }
+  .toolbar-override .toolbar-override-item:not(:last-child) {
+    margin-right: 16px; }
 
 .order-tabs {
   background-color: #FFFFFF;
