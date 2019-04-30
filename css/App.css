@@ -240,8 +240,11 @@ button:focus {
   .toolbar-override .toolbar-override-item:not(:last-child) {
     margin-right: 16px; }
 
-.pcard_body {
-  min-height: 140px; }
+.order-tabs {
+  background-color: #FFFFFF;
+  padding: 32px 32px 0 32px; }
+  .order-tabs li {
+    padding: initial; }
 
 .top-toolbar {
   background-color: #FFFFFF; }
@@ -375,15 +378,8 @@ button:focus {
   .toolbar-override .toolbar-override-item:not(:last-child) {
     margin-right: 16px; }
 
-.card-image-header {
-  padding: 0 !important; }
-
-.portfolio-card-header {
-  min-height: 100px;
-  max-height: 200px;
-  background-size: stretch;
-  color: white;
-  padding: 8px 24px; }
+.pcard_body {
+  min-height: 140px; }
 
 :root {
   --ins-color--orange: #ec7a08; }
@@ -506,9 +502,13 @@ button:focus {
   .toolbar-override .toolbar-override-item:not(:last-child) {
     margin-right: 16px; }
 
-.order-tabs {
-  background-color: #FFFFFF;
-  padding: 32px 32px 0 32px; }
-  .order-tabs li {
-    padding: initial; }
+.card-image-header {
+  padding: 0 !important; }
+
+.portfolio-card-header {
+  min-height: 100px;
+  max-height: 200px;
+  background-size: stretch;
+  color: white;
+  padding: 8px 24px; }
 
