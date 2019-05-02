@@ -89,8 +89,10 @@ button:focus {
   .requests-table tbody tr {
     font-size: 14px; }
     .requests-table tbody tr.finished .requests-step-label span:first-child {
-      background-color: #007BBA;
+      background-color: var(--pf-global--primary-color--100);
       color: #FFFFFF; }
+    .requests-table tbody tr.finished.failed .requests-step-label span:first-child {
+      background-color: var(--pf-global--danger-color--100); }
     .requests-table tbody tr td {
       padding-top: 8px;
       padding-bottom: 8px; }
@@ -210,8 +212,10 @@ button:focus {
   .requests-table tbody tr {
     font-size: 14px; }
     .requests-table tbody tr.finished .requests-step-label span:first-child {
-      background-color: #007BBA;
+      background-color: var(--pf-global--primary-color--100);
       color: #FFFFFF; }
+    .requests-table tbody tr.finished.failed .requests-step-label span:first-child {
+      background-color: var(--pf-global--danger-color--100); }
     .requests-table tbody tr td {
       padding-top: 8px;
       padding-bottom: 8px; }
@@ -348,8 +352,10 @@ button:focus {
   .requests-table tbody tr {
     font-size: 14px; }
     .requests-table tbody tr.finished .requests-step-label span:first-child {
-      background-color: #007BBA;
+      background-color: var(--pf-global--primary-color--100);
       color: #FFFFFF; }
+    .requests-table tbody tr.finished.failed .requests-step-label span:first-child {
+      background-color: var(--pf-global--danger-color--100); }
     .requests-table tbody tr td {
       padding-top: 8px;
       padding-bottom: 8px; }
@@ -472,8 +478,10 @@ button:focus {
   .requests-table tbody tr {
     font-size: 14px; }
     .requests-table tbody tr.finished .requests-step-label span:first-child {
-      background-color: #007BBA;
+      background-color: var(--pf-global--primary-color--100);
       color: #FFFFFF; }
+    .requests-table tbody tr.finished.failed .requests-step-label span:first-child {
+      background-color: var(--pf-global--danger-color--100); }
     .requests-table tbody tr td {
       padding-top: 8px;
       padding-bottom: 8px; }
