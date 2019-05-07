@@ -121,6 +121,13 @@ button:focus {
   .toolbar-override .toolbar-override-item:not(:last-child) {
     margin-right: 16px; }
 
+.button-with-spinner .ins-c-spinner::before {
+  height: 16px;
+  width: 16px;
+  margin-left: 8px;
+  border-color: #ededed;
+  border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
+
 :root {
   --ins-color--orange: #ec7a08; }
 
@@ -243,6 +250,13 @@ button:focus {
   align-items: center; }
   .toolbar-override .toolbar-override-item:not(:last-child) {
     margin-right: 16px; }
+
+.button-with-spinner .ins-c-spinner::before {
+  height: 16px;
+  width: 16px;
+  margin-left: 8px;
+  border-color: #ededed;
+  border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
 
 .order-tabs {
   background-color: #FFFFFF;
@@ -384,6 +398,13 @@ button:focus {
   .toolbar-override .toolbar-override-item:not(:last-child) {
     margin-right: 16px; }
 
+.button-with-spinner .ins-c-spinner::before {
+  height: 16px;
+  width: 16px;
+  margin-left: 8px;
+  border-color: #ededed;
+  border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
+
 .pcard_body {
   min-height: 140px; }
 
@@ -509,6 +530,13 @@ button:focus {
   align-items: center; }
   .toolbar-override .toolbar-override-item:not(:last-child) {
     margin-right: 16px; }
+
+.button-with-spinner .ins-c-spinner::before {
+  height: 16px;
+  width: 16px;
+  margin-left: 8px;
+  border-color: #ededed;
+  border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
 
 .card-image-header {
   padding: 0 !important; }
