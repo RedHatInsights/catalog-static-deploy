@@ -118,7 +118,7 @@ button:focus {
 .toolbar-override {
   display: flex;
   align-items: center; }
-  .toolbar-override .toolbar-override-item:not(:last-child) {
+  .toolbar-override > div:not(:last-child), .toolbar-override > a:not(:last-child) {
     margin-right: 16px; }
 
 .button-with-spinner .ins-c-spinner::before {
@@ -248,7 +248,7 @@ button:focus {
 .toolbar-override {
   display: flex;
   align-items: center; }
-  .toolbar-override .toolbar-override-item:not(:last-child) {
+  .toolbar-override > div:not(:last-child), .toolbar-override > a:not(:last-child) {
     margin-right: 16px; }
 
 .button-with-spinner .ins-c-spinner::before {
@@ -395,7 +395,7 @@ button:focus {
 .toolbar-override {
   display: flex;
   align-items: center; }
-  .toolbar-override .toolbar-override-item:not(:last-child) {
+  .toolbar-override > div:not(:last-child), .toolbar-override > a:not(:last-child) {
     margin-right: 16px; }
 
 .button-with-spinner .ins-c-spinner::before {
@@ -528,7 +528,7 @@ button:focus {
 .toolbar-override {
   display: flex;
   align-items: center; }
-  .toolbar-override .toolbar-override-item:not(:last-child) {
+  .toolbar-override > div:not(:last-child), .toolbar-override > a:not(:last-child) {
     margin-right: 16px; }
 
 .button-with-spinner .ins-c-spinner::before {
