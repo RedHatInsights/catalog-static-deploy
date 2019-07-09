@@ -30,6 +30,9 @@
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
 
+.disabled-color {
+  color: #d2d2d2; }
+
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
 
@@ -182,6 +185,9 @@
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
 
+.disabled-color {
+  color: #d2d2d2; }
+
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
 
@@ -325,6 +331,9 @@
   height: 330px; }
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
+
+.disabled-color {
+  color: #d2d2d2; }
 
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
@@ -479,6 +488,9 @@
   height: 330px; }
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
+
+.disabled-color {
+  color: #d2d2d2; }
 
 .destructive-color:not(:disabled) {
   color: #FF0000 !important; }
