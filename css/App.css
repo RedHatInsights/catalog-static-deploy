@@ -136,6 +136,9 @@
       z-index: 1;
       cursor: progress; }
 
+.disabled-link {
+  pointer-events: none; }
+
 /**
 * non working pf display modifier: https://www.patternfly.org/v4/documentation/core/utilities/display#display-block
 */
@@ -291,6 +294,9 @@
       z-index: 1;
       cursor: progress; }
 
+.disabled-link {
+  pointer-events: none; }
+
 /**
 * non working pf display modifier: https://www.patternfly.org/v4/documentation/core/utilities/display#display-block
 */
@@ -437,6 +443,9 @@
       background-color: rgba(210, 210, 210, 0.5);
       z-index: 1;
       cursor: progress; }
+
+.disabled-link {
+  pointer-events: none; }
 
 /**
 * non working pf display modifier: https://www.patternfly.org/v4/documentation/core/utilities/display#display-block
@@ -594,6 +603,9 @@
       background-color: rgba(210, 210, 210, 0.5);
       z-index: 1;
       cursor: progress; }
+
+.disabled-link {
+  pointer-events: none; }
 
 /**
 * non working pf display modifier: https://www.patternfly.org/v4/documentation/core/utilities/display#display-block
