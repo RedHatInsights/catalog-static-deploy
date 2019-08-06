@@ -118,12 +118,15 @@
   .toolbar-override > div:not(:last-child), .toolbar-override > a:not(:last-child) {
     margin-right: 16px; }
 
-.button-with-spinner .ins-c-spinner::before {
-  height: 16px;
-  width: 16px;
-  margin-left: 8px;
-  border-color: #ededed;
-  border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
+.button-with-spinner {
+  display: flex;
+  align-items: center; }
+  .button-with-spinner .ins-c-spinner::before {
+    height: 16px;
+    width: 16px;
+    margin-left: 8px;
+    border-color: #ededed;
+    border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
 
 .portfolio-item-progress {
   position: relative;
@@ -276,12 +279,15 @@
   .toolbar-override > div:not(:last-child), .toolbar-override > a:not(:last-child) {
     margin-right: 16px; }
 
-.button-with-spinner .ins-c-spinner::before {
-  height: 16px;
-  width: 16px;
-  margin-left: 8px;
-  border-color: #ededed;
-  border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
+.button-with-spinner {
+  display: flex;
+  align-items: center; }
+  .button-with-spinner .ins-c-spinner::before {
+    height: 16px;
+    width: 16px;
+    margin-left: 8px;
+    border-color: #ededed;
+    border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
 
 .portfolio-item-progress {
   position: relative;
@@ -426,12 +432,15 @@
   .toolbar-override > div:not(:last-child), .toolbar-override > a:not(:last-child) {
     margin-right: 16px; }
 
-.button-with-spinner .ins-c-spinner::before {
-  height: 16px;
-  width: 16px;
-  margin-left: 8px;
-  border-color: #ededed;
-  border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
+.button-with-spinner {
+  display: flex;
+  align-items: center; }
+  .button-with-spinner .ins-c-spinner::before {
+    height: 16px;
+    width: 16px;
+    margin-left: 8px;
+    border-color: #ededed;
+    border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
 
 .portfolio-item-progress {
   position: relative;
@@ -586,12 +595,15 @@
   .toolbar-override > div:not(:last-child), .toolbar-override > a:not(:last-child) {
     margin-right: 16px; }
 
-.button-with-spinner .ins-c-spinner::before {
-  height: 16px;
-  width: 16px;
-  margin-left: 8px;
-  border-color: #ededed;
-  border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
+.button-with-spinner {
+  display: flex;
+  align-items: center; }
+  .button-with-spinner .ins-c-spinner::before {
+    height: 16px;
+    width: 16px;
+    margin-left: 8px;
+    border-color: #ededed;
+    border-top-color: var(--pf-c-button--disabled--BackgroundColor); }
 
 .portfolio-item-progress {
   position: relative;
