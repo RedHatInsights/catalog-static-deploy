@@ -175,6 +175,33 @@
 .pf-u-display-block {
   display: block; }
 
+.image-upload-button {
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; }
+  .image-upload-button svg {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.image-preview {
+  height: 64px;
+  max-width: 300px;
+  object-fit: cover; }
+
+.image-upload-spinner:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px; }
+
 .elipsis-text-overflow {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -351,6 +378,33 @@
 */
 .pf-u-display-block {
   display: block; }
+
+.image-upload-button {
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; }
+  .image-upload-button svg {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.image-preview {
+  height: 64px;
+  max-width: 300px;
+  object-fit: cover; }
+
+.image-upload-spinner:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px; }
 
 .pcard_body {
   min-height: 140px; }
@@ -543,6 +597,33 @@
 .pf-u-display-block {
   display: block; }
 
+.image-upload-button {
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; }
+  .image-upload-button svg {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.image-preview {
+  height: 64px;
+  max-width: 300px;
+  object-fit: cover; }
+
+.image-upload-spinner:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px; }
+
 .card-image-header {
   padding: 0 !important; }
 
@@ -732,6 +813,33 @@
 */
 .pf-u-display-block {
   display: block; }
+
+.image-upload-button {
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; }
+  .image-upload-button svg {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.image-preview {
+  height: 64px;
+  max-width: 300px;
+  object-fit: cover; }
+
+.image-upload-spinner:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px; }
 
 .order-tabs {
   background-color: #FFFFFF;
