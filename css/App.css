@@ -26,6 +26,7 @@
   word-wrap: break-word; }
 
 .content-gallery .content-gallery-card {
+  word-break: break-all;
   height: 330px; }
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
@@ -230,6 +231,7 @@
   word-wrap: break-word; }
 
 .content-gallery .content-gallery-card {
+  word-break: break-all;
   height: 330px; }
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
@@ -448,6 +450,7 @@
   word-wrap: break-word; }
 
 .content-gallery .content-gallery-card {
+  word-break: break-all;
   height: 330px; }
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
@@ -665,6 +668,7 @@
   word-wrap: break-word; }
 
 .content-gallery .content-gallery-card {
+  word-break: break-all;
   height: 330px; }
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
