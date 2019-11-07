@@ -26,6 +26,7 @@
   word-wrap: break-word; }
 
 .content-gallery .content-gallery-card {
+  word-break: break-all;
   height: 330px; }
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
@@ -106,13 +107,16 @@
     position: absolute;
     width: 300px;
     background: transparent; }
-  .toolbar-filter-input-group svg {
-    vertical-align: -0.125em;
-    z-index: 1000;
+  .toolbar-filter-input-group .filter-icons-container {
     position: absolute;
     right: 8px;
-    top: 10px;
-    fill: #72767B; }
+    top: 8px; }
+    .toolbar-filter-input-group .filter-icons-container svg {
+      z-index: 1000;
+      fill: #72767B; }
+    .toolbar-filter-input-group .filter-icons-container:hover svg.clear-filter {
+      fill: var(--pf-global--Color--100);
+      cursor: pointer; }
 
 .toolbar-override {
   display: flex;
@@ -202,6 +206,17 @@
   width: 16px;
   height: 16px; }
 
+.top-toolbar {
+  background-color: #FFFFFF; }
+  .top-toolbar .pf-c-breadcrumb__item .active {
+    color: var(--pf-c-breadcrumb__item--Color);
+    text-decoration: none;
+    pointer-events: none; }
+  .top-toolbar h2 {
+    margin-bottom: 0 !important; }
+  .top-toolbar .top-toolbar-title {
+    min-width: 200px; }
+
 .elipsis-text-overflow {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -230,6 +245,7 @@
   word-wrap: break-word; }
 
 .content-gallery .content-gallery-card {
+  word-break: break-all;
   height: 330px; }
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
@@ -310,13 +326,16 @@
     position: absolute;
     width: 300px;
     background: transparent; }
-  .toolbar-filter-input-group svg {
-    vertical-align: -0.125em;
-    z-index: 1000;
+  .toolbar-filter-input-group .filter-icons-container {
     position: absolute;
     right: 8px;
-    top: 10px;
-    fill: #72767B; }
+    top: 8px; }
+    .toolbar-filter-input-group .filter-icons-container svg {
+      z-index: 1000;
+      fill: #72767B; }
+    .toolbar-filter-input-group .filter-icons-container:hover svg.clear-filter {
+      fill: var(--pf-global--Color--100);
+      cursor: pointer; }
 
 .toolbar-override {
   display: flex;
@@ -409,17 +428,6 @@
 .pcard_body {
   min-height: 140px; }
 
-.top-toolbar {
-  background-color: #FFFFFF; }
-  .top-toolbar .pf-c-breadcrumb__item .active {
-    color: var(--pf-c-breadcrumb__item--Color);
-    text-decoration: none;
-    pointer-events: none; }
-  .top-toolbar h2 {
-    margin-bottom: 0 !important; }
-  .top-toolbar .top-toolbar-title {
-    min-width: 200px; }
-
 .elipsis-text-overflow {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -448,6 +456,7 @@
   word-wrap: break-word; }
 
 .content-gallery .content-gallery-card {
+  word-break: break-all;
   height: 330px; }
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
@@ -528,13 +537,16 @@
     position: absolute;
     width: 300px;
     background: transparent; }
-  .toolbar-filter-input-group svg {
-    vertical-align: -0.125em;
-    z-index: 1000;
+  .toolbar-filter-input-group .filter-icons-container {
     position: absolute;
     right: 8px;
-    top: 10px;
-    fill: #72767B; }
+    top: 8px; }
+    .toolbar-filter-input-group .filter-icons-container svg {
+      z-index: 1000;
+      fill: #72767B; }
+    .toolbar-filter-input-group .filter-icons-container:hover svg.clear-filter {
+      fill: var(--pf-global--Color--100);
+      cursor: pointer; }
 
 .toolbar-override {
   display: flex;
@@ -665,6 +677,7 @@
   word-wrap: break-word; }
 
 .content-gallery .content-gallery-card {
+  word-break: break-all;
   height: 330px; }
   .content-gallery .content-gallery-card .card-link {
     height: 100%; }
@@ -745,13 +758,16 @@
     position: absolute;
     width: 300px;
     background: transparent; }
-  .toolbar-filter-input-group svg {
-    vertical-align: -0.125em;
-    z-index: 1000;
+  .toolbar-filter-input-group .filter-icons-container {
     position: absolute;
     right: 8px;
-    top: 10px;
-    fill: #72767B; }
+    top: 8px; }
+    .toolbar-filter-input-group .filter-icons-container svg {
+      z-index: 1000;
+      fill: #72767B; }
+    .toolbar-filter-input-group .filter-icons-container:hover svg.clear-filter {
+      fill: var(--pf-global--Color--100);
+      cursor: pointer; }
 
 .toolbar-override {
   display: flex;
