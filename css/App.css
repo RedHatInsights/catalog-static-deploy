@@ -221,6 +221,12 @@
   border-top: 1px solid #d2d2d2;
   padding-top: 24px; }
 
+.app-tabs {
+  border-bottom: 1px solid lightgrey; }
+
+.empty-state {
+  height: calc(100% - 197px); }
+
 .top-toolbar {
   background-color: #FFFFFF; }
   .top-toolbar .pf-c-breadcrumb__item .active {
@@ -231,6 +237,13 @@
     margin-bottom: 0 !important; }
   .top-toolbar .top-toolbar-title {
     min-width: 200px; }
+
+.toolbar {
+  background-color: #FFFFFF;
+  position: relative;
+  top: 1px; }
+  .toolbar h2 {
+    margin-bottom: 0 !important; }
 
 .elipsis-text-overflow {
   text-overflow: ellipsis;
@@ -454,6 +467,12 @@
 .share-group-modal.group {
   border-top: 1px solid #d2d2d2;
   padding-top: 24px; }
+
+.app-tabs {
+  border-bottom: 1px solid lightgrey; }
+
+.empty-state {
+  height: calc(100% - 197px); }
 
 .pcard_body {
   min-height: 140px; }
@@ -680,6 +699,12 @@
 .share-group-modal.group {
   border-top: 1px solid #d2d2d2;
   padding-top: 24px; }
+
+.app-tabs {
+  border-bottom: 1px solid lightgrey; }
+
+.empty-state {
+  height: calc(100% - 197px); }
 
 .card-image-header {
   padding: 0 !important; }
@@ -916,6 +941,12 @@
 .share-group-modal.group {
   border-top: 1px solid #d2d2d2;
   padding-top: 24px; }
+
+.app-tabs {
+  border-bottom: 1px solid lightgrey; }
+
+.empty-state {
+  height: calc(100% - 197px); }
 
 .order-tabs {
   background-color: #FFFFFF;
