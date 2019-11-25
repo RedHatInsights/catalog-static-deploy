@@ -344,6 +344,9 @@ a.breadcrumb-active {
   grid-gap: 16px !important;
   gap: 16px; }
 
+.bottom-pagination-container {
+  width: 100%; }
+
 .top-toolbar {
   background-color: #FFFFFF; }
   .top-toolbar .pf-c-breadcrumb__item .active {
@@ -708,6 +711,9 @@ a.breadcrumb-active {
   grid-gap: 16px !important;
   gap: 16px; }
 
+.bottom-pagination-container {
+  width: 100%; }
+
 .pcard_body {
   min-height: 140px; }
 
@@ -1056,6 +1062,9 @@ a.breadcrumb-active {
 .pf-u-gg-md {
   grid-gap: 16px !important;
   gap: 16px; }
+
+.bottom-pagination-container {
+  width: 100%; }
 
 .card-image-header {
   padding: 0 !important; }
