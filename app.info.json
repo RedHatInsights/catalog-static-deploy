@@ -1,11 +1,11 @@
 {
   "app_name": "catalog",
-  "src_hash": "f2e1e8cb1adeb5c680b5babcf5fe7f390e149540",
+  "src_hash": "d54a2cd0b34ff7cd7ae23cc232f2887176219247",
   "src_tag": "",
   "src_branch": "ci-stable",
   "travis": {
     "event_type": "push",
-    "build_number": "2722",
-    "build_web_url": "https://travis-ci.org/RedHatInsights/catalog-ui/builds/696599895"
+    "build_number": "2775",
+    "build_web_url": "https://travis-ci.org/RedHatInsights/catalog-ui/builds/701422487"
   }
 }
