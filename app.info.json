@@ -1,12 +1,12 @@
 {
   "app_name": "catalog",
-  "src_hash": "81fc50e77faaad13c51c2edd254bc1ab54327a0f",
+  "src_hash": "66d64cad0531b0afab8faeac46cded1f30b2c90b",
   "src_tag": "",
   "src_branch": "main",
-  "patternfly_dependencies": ["@patternfly/react-core@4.121.1","@patternfly/react-icons@4.10.7","@patternfly/react-styles@4.10.11","@patternfly/react-table@4.27.7"],
+  "patternfly_dependencies": ["@patternfly/react-core@4.128.2","@patternfly/react-icons@4.10.11","@patternfly/react-styles@4.10.11","@patternfly/react-table@4.27.7"],
   "travis": {
     "event_type": "push",
-    "build_number": "4195",
-    "build_web_url": "https://travis-ci.com/RedHatInsights/catalog-ui/builds/228673452"
+    "build_number": "4198",
+    "build_web_url": "https://travis-ci.com/RedHatInsights/catalog-ui/builds/228713789"
   }
 }
