@@ -1,2 +1,2 @@
 "use strict";(self.webpackChunkcatalog=self.webpackChunkcatalog||[]).push([[240],{20240:(e,n,t)=>{t.d(n,{Z:()=>r});var u=t(30624);const r=function(){var e=(0,u.useRef)(!1);return(0,u.useEffect)((function(){return e.current=!0,function(){return e.current=!1}}),[]),e}}}]);
-//# sourceMappingURL=../sourcemaps/240.2d51f0b62b86c881c113.js.map
+//# sourceMappingURL=../sourcemaps/240.ed9cc384b4a63bb70433.js.map
