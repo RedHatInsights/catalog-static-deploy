@@ -1,1 +1,0 @@
-(self.webpackChunkcatalog=self.webpackChunkcatalog||[]).push([[7075],{56024:()=>{},43390:()=>{}}]);
