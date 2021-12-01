@@ -1,13 +1,13 @@
 {
   "app_name": "catalog",
-  "src_hash": "7cf5a704c1bfc1e3545194bba07030f470b98a4c",
+  "src_hash": "104915cb2750850bc0ab6ee76f0e6f0fcd562906",
   "src_tag": "",
   "src_branch": "main",
   "patternfly_dependencies": ["@patternfly/patternfly@4.159.1","@patternfly/react-core@4.175.4","@patternfly/react-icons@4.26.4","@patternfly/react-styles@4.25.4","@patternfly/react-table@4.37.8"],
-  "rh_cloud_services_dependencies": ["@redhat-cloud-services/approval-client@1.0.94","@redhat-cloud-services/catalog-client@1.0.94","@redhat-cloud-services/frontend-components@3.5.1","@redhat-cloud-services/frontend-components-config@4.5.4","@redhat-cloud-services/frontend-components-notifications@3.2.5","@redhat-cloud-services/frontend-components-utilities@3.2.6","@redhat-cloud-services/rbac-client@1.0.103"],
+  "rh_cloud_services_dependencies": ["@redhat-cloud-services/approval-client@1.0.94","@redhat-cloud-services/catalog-client@1.0.94","@redhat-cloud-services/frontend-components@3.5.1","@redhat-cloud-services/frontend-components-config@4.5.6","@redhat-cloud-services/frontend-components-notifications@3.2.5","@redhat-cloud-services/frontend-components-utilities@3.2.6","@redhat-cloud-services/rbac-client@1.0.103"],
   "travis": {
     "event_type": "push",
-    "build_number": "4767",
-    "build_web_url": "https://app.travis-ci.com/RedHatInsights/catalog-ui/builds/242683700"
+    "build_number": "4774",
+    "build_web_url": "https://app.travis-ci.com/RedHatInsights/catalog-ui/builds/242753896"
   }
 }
